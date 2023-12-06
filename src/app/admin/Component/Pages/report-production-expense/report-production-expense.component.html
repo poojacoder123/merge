@@ -1,0 +1,166 @@
+<div class="container-fluid my-4 ">
+    <div class="prant_div">
+      <div class="fast_div">
+        <div class="super_chaild">
+          <mat-icon>density_medium</mat-icon>
+          <i class="fa-solid fa-blender fs-1"></i>
+          <span class="fs-4"> Production Expenses Report</span>
+        </div>
+        <div>
+          <a class="text_routes" routerLink="/admin"> Dashboard </a>
+          <i class="ri-arrow-right-s-line"></i> Production Expenses Report
+        </div>
+      </div>
+      <div class="secoand_div">
+  
+        <button mat-raised-button matTooltip="Filter.." class="demo-button">
+            
+            <i class="ri-filter-2-fill"></i>
+
+        </button>
+        <button mat-raised-button matTooltip="status" class="demo-button dropdown-toggle mx-2 "
+            data-bs-toggle="dropdown" aria-expanded="false">
+            <mat-icon>density_medium</mat-icon>
+        </button>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="@wweb">Company Name </a></li>
+            <li><a class="dropdown-item" href="#">Company website </a></li>
+        </ul>
+        <button mat-raised-button class="demo-button ">
+            <i class="ri-printer-line fs-5"></i>
+        </button>
+        <button mat-raised-button matTooltip="Add" class="demo-button ms-2">
+            <i class="ri-add-line fs-5 "></i>
+            <!-- fitter -->
+        </button>
+    </div>
+    </div>
+    <hr />
+    <mat-form-field style="height: 100%; width: 100%;">
+           <mat-label>Search</mat-label>
+           <input matInput placeholder="Ex. ium" #input>
+    </mat-form-field>
+    <div class="card row">
+      <div class="col-md-12 col-sm-12 set_scroller" >
+        <table class="table table-hover">
+            <thead>
+                <tr style=" border: none;">
+                <th>
+                    <span>
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    </span>
+                  </th>
+                <th scope="col" class="text-center text-uppercase">Date</th>
+                <th scope="col" class="text-center text-uppercase">Category</th>
+                <th scope="col" class="text-center text-uppercase">Description</th>
+                <th scope="col" class="text-center text-uppercase">Amount</th>
+                <th scope="col" class="text-center text-uppercase">Total</th> 
+                 <th scope="col" class="text-center text-uppercase">Status</th>
+                 <th scope="col" class="text-center text-uppercase"> Payment Status</th>
+                </tr>
+            </thead>
+<!-- table data from backend -->
+<tbody style="text-align: center;">
+<tr *ngFor="let e of   report_production_expense ; ">
+  <td class="mt-4">
+    <span>
+      <input class="form-check-input mt-2" type="checkbox" id="flexCheckDefault">
+    </span>
+  </td>
+  <!-- <td>
+    <div class="Btn_Close">#VEND00001</div>
+  </td> -->
+  <td>
+    <div style="width: 150px;" class="text_decoreion p-2 border border-1 rounded ">{{e.DATE}}</div>
+  </td>
+  <td>
+    <div style="width: 150px;" class="text_decoreion p-2 border border-1 rounded ">{{e.CATEGORY}}</div>
+  </td>
+
+  <td>
+    <div style="width: 200px;" class="text_decoreion border border-1 rounded p-2 "> {{e.DESCRIPTION}} </div>
+  </td>
+  <td>
+    <div style="width: 150px;" class="text_decoreion border border-1 rounded py-2 px-3">{{e.AMOUNT | currency}}
+    </div>
+  </td>
+  <td>
+    <div style="width: 150px;" class="text_decoreion border border-1 rounded py-2 px-3">{{e.TOTAL |currency}}
+    </div>
+  </td>
+  <td>
+    <div style="width: 150px;" class="text_decoreion border border-1 rounded py-2 px-3 bg-status">{{e.STATUS}}
+    </div>
+  </td>
+  <td>
+    <div style="width: 180px;" class="text_decoreion border border-1 rounded py-2 px-3 bg-status">{{e.PAYMENT_STATUS}}
+    </div>
+  </td>
+ 
+<!-- balance -->
+
+ 
+<tr>
+<!-- empty -->
+</tr>
+</tbody>
+        </table>
+       
+      </div>
+  
+    </div>
+   <div class="row my-3 ">
+      <div class="prant_div">
+        <div class="new_dropdown">
+          <div>
+            <div class="input-group mb-3">
+              <button type="button" class="btn btn-outline-secondary">10</button>
+              <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <span class="visually-hidden">Toggle Dropdown</span>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">15</a></li>
+                <li><a class="dropdown-item" href="#">25</a></li>
+                <li><a class="dropdown-item" href="#">50</a></li>
+                <li><a class="dropdown-item" href="#">100</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="d-grid ga d-md-flex justify-content-md-end">
+            <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
+              <div class="btn-group me-2" role="group" aria-label="First group">
+                <button type="button" class="btn btn-outline-secondary"> 1</button>
+                <button type="button" class="btn btn-outline-secondary">2</button>
+                <button type="button" class="btn btn-outline-secondary">3</button>
+                <button type="button" class="btn btn-outline-secondary">4</button>
+                <button type="button" class="btn btn-outline-secondary">5</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="d-grid ga d-md-flex justify-content-md-end">
+            <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
+              <div class="btn-group me-2" role="group" aria-label="First group">
+                <button type="button" class="btn btn-outline-secondary">
+                  <i class="fas fa-angle-left"></i>
+                </button>
+                <button type="button" class="btn btn-outline-secondary">
+                  <i class="fas fa-angle-left"></i>
+                </button>
+                <button type="button" class="btn btn-outline-secondary">
+                  <i class="fas fa-angle-right"></i>
+                </button>
+                <button type="button" class="btn btn-outline-secondary ">
+                  <i class="fas fa-angle-right"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+         </div>
+      </div>
+   </div>
+  </div>

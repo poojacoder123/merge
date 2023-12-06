@@ -1,0 +1,31 @@
+
+
+
+
+
+ 
+  
+      <section class="calculadora"> 
+        <input type="text text-light" class="pantalla" [(ngModel)]="display" placeholder="0"  readonly>
+        <button class="tecla especial" (click)="clearDisplay()">AC</button>
+        <button class="tecla especial">+/-</button>
+        <button class="tecla especial"  id=" ">&#37;</button>
+        <button class="tecla signo"  (click)="appendToDisplay('/')" id=" ">&divide;</button>
+        <button class="tecla numero" (click)="appendToDisplay('7')" id="boton_7">7</button>
+        <button class="tecla numero" (click)="appendToDisplay('8')" id="boton_7">8</button>
+        <button class="tecla numero" (click)="appendToDisplay('9')" id="boton_9">9</button>
+        <button class="tecla signo"  (click)="appendToDisplay('*')" id=" ">&times;</button>
+        <button class="tecla numero" (click)="appendToDisplay('4')" id="boton_4">4</button>
+        <button class="tecla numero" (click)="appendToDisplay('5')" id="boton_5">5</button>
+        <button class="tecla numero" (click)="appendToDisplay('6')" id="boton_6">6</button>
+        <button class="tecla signo"  (click)="appendToDisplay('-')" id=" ">&minus;</button>
+        <button class="tecla numero" (click)="appendToDisplay('1')" id="boton_1">1</button>
+        <button class="tecla numero" (click)="appendToDisplay('2')" id="boton_2">2</button>
+        <button class="tecla numero" (click)="appendToDisplay('3')" id="boton_3">3</button>
+        <button class="tecla signo"  (click)="appendToDisplay('+')" id=" ">&plus;</button>
+        <button class="tecla cero"   (click)="appendToDisplay('0')" id="boton_0">0</button>
+        <button class="tecla numero">,</button>
+        <button class="tecla signo" (click)="calculate()"  id=" ">&equals;</button>
+     </section>
+  
+

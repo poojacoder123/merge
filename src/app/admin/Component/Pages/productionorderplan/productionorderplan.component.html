@@ -1,0 +1,210 @@
+<div class="container-fluid my-4 ">
+    <div class="prant_div">
+        <div class="fast_div">
+            <div class="super_chaild">
+                <mat-icon>density_medium</mat-icon>
+                <i class="fa-solid fa-sheet-plastic fs-1"></i>
+                <span class="fs-4">Production Order Plan </span>
+            </div>
+            <div>
+                <a class="text_routes" routerLink="/admin"> Dashboard </a>
+                <i class="ri-arrow-right-s-line"></i> Production Order Plan
+            </div>
+        </div>
+        <div class="secoand_div">
+  
+            <button mat-raised-button matTooltip="Filter.." class="demo-button">
+                <!-- <i class="ri-add-line fs-5"></i> -->
+                <i class="ri-filter-2-fill"></i>
+  
+            </button>
+            <button mat-raised-button matTooltip="status" class="demo-button dropdown-toggle mx-2 "
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <mat-icon>density_medium</mat-icon>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="@wweb">Company Name </a></li>
+                <li><a class="dropdown-item" href="#">Company website </a></li>
+            </ul>
+            <button mat-raised-button class="demo-button ">
+                <i class="ri-printer-line fs-5"></i>
+            </button>
+            <button mat-raised-button matTooltip="Add" (click)="ProductionOrderPlan()" class="demo-button ms-2">
+                <!-- <i class="ri-filter-2-fill"></i> -->
+                <i class="ri-add-line fs-5 "></i>
+  
+                <!-- fitter -->
+            </button>
+        </div>
+  
+    </div>
+    <hr />
+    <mat-form-field style="height: 100%; width: 100%;">
+        <mat-label>Search</mat-label>
+        <input matInput placeholder="Ex. ium" #input>
+    </mat-form-field>
+
+
+    <div class="card row">
+        <div class="col-md-12 col-sm-12 set_scroller">
+  
+            <table class="table table-hover">
+                <thead>
+                    <th scope="col"><input class="form-check-" type="checkbox" value="" id="flexCheckDefault"></th>
+                    <th scope="col" style="text-align: center;">PLAN ID</th>
+                    <th scope="col" style="text-align: center;">PRODUCT ID</th>
+                    <th scope="col" style="text-align: center;">PRODUCT NAME</th>
+                    <th scope="col" style="text-align: center;">QTY</th>
+                    <th scope="col" style="text-align: center;">START DATE</th>
+                    <th scope="col" style="text-align: center;">END DATE</th>
+                    <th scope="col" style="padding-left: 2rem;">STATUS</th>
+                    <th scope="col" style="text-align: center;">PRIORITY</th>
+                    <th scope="col" style="text-align: center;">ASSIGNED TO</th>
+                 
+                </thead>
+                <tbody>
+                    <tr>
+                        <td> <input class="form-check-input mt-2" type="checkbox" value="" id="flexCheckDefault"></td>
+                        <td><span class="card text-center">#878790</span></td>
+                        <td><span class="card text-center"> 67676
+                            </span></td>
+                        <td><span class="card text-center">Product C
+                            </span></td>
+
+
+
+                        <td><span class="card text-center">1000</span></td>
+
+                        <td><span class="card text-center">7-11-2023
+                            </span></td>
+                        <td><span class="card text-center">7-11-2023
+                            </span></td>
+                        <td><span class="card text-center" style="color: #000000; ">Planned</span></td>
+                        <td><span class="card text-center" style="color: #000000; ">Low</span></td>
+                        <td><span class="card text-center">Department </span> </td>
+
+                                <!-- <td ><input id="s2" type="checkbox" class="switch mx-2 mt-2 ms-5 " checked> </td> -->
+                      
+
+                    </tr>
+                    <tr>
+                        <td> <input class="form-check-input mt-2" type="checkbox" value="" id="flexCheckDefault"></td>
+                        <td><span class="card text-center">#878790
+                            </span></td>
+                        <td><span class="card text-center">67676
+                            </span></td>
+                        <td><span class="card text-center">Product B
+                            </span></td>
+
+
+
+                        <td><span class="card text-center">1000</span></td>
+
+                        <td><span class="card text-center">7-11-2023
+                            </span></td>
+                        <td><span class="card text-center">7-11-2023
+                            </span></td>
+                        <td><span class="card text-center" style="color: #000000; ">Progress</span></td>
+                        <td><span class="card text-center" style="color: #000;">Medium</span></td>
+                        <td><span class="card text-center">Department </span> </td>
+
+
+                        <!-- <td ><input id="s2" type="checkbox" class="switch mx-2 mt-2 ms-5" checked> </td> -->
+                       
+                    </tr>
+                    <tr>
+                        <td> <input class="form-check-input mt-2" type="checkbox" value="" id="flexCheckDefault"></td>
+                        <td><span class="card text-center">#878790
+                            </span></td>
+                        <td><span class="card text-center">67676
+                            </span></td>
+                        <td><span class="card text-center">Product A
+                            </span></td>
+
+
+                        <td><span class="card text-center">1000</span></td>
+
+                        <td><span class="card text-center">7-11-2023
+                            </span></td>
+                        <td><span class="card text-center">7-11-2023
+                            </span></td>
+                        <td><span class="card text-center" style="color: #000000;">Completed</span></td>
+                        <td><span class="card text-center" style="color: #000; ">High</span></td>
+                        <td><span class="card text-center">Department </span> </td>
+
+                        <!-- <td><input id="s2" type="checkbox" class="switch mx-2 mt-2 ms-5 " checked> </td> -->
+                       
+
+                    </tr>
+                    <tr>
+                        <td colspan="2">TOTAL</td>
+                        <td></td>
+                        <td></td>
+
+                        <td><span class="card text-center">3000</span></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row my-3 ">
+        <div class="prant_div">
+            <div class="new_dropdown">
+                <div>
+                    <div class="input-group mb-3">
+                        <button type="button" class="btn btn-outline-secondary">10</button>
+                        <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="visually-hidden">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">15</a></li>
+                            <li><a class="dropdown-item" href="#">25</a></li>
+                            <li><a class="dropdown-item" href="#">50</a></li>
+                            <li><a class="dropdown-item" href="#">100</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="d-grid ga d-md-flex justify-content-md-end">
+                    <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
+                        <div class="btn-group me-2" role="group" aria-label="First group">
+                            <button type="button" class="btn btn-outline-secondary"> 1</button>
+                            <button type="button" class="btn btn-outline-secondary">2</button>
+                            <button type="button" class="btn btn-outline-secondary">3</button>
+                            <button type="button" class="btn btn-outline-secondary">4</button>
+                            <button type="button" class="btn btn-outline-secondary">5</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="d-grid ga d-md-flex justify-content-md-end">
+                    <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
+                        <div class="btn-group me-2" role="group" aria-label="First group">
+                            <button type="button" class="btn btn-outline-secondary">
+                                <i class="fas fa-angle-left"></i>
+                            </button>
+                            <button type="button" class="btn btn-outline-secondary">
+                                <i class="fas fa-angle-left"></i>
+                            </button>
+                            <button type="button" class="btn btn-outline-secondary">
+                                <i class="fas fa-angle-right"></i>
+                            </button>
+                            <button type="button" class="btn btn-outline-secondary ">
+                                <i class="fas fa-angle-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+

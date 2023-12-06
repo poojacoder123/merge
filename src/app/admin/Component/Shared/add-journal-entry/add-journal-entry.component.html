@@ -1,0 +1,97 @@
+
+
+
+  <ng-container>
+    <span mat-dialog-title>
+        <div class="set_header">
+          <div class="d-flex  align-items-center">
+           <img src="../../../../../assets/logos/journalentry.png">
+            <span class="text-capitalize fs-4 mx-2 fw-bold" style="font-family: Arial, Helvetica, sans-serif;">Out of Stock Report</span>  
+          </div>
+          <div>
+            <button
+            align="end"
+            type="button"
+            [mat-dialog-close]="true"
+            class="btn-close"
+            aria-label="Close"
+          ></button>
+          </div>
+        </div>
+      </span>
+      <mat-divider></mat-divider>
+      <mat-dialog-content>
+    
+        <form [formGroup]="addjournal">
+      
+          
+            <div class="formback my-3 mx-3">
+                <div class="container-fluid c1 " style=" margin-bottom: 3rem;  padding-bottom: 2rem;">
+                  <form class="row gy-2 gx-4 align-items-center " style=" padding-bottom: 3rem;" id="form1">
+                    <div class=" col-sm-12 col-md-6 " style="line-height: 2rem;  ">
+                      <label class="" for="specificSizeSelect">JOURNAL NO:</label><br>
+                      <input type="password" class="form-control " id="inputPassword " placeholder="#INVO00035">
+                    </div>
+                    <div class="col-sm-12 col-md-6 " style="line-height: 2rem;  ">
+                      <label class="" for="specificSizeSelect">DATE: </label><br>
+                      <input type="date" class="form-control" type="datetime-local" id="Test_DatetimeLocal">
+                    </div>
+            
+                   
+                    <div class=" col-sm-12 col-md-6 " style="line-height: 2rem;  ">
+                      <label class="" for="specificSizeSelect">PARTICULARS:</label>
+                      <select class="form-select" id="specificSizeSelect">
+                        <option selected>Account Ledger</option>
+                        <option value="1">Account Ledger</option>
+                        <option value="2">Account Ledger</option>
+                        <option value="3">Account Ledger</option>
+                      </select>
+                    </div>
+                    
+                    <div class="col-sm-12 col-md-6 " style="line-height: 2rem;  ">
+                      <label class="" for="specificSizeSelect">CREDIT:</label>
+                      <input type="password" class="form-control " id="inputPassword " placeholder="Enter Crebit Amount">
+                    </div>
+                    <div class=" col-sm-12 col-md-6 " style="line-height: 2rem;  ">
+                      <label class="" for="specificSizeSelect">PARTICULARS:</label>
+                      <select class="form-select" id="specificSizeSelect">
+                        <option selected>Account Ledger</option>
+                        <option value="1">Account Ledger</option>
+                        <option value="2">Account Ledger</option>
+                        <option value="3">Account Ledger</option>
+                      </select>
+                    </div>
+                    <div class="col-sm-12 col-md-6 " style="line-height: 2rem;  ">
+                      <label class="" for="specificSizeSelect">DEBIT:</label>
+                      <input type="password" class="form-control " id="inputPassword " placeholder="Enter debit Amount">
+                    </div>
+                    <div class=" col-sm-12 col-md-6 " style="line-height: 2rem;">
+                      <label class="" for="specificSizeSelect">STATUS:</label><br>
+                      <select class="form-select" id="specificSizeSelect">
+                        <option selected>STATUS</option>
+                        <option value="1">Recived </option>
+                        <option value="2">pending </option>
+                      </select>
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                      <label class="" for="autoSizingInputGroup">NOTES:</label>
+                      <input type="password" class="form-control" id="inputPassword " placeholder="Enter Notes">
+                    </div>
+                  </form>
+                </div>
+              </div>
+            
+
+        </form>
+      </mat-dialog-content>
+      
+      
+      <mat-divider></mat-divider>
+    <mat-dialog-actions class="py-2" align="end">
+        <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+          <div class=" Btn_Save" type="button"  >Save</div>
+          <div mat-dialog-close class="Btn_Close" >Cancel</div>
+        </div>
+    </mat-dialog-actions>
+      
+    </ng-container>

@@ -1,0 +1,287 @@
+
+
+
+
+<div class="container  mt-4">
+  <div class="top_mane">
+    <div class="mani mx-3 " >
+      <div class="page_name" >
+        <mat-icon>density_medium</mat-icon>
+        <img src="../../../../../assets/submenu/categories_menu.png" />
+        <span class="fs-4"> Manage Category</span> 
+      </div>
+      <div>
+      <a class="text_routes" routerLink="/admin"> Dashboard </a><i class="ri-arrow-right-s-line"></i> Category
+    </div>
+  </div>
+
+  <!-- <div class="form-group" style="width: 40%;">
+    
+    <input type="search" placeholder="Search..." (keyup)="applyFilter($event)" class="form-control" #input />
+  </div> -->
+
+
+  <div>
+
+ 
+
+
+<button mat-raised-button (click)="addData()" class="demo-button ">
+  <i class="ri-add-line"></i>
+</button>
+<button mat-raised-button  class="demo-button dropdown-toggle "  data-bs-toggle="dropdown" aria-expanded="false">
+  <mat-icon>density_medium</mat-icon>
+</button>
+<ul class="dropdown-menu">
+  <li><a class="dropdown-item" href="#">Show All </a></li>
+  <li><hr class="dropdown-divider"></li>
+ 
+  <li><a class="dropdown-item" href="#">Complete </a></li>
+  <li><a class="dropdown-item" href="#">Canceled </a></li>
+
+</ul>
+
+
+
+<button mat-raised-button (click)="print_btn()" class="demo-button ">
+
+
+  <i class="ri-printer-line fs-5"></i>
+
+</button>
+
+<button mat-raised-button  class="demo-button ">
+  <i class="ri-filter-2-fill"></i>
+</button>
+</div>
+  </div>
+ 
+
+
+<hr />
+<div class="px-3">
+  <!-- <mat-form-field  >
+    <mat-label>Search</mat-label>
+   <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" style="width: 100%;" #input>
+   </mat-form-field>  -->
+
+
+   <div class="input-group mb-3">
+    <input type="text" class="form-control" (keyup)="applyFilter($event)" placeholder="Search..." #input aria-label="Recipient's username" aria-describedby="basic-addon2">
+    <span class="input-group-text" id="basic-addon2"> <i class="fas fa-search"></i>
+    </span>
+  </div>
+  
+
+   
+</div>
+
+<div class="row  mx-3" > 
+  
+         
+
+          
+
+ <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <tr cdkDrag>
+         <ng-container matColumnDef="_id">
+         <th mat-header-cell *matHeaderCellDef> <input type="checkbox" /> </th>
+         <td mat-cell *matCellDef="let element ;"> 
+        <input type="checkbox" />  
+        </td>
+         </ng-container>
+         <ng-container matColumnDef="color">
+          <th class="text-uppercase text-end" mat-header-cell *matHeaderCellDef> </th>
+          <td mat-cell *matCellDef="let element;let n = index">
+        
+             <div  class="cut_line" [style.background-color]="new_color[n]"></div>
+           </td>
+          </ng-container>
+         <ng-container matColumnDef="name">
+         <th class="text-uppercase text-end" mat-header-cell *matHeaderCellDef> Name </th>
+         <td mat-cell *matCellDef="let element;let n = index">
+              {{element.categoryname}}
+          </td>
+         </ng-container>
+
+         <ng-container matColumnDef="products">
+          <th class="text-center text-uppercase" mat-header-cell *matHeaderCellDef> Products </th>
+          <td class="text-center" mat-cell *matCellDef="let element"> 
+            Apple,
+            Nokia,
+            Amazon,
+            Instagram,
+            LinkedIn
+            
+          </td>
+         </ng-container>
+         <ng-container matColumnDef="product_count">
+          <th class="text-center text-uppercase" mat-header-cell *matHeaderCellDef> #Products  </th>
+          <td class="text-center" mat-cell *matCellDef="let element"> 
+          5
+            
+          </td>
+         </ng-container>
+
+
+         <ng-container matColumnDef="status">
+          <th class="text-center text-uppercase" mat-header-cell *matHeaderCellDef> Status </th>
+          <td class="text-center" mat-cell *matCellDef="let element"> 
+            <input id="s1" type="checkbox" class="switch">
+            
+          </td>
+         </ng-container>
+
+
+         <ng-container matColumnDef="Action">
+         <th class="text-uppercase" mat-header-cell *matHeaderCellDef style="text-align: center;"> Action </th>
+         <td mat-cell *matCellDef="let element" style="text-align: center;"> 
+        
+         <div class="parent_div ">
+          <div
+          style="cursor: pointer;"
+ 
+          class="view_icon"
+         
+          aria-label="Example icon button with a menu icon">
+          <i class="ri-eye-line"></i>
+         </div>
+          <div
+          style="cursor: pointer;"
+ 
+          class="edit_icon"
+          (click)="editCategory(element)"
+          aria-label="Example icon button with a menu icon">
+          <i class="ri-pencil-line"></i>
+         </div>
+          
+          <div
+          style="cursor: pointer;"
+ 
+          class="delete_icon"
+          (click)="OnDelete(element)"
+          aria-label="Example icon button with a menu icon">
+          <i class="ri-delete-bin-6-line "></i>
+         </div>
+         </div>
+          
+        
+     
+   
+        </td>
+        </ng-container>
+
+        <ng-container matColumnDef="move">
+          <th class="text-center" mat-header-cell *matHeaderCellDef> </th>
+          <td class="text-center" mat-cell *matCellDef="let element" > 
+            <mat-icon class="fs-4" style="cursor: pointer;">density_medium</mat-icon>
+          </td>
+        </ng-container>
+      </tr>
+        
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">No data matching the filter"{{input.value}}"</td>
+        </tr>
+        </table> 
+      
+      
+      
+  </div>
+ 
+
+  <div class="row my-3 mx-1">
+    <div class="prant_div">
+      <div class="new_dropdown" >
+
+        <div >
+          <div class="input-group mb-3">
+              <button type="button" class="btn btn-outline-secondary">10</button>
+              <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split"
+                  data-bs-toggle="dropdown" aria-expanded="false">
+                  <span class="visually-hidden">Toggle Dropdown</span>
+              </button>
+              <ul class="dropdown-menu">
+  
+                  <li><a class="dropdown-item" href="#">15</a></li>
+                  <li><a class="dropdown-item" href="#">25</a></li>
+                  <li><a class="dropdown-item" href="#">50</a></li>
+                  <li><a class="dropdown-item" href="#">100</a></li>
+              </ul>
+  
+          </div>
+      </div>
+    </div>
+   
+    <div >
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+
+        <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
+            <div class="btn-group me-2" role="group" aria-label="First group">
+                <button type="button" class="btn btn-outline-secondary" > 1</button>
+                <button type="button" class="btn btn-outline-secondary">2</button>
+                <button type="button" class="btn btn-outline-secondary">3</button>
+                <button type="button" class="btn btn-outline-secondary">4</button>
+                <button type="button" class="btn btn-outline-secondary">5</button>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div >
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+
+        <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
+            <div class="btn-group me-2" role="group" aria-label="First group">
+                <button type="button" class="btn btn-outline-secondary"> |
+                    <i
+                        class="fas fa-angle-left"></i>
+                    </button>
+                <button type="button" class="btn btn-outline-secondary"><i
+                        class="fas fa-angle-left"></i>
+                      </button>
+                <button type="button" class="btn btn-outline-secondary"><i
+                        class="fas fa-angle-right"></i>
+                      </button>
+                <button type="button" class="btn btn-outline-secondary " ><i
+                        class="fas fa-angle-right"></i> |
+                </button>
+            </div>
+        </div>
+    </div>
+
+    </div>
+    </div>
+ 
+   
+</div>
+  </div>
+ 
+ 
+          
+
+ 
+      
+
+
+
+
+
+ 
+   
+        
+        
+          
+        
+       
+        
+      
+        
+          
+
+
+  
+
+
+
+  

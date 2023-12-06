@@ -1,0 +1,34 @@
+
+
+
+  <div  class="container my-4">
+    <div id="body">
+
+      <form [formGroup]="brandform" >
+       <div  class="containers">
+           <div class="brand-logo"></div>
+            <div class="brand-title ">Product {{ idname ? 'Brand' : 'Category' }}</div>
+            <div class="inputs">
+              <label class="form-label"> {{ idname ? 'Brand' : 'Category' }} Name</label>
+              <input type="text" formControlName="{{ idname ? 'brandname': 'categoryname'}}" placeholder="Enter your {{ idname ? 'Brand' : 'Category' }} Name" />
+              <small class="text-danger" *ngIf="ckformBrand">Enter your Brand Name Required</small>
+              <small class="text-danger" *ngIf="ckformCategory">Enter your Category Name Required</small>
+              <button type="submit" (click)="CreateBrandName()"><span>
+                <span *ngIf="ids || category_id ">
+                 {{'Update'}} 
+                </span>
+                <span *ngIf="!ids && !category_id ">
+                {{ 'Submit'}}
+                </span>
+              </span>
+                </button>
+            </div>
+        </div>
+      </form>
+</div>
+</div>
+
+
+
+
+ 

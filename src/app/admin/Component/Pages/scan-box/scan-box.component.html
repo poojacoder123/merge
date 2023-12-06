@@ -1,0 +1,334 @@
+<div class="container-fluid my-4 ">
+    <div class="prant_div">
+        <div class="fast_div">
+            <div class="super_chaild">
+                <mat-icon>density_medium</mat-icon>
+                <i class="fa-solid fa-shield-plus fs-1"></i>
+                <span class="fs-4">Scan Box </span>
+            </div>
+            <div>
+                <a class="text_routes" routerLink="/admin"> Dashboard </a>
+                <i class="ri-arrow-right-s-line"></i> Scan Box
+            </div>
+        </div>
+        <div class="secoand_div">
+  
+            <button mat-raised-button matTooltip="Filter.." class="demo-button">
+                <!-- <i class="ri-add-line fs-5"></i> -->
+                <i class="ri-filter-2-fill"></i>
+  
+            </button>
+            <button mat-raised-button matTooltip="status" class="demo-button dropdown-toggle mx-2 "
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <mat-icon>density_medium</mat-icon>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="@wweb">Company Name </a></li>
+                <li><a class="dropdown-item" href="#">Company website </a></li>
+            </ul>
+            <button mat-raised-button class="demo-button ">
+                <i class="ri-printer-line fs-5"></i>
+            </button>
+            <button mat-raised-button matTooltip="Add" (click)="open_modal()" class="demo-button ms-2">
+                <!-- <i class="ri-filter-2-fill"></i> -->
+                <i class="ri-add-line fs-5 "></i>
+  
+                <!-- fitter -->
+            </button>
+        </div>
+  
+    </div>
+    <hr />
+    <mat-form-field style="height: 100%; width: 100%;">
+        <mat-label>Search</mat-label>
+        <input matInput placeholder="Ex. ium" #input>
+    </mat-form-field>
+
+
+    <div class="card row">
+        <div class="col-md-12 col-sm-12 set_scroller">
+  
+            <table class="table table-hover">
+                <thead>
+                    <th scope="col"> <input class="form-check-" type="checkbox" value="" id="flexCheckDefault"></th>
+                    <th scope="col" style="text-align: center;"> ORDER ID.</th>
+                    <th scope="col" style="text-align: center;">ITEMS</th>
+                    <th scope="col " style="padding-left: 1.5rem;">SIZE</th>
+                    <th scope="col" style="text-align: center;">DIMENSIONS</th>
+                    <th scope="col" style="text-align: center;">CATEGORY</th>
+                    <th scope="col" style="text-align: center;">QUANTITY</th>
+                    <th scope="col " style="padding-left: 1.2rem;">DOCUMENT</th>
+                    <th scope="col " style="padding-left: 1.5rem;">BARCODE</th>
+                    <th scope="col " style="padding-left: 1.2rem;">STATUS</th>
+                    <th scope="col " style="padding-left: 5rem;">ACTION</th>
+                    <!-- </tr> -->
+                </thead>
+                <tbody>
+                    <tr>
+                        <td> <input class="form-check-input mt-2" type="checkbox" value="" id="flexCheckDefault"></td>
+
+                        <td><span class="card text-center"style="height: 50px;">#7678</span></td>
+
+
+                        <td><span class="card text-center" style="height: 50px; width: 110px;">Item 1
+                            </span></td>
+
+                        <td><span class="card text-center" style="height: 50px; width: 100px;">small
+                            </span></td>
+
+                        <td><span class="card text-center" style="height: 50px; width: 100px">.....
+                            </span></td>
+                        <td><span class="card text-center" style="height: 50px; width: 100px">Shoes
+                            </span></td>
+                        <!-- <td><span class="card text-center">
+                            <div class="btn-group " role="group" aria-label="Basic outlined example">
+                                <button type="button" class="btn btn-outline-secondary" checked>-</button>
+                                <button type="button" class="btn btn-outline-secondary">1</button>
+                                <button type="button" class="btn btn-outline-secondary">+</button>
+                            </div></span>
+                        </td> -->
+                        <td><span class="card text-center" style="height: 50px;  width: 100px">.....
+                        </span></td>
+                        <td class="text-center"><span class="card text-center">
+                            <div><img src="../../../../../assets/logos/R.jpeg" style="height: 33px; width: 80px; " alt="upload image">
+                            </div></span>
+                    </td>
+                        <td class="text-center"><span class="card text-center">
+                                <div><img src="../../../../../assets/logos/barcode.png" style="height: 33px; width: 80px; " alt="scanner">
+                                </div></span>
+                        </td>
+                        <td><span class="card text-center" style="height: 50px;">Pending
+                            </span></td>
+                        <td>
+                            <div class="parent_div pt-2">
+
+                                <div style="cursor: pointer;" class="add_icon"
+                                    aria-label="Example icon button with a menu icon">
+                                    <i class="ri-file-add-line"></i>
+                                </div>
+                                <div style="cursor: pointer;" class="view_icon"
+                                    aria-label="Example icon button with a menu icon">
+                                    <i class="ri-eye-line"></i>
+                                </div>
+                                <div style="cursor: pointer;" class="edit_icon"
+                                    aria-label="Example icon button with a menu icon">
+                                    <i class="ri-pencil-line"></i>
+                                </div>
+
+                                <div style="cursor: pointer;" class="delete_icon"
+                                    aria-label="Example icon button with a menu icon">
+                                    <i class="ri-delete-bin-6-line "></i>
+                                </div>
+                                <div style="cursor: pointer;" class="print_icon"
+                                    aria-label="Example icon button with a menu icon">
+                                    <i class="ri-printer-fill"></i>
+                                </div>
+
+
+                                <div class="btn-group dropstart">
+                                    <button type="button" class="btn  " data-bs-toggle="dropdown"
+                                        aria-expanded="fals"><i class="ri-more-2-fill"></i>
+                                    </button>
+                                    <ul class="dropdown-menu" style="width: 16vw;">
+                                        <li><a class="dropdown-PRODUCT" href="#"><i class="ri-eye-fill"></i> View
+                                                Sale</a></li>
+                                        <li><a class="dropdown-PRODUCT" href="#"><i class="ri-download-fill"></i>
+                                                Download
+                                                PDF</a></li>
+                                        <li><a class="dropdown-PRODUCT" href="#"><i
+                                                    class="ri-money-dollar-circle-fill"></i>
+                                                Show Payments</a>
+                                        </li>
+
+                                        <li><a class="dropdown-PRODUCT" href="#"><i class="ri-shopping-cart-fill"></i>
+                                                Create
+                                                Sale Return</a>
+                                        </li>
+
+                                        <li><a class="dropdown-PRODUCT" href="#"><i class="ri-pencil-fill"></i> Edit
+                                                Sale</a>
+                                        </li>
+                                        <li><a class="dropdown-PRODUCT" href="#"><i class="ri-delete-bin-5-fill"></i>
+                                                Delete
+                                                Sale</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </td>
+
+
+
+                    </tr>
+                    <tr>
+                        <td> <input class="form-check-input mt-2" type="checkbox" value="" id="flexCheckDefault"></td>
+
+                        <td><span class="card text-center"style="height: 50px; width: 100px;">#7678</span></td>
+
+
+                        <td><span class="card text-center" style="height: 50px; width: 100px;">Item 1
+                            </span></td>
+
+                        <td><span class="card text-center" style="height: 50px; width: 100px;">small
+                            </span></td>
+
+                        <td><span class="card text-center" style="height: 50px; width: 100px">.....
+                            </span></td>
+                        <td><span class="card text-center" style="height: 50px;">Shoes
+                            </span></td>
+                        <!-- <td><span class="card text-center">
+                            <div class="btn-group " role="group" aria-label="Basic outlined example">
+                                <button type="button" class="btn btn-outline-secondary" checked>-</button>
+                                <button type="button" class="btn btn-outline-secondary">1</button>
+                                <button type="button" class="btn btn-outline-secondary">+</button>
+                            </div></span>
+                        </td> -->
+                        <td><span class="card text-center" style="height: 50px;">.....
+                        </span></td>
+                        <td class="text-center"><span class="card text-center">
+                            <div><img src="../../../../../assets/logos/R.jpeg" style="height: 33px; width: 80px; " alt="upload image">
+                            </div></span>
+                    </td>
+                        <td class="text-center"><span class="card text-center">
+                                <div><img src="../../../../../assets/logos/barcode.png" style="height: 33px; width: 80px; " alt="scanner">
+                                </div></span>
+                        </td>
+                        <td><span class="card text-center" style="height: 50px;">Pending
+                            </span></td>
+                        <td>
+                            <div class="parent_div pt-2">
+
+                                <div style="cursor: pointer;" class="add_icon"
+                                    aria-label="Example icon button with a menu icon">
+                                    <i class="ri-file-add-line"></i>
+                                </div>
+                                <div style="cursor: pointer;" class="view_icon"
+                                    aria-label="Example icon button with a menu icon">
+                                    <i class="ri-eye-line"></i>
+                                </div>
+                                <div style="cursor: pointer;" class="edit_icon"
+                                    aria-label="Example icon button with a menu icon">
+                                    <i class="ri-pencil-line"></i>
+                                </div>
+
+                                <div style="cursor: pointer;" class="delete_icon"
+                                    aria-label="Example icon button with a menu icon">
+                                    <i class="ri-delete-bin-6-line "></i>
+                                </div>
+                                <div style="cursor: pointer;" class="print_icon"
+                                    aria-label="Example icon button with a menu icon">
+                                    <i class="ri-printer-fill"></i>
+                                </div>
+
+
+                                <div class="btn-group dropstart">
+                                    <button type="button" class="btn  " data-bs-toggle="dropdown"
+                                        aria-expanded="fals"><i class="ri-more-2-fill"></i>
+                                    </button>
+                                    <ul class="dropdown-menu" style="width: 16vw;">
+                                        <li><a class="dropdown-PRODUCT" href="#"><i class="ri-eye-fill"></i> View
+                                                Sale</a></li>
+                                        <li><a class="dropdown-PRODUCT" href="#"><i class="ri-download-fill"></i>
+                                                Download
+                                                PDF</a></li>
+                                        <li><a class="dropdown-PRODUCT" href="#"><i
+                                                    class="ri-money-dollar-circle-fill"></i>
+                                                Show Payments</a>
+                                        </li>
+
+                                        <li><a class="dropdown-PRODUCT" href="#"><i class="ri-shopping-cart-fill"></i>
+                                                Create
+                                                Sale Return</a>
+                                        </li>
+
+                                        <li><a class="dropdown-PRODUCT" href="#"><i class="ri-pencil-fill"></i> Edit
+                                                Sale</a>
+                                        </li>
+                                        <li><a class="dropdown-PRODUCT" href="#"><i class="ri-delete-bin-5-fill"></i>
+                                                Delete
+                                                Sale</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </td>
+
+
+
+                    </tr>
+
+                    <tr>
+                        <td> <input class="form-check-input mt-2" type="checkbox" value="" id="flexCheckDefault"></td>
+
+                        <td><span class="card text-center"style="height: 50px;">#7678</span></td>
+
+
+                        <td><span class="card text-center" style="height: 50px; width: 110px;">Item 1
+                            </span></td>
+
+                        <td><span class="card text-center" style="height: 50px; width: 75px;">small
+                            </span></td>
+
+                        <td><span class="card text-center" style="height: 50px;">.....
+                            </span></td>
+                        <td><span class="card text-center" style="height: 50px;">Shoes
+                            </span></td>
+                        <!-- <td><span class="card text-center">
+                            <div class="btn-group " role="group" aria-label="Basic outlined example">
+                                <button type="button" class="btn btn-outline-secondary" checked>-</button>
+                                <button type="button" class="btn btn-outline-secondary">1</button>
+                                <button type="button" class="btn btn-outline-secondary">+</button>
+                            </div></span>
+                        </td> -->
+                        <td><span class="card text-center" style="height: 50px;">.....
+                        </span></td>
+                        <td class="text-center"><span class="card text-center">
+                            <div><img src="../../../../../assets/logos/R.jpeg" style="height: 33px; width: 80px; " alt="upload image">
+                            </div></span>
+                    </td>
+                        <td class="text-center"><span class="card text-center">
+                            <div><img src="../../../../../assets/logos/barcode.png" style="height: 33px; width: 80px; " alt="scanner">
+                                </div></span>
+                        </td>
+                        <td><span class="card text-center" style="height: 50px;">Pending
+                            </span></td>
+                        <td>
+                            <div class="parent_div pt-2">
+
+                                <div style="cursor: pointer;" class="add_icon"
+                                    aria-label="Example icon button with a menu icon">
+                                    <i class="ri-file-add-line"></i>
+                                </div>
+                                <div style="cursor: pointer;" class="view_icon"
+                                    aria-label="Example icon button with a menu icon">
+                                    <i class="ri-eye-line"></i>
+                                </div>
+                                <div style="cursor: pointer;" class="edit_icon"
+                                    aria-label="Example icon button with a menu icon">
+                                    <i class="ri-pencil-line"></i>
+                                </div>
+
+                                <div style="cursor: pointer;" class="delete_icon"
+                                    aria-label="Example icon button with a menu icon">
+                                    <i class="ri-delete-bin-6-line "></i>
+                                </div>
+                                <div style="cursor: pointer;" class="print_icon"
+                                    aria-label="Example icon button with a menu icon">
+                                    <i class="ri-printer-fill"></i>
+                                </div>
+
+
+                                <div class="btn-group dropstart">
+                                    <button type="button" class="btn  " data-bs-toggle="dropdown"
+                                        aria-expanded="fals"><i class="ri-more-2-fill"></i>
+                                    </button>
+                                    <ul class="dropdown-menu" style="width: 16vw;">
+                                        <li><a class="dropdown-PRODUCT" href="#"><i class="ri-eye-fill"></i> View
+                                                Sale</a></li>
+                                        <li><a class="dropdown-PRODUCT" href="#"><i class="ri-download-fill"></i>
+                                                Download
+                                                PDF</a></li>
+                                        <li><a class="dropdown-PRODUCT" href="#"><i
+                                                    class="ri-money-dollar-circle-fill"></i>
+                                                Show Payments</a>
+                                        </li>

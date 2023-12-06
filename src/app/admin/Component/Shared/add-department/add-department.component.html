@@ -1,0 +1,2071 @@
+<ng-container *ngIf="data.name == 'Department'">
+ <span mat-dialog-title  >
+
+
+  <div class="set_header">
+    <div class="d-flex align-items-center">
+      <img src="./assets/submenu/enterprise.png" style="height: 5vh;" alt="" srcset="">  
+      <span class="text-capitalize fs-4 mx-2" style="font-family: Arial, Helvetica, sans-serif;"> Department</span>  
+      </div>
+    <div>
+      <button
+      align="end"
+      type="button"
+      [mat-dialog-close]="true"
+      class="btn-close"
+      aria-label="Close"
+    ></button>
+    </div>
+  </div>
+</span>
+<mat-divider></mat-divider>
+<mat-dialog-content class="mat-typography">
+  <div class="form-group">
+    <label class="form-label ">Department Name</label>
+    <input type="text" class="form-control" placeholder="Department Name..." />
+  </div>
+  <div class="form-group">
+  <label class="form-label">Status</label>
+  <select class="form-select" aria-label="Default select example">
+    <option value="1">OFF</option>
+    <option value="2">ON</option>
+  </select>
+</div>
+</mat-dialog-content>
+<mat-dialog-actions align="center">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Add Department</button>
+</mat-dialog-actions>
+</ng-container>
+<ng-container *ngIf="data.name == 'Category'">
+
+<span mat-dialog-title>
+
+  <div class="set_header">
+    <div class="d-flex  align-items-center">
+         <img src="../../../../../assets/submenu/grid.png" style="height: 5vh;" alt="" srcset="">  
+         <span class="text-capitalize fs-4 mx-2" style="font-family: Arial, Helvetica, sans-serif;"> Categorie</span>  
+    </div>
+    <div>
+      <button
+      align="end"
+      type="button"
+      [mat-dialog-close]="true"
+      class="btn-close"
+      aria-label="Close"
+    ></button>
+    </div>
+  </div>
+ 
+  
+</span>
+<mat-divider></mat-divider>
+<div mat-dialog-content>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label class="form-label">Category Images</label>
+        <input type="file" class="form-control" placeholder="Category Name..." />
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label class="form-label">Category Name</label>
+        <input type="text" class="form-control" placeholder="Category Name..." />
+      </div>
+    </div>
+  </div>
+  
+</div>
+<mat-dialog-actions align="center">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Add Categorie</button>
+</mat-dialog-actions>
+
+</ng-container>
+<ng-container *ngIf="data.name == 'Brand'">
+
+  <span mat-dialog-title>
+  
+    <div class="set_header">
+      <div class="d-flex  align-items-center">
+           <img src="../../../../../assets/submenu/brand-image.png" style="height: 5vh;" alt="" srcset="">  
+           <span class="text-capitalize fs-4 mx-2" style="font-family: Arial, Helvetica, sans-serif;"> Brand</span>  
+      </div>
+      <div>
+        <button
+        align="end"
+        type="button"
+        [mat-dialog-close]="true"
+        class="btn-close"
+        aria-label="Close"
+      ></button>
+      </div>
+    </div>
+   
+    
+  </span>
+  <mat-divider></mat-divider>
+  <form [formGroup]="brandform">
+  <div mat-dialog-content>
+   <div class="form-group">
+    <label class="form-label">Brand Name</label>
+    <input type="text" formControlName="brandname" class="form-control" placeholder="Brand Name..." />
+        <small class="text-danger" *ngIf="ckformBrand">Enter your Brand Name Required</small>
+        </div>
+      </div>
+    </form>
+
+  
+  <mat-dialog-actions align="center">
+    <button mat-button mat-dialog-close >Cancel</button>
+    <button mat-button  [mat-dialog-close]="brandform.value" (click)="Create_And_Update_Brand()" cdkFocusInitial>Add Brand</button>
+  </mat-dialog-actions>
+  
+</ng-container>
+<ng-container *ngIf="data.name == 'Unit'">
+
+  <span mat-dialog-title>
+    <div class="set_header">
+      <div class="d-flexalign-items-center">
+           <span class="text-capitalize fs-4 mx-2" style="font-family: Arial, Helvetica, sans-serif;"> Unit</span>  
+      </div>
+      <div>
+        <button
+        align="end"
+        type="button"
+        [mat-dialog-close]="true"
+        class="btn-close"
+        aria-label="Close"
+      ></button>
+      </div>
+    </div>
+
+
+  </span>
+  <mat-divider></mat-divider>
+  <div mat-dialog-content>
+    
+     
+        <div class="form-group">
+          <label class="form-label">Unit Name</label>
+          <input type="text" class="form-control" placeholder="Unit Name..." />
+        </div>
+      </div>
+   
+    
+  
+  <mat-dialog-actions align="center">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Add Unit</button>
+  </mat-dialog-actions>
+  
+</ng-container>
+<ng-container *ngIf="data.name == 'orders'">
+<span mat-dialog-title>
+    <div class="set_header">
+      <div class="d-flex  align-items-center">
+           <img src="../../../../../assets/submenu/brand-image.png" style="height: 5vh;" alt="" srcset="">  
+           <span class="text-capitalize fs-4 mx-2 fw-bold" style="font-family: Arial, Helvetica, sans-serif;"> Purchase Order</span>  
+      </div>
+      <div>
+        <button
+        align="end"
+        type="button"
+        [mat-dialog-close]="true"
+        class="btn-close"
+        aria-label="Close"
+      ></button>
+      </div>
+    </div>
+  </span>
+  <mat-divider></mat-divider>
+  <mat-dialog-content>
+
+    <form [formGroup]="PurchaseOrderform">
+    <div class="container-fluid c1 py-3 my-2">
+      <div class="row">
+          <div class=" col-sm-12 col-md-3" style="line-height: 2rem;  ">
+               <label class="form-label" for="specificSizeSelect">Order No. </label><br>
+               <input type="text" disabled class="form-control" [value]="countes" id="inputPassword " >
+          </div>
+        <div class="  col-md-3 col-sm-12" style="line-height: 2rem;  ">
+          <label class="form-label" for="specificSizeSelect">Order Date</label>
+             <input type="text" disabled [value]=" newDates | date : 'dd/MM/YY'" class="form-control" />
+         
+          </div>
+          <div class="col-md-3 col-sm-12" style="line-height: 2rem;">
+        <label class="form-label" for="specificSizeSelect">Due Date</label>
+            <input type="date" formControlName="DueDate"  class="form-control" placeholder=" ">
+            <small class="text-danger" *ngIf="PurchaseOrderform.controls['DueDate'].errors && ckPurchaseOrderform">Select your Dus Date </small>
+          </div>
+          <div class=" col-sm-4 col-md-3" style="line-height: 2rem;  ">
+
+              <label class="form-label" for="specificSizeSelect">Party Account</label>
+              <select class="form-select" formControlName="PartyAccount" id="specificSizeSelect">
+                  <option value="" >Select</option>
+                  <option>Amer</option>
+                  <option >Ram</option>
+                  <option >Shyem</option>
+              </select>
+
+              <small class="text-danger" *ngIf="PurchaseOrderform.controls['PartyAccount'].errors && ckPurchaseOrderform">Select your PARTY ACCOUNT</small>
+
+          </div>
+
+          <div class="col-sm-4 col-md-3" style="line-height: 2rem;  ">
+            <label class="form-label" for="specificSizeSelect"> Purchase Ledger</label>
+              <select class="form-select" formControlName="PurchaseSalesLedger" id="specificSizeSelect">
+                  <option value="">Select</option>
+                  <option >PURCHASE ACCOUNT</option>
+                  <option >Two</option>
+                  <option >Three</option>
+              </select>
+              <small class="text-danger" *ngIf="PurchaseOrderform.controls['PurchaseSalesLedger'].errors && ckPurchaseOrderform">Select your PURCHASE LEDGER</small>
+
+
+
+          </div>
+          <div class=" col-sm-12 col-md-3" style="line-height: 2rem;  ">
+
+              <label class="form-label" for="specificSizeSelect"> Product Name</label>
+              <select class="form-select" formControlName="ProductName" id="specificSizeSelect">
+                  <option value="">Select</option>
+                  <option>PRODUCT 2</option>
+                  <option>PRODUCT 3</option>
+                  <option>PRODUCT 4</option>
+              </select>
+
+              <small class="text-danger" *ngIf="PurchaseOrderform.controls['ProductName'].errors && ckPurchaseOrderform">Select your PRODUCT NAME</small>
+
+          </div>
+
+         
+
+          <div class="col-sm-4 col-md-3" style="line-height: 2rem;  ">
+
+              <label class="form-label" for="autoSizingInputGroup">Quantity </label>
+              <input type="text" (input)="ckpice()" formControlName="Quantity" class="form-control" id="inputPassword " placeholder="Enter Quantity">
+           
+              <small class="text-danger" *ngIf="PurchaseOrderform.controls['Quantity'].errors && ckPurchaseOrderform">Enter your  QUANTITY </small>
+
+          </div>
+
+          <div class=" col-sm-3 col-md-3" style="line-height: 2rem;  ">
+
+              <label class="form-label" for="specificSizeSelect">Price</label>
+              <input type="text" (input)="ckpice()" formControlName="Price" class="form-control"  placeholder="Enter Price">
+              <small class="text-danger" *ngIf="PurchaseOrderform.controls['Price'].errors && ckPurchaseOrderform">Enter your  PRICE </small>
+           
+
+
+
+          </div>
+
+
+          <div class=" col-sm-12 col-md-3" style="line-height: 2rem;">
+              <label class="form-label" for="specificSizeSelect">Amount</label>
+              <input type="text" disabled class="form-control" [value]="setAmount" id="inputPassword " placeholder="Quantity*PRICE">
+          </div>
+
+          <div class=" col-sm-12 col-md-3" style="line-height: 2rem;">
+            <label class="form-label" for="specificSizeSelect">Status	</label>
+            <select class="form-select" formControlName="Status" id="specificSizeSelect">
+              <option value="">Select</option>
+              <option >On</option>
+              <option >Off</option>
+            </select>
+            <small class="text-danger" *ngIf="PurchaseOrderform.controls['Status'].errors && ckPurchaseOrderform">Select your Status</small>
+          </div>
+          <div class=" col-sm-12 col-md-3" style="line-height: 2rem; ">
+            <label class="form-label"  for="autoSizingInputGroup">Warehouse</label>
+            <select class="form-select" formControlName="Warehouse" id="specificSizeSelect">
+              <option value="">Select</option>
+              <option>Warehouse 1</option>
+              <option >Warehouse 2</option>
+            </select>
+            <small class="text-danger" *ngIf="PurchaseOrderform.controls['Warehouse'].errors && ckPurchaseOrderform">Select your Warehouse</small>
+          </div>
+         <div class=" col-sm-12 col-md-3" style="line-height: 2rem; ">
+              <label class="form-label"  for="autoSizingInputGroup">Notes</label>
+              <input type="text" formControlName="Notes" class="form-control" id="autoSizingInputGroup " placeholder="Enter Notes">
+
+            </div>
+      </div>
+    </div>
+    </form>
+  </mat-dialog-content>
+  
+  
+  <mat-divider></mat-divider>
+<mat-dialog-actions class="py-2" align="end">
+    <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+      <div class=" Btn_Save" (click)="add_order()" type="button">Save</div>
+      <div mat-dialog-close class="Btn_Close" >Cancel</div>
+    </div>
+</mat-dialog-actions>
+  
+</ng-container>
+<ng-container *ngIf="data.name == 'Purchase-invoice'">
+  <span mat-dialog-title>
+      <div class="set_header">
+        <div class="d-flex  align-items-center">
+             <img src="./assets/billentry.png" style="height: 5vh;" alt="" srcset="">  
+             <span class="text-capitalize fs-4 mx-2 fw-bold" style="font-family: Arial, Helvetica, sans-serif;">  Purchase Invoice</span>  
+        </div>
+        <div>
+          <button
+          align="end"
+          type="button"
+          [mat-dialog-close]="true"
+          class="btn-close"
+          aria-label="Close"
+        ></button>
+        </div>
+      </div>
+    </span>
+    <mat-divider></mat-divider>
+    <mat-dialog-content>
+  
+      <!-- <form [formGroup]="PurchaseOrderform"> -->
+      <div class="container-fluid c1 py-3 my-2">
+        <div class="row">
+            <div class=" col-sm-12 col-md-3" style="line-height: 2rem;  ">
+                 <label class="form-label" for="specificSizeSelect">Invoice No. </label><br>
+                 <input type="text" disabled class="form-control" [value]="countes" id="inputPassword " >
+            </div>
+          <div class="  col-md-3 col-sm-12" style="line-height: 2rem;  ">
+            <label class="form-label" for="specificSizeSelect">Order Date</label>
+               <input type="text" disabled [value]=" newDates | date : 'dd/MM/YY'" class="form-control" />
+           
+            </div>
+            <div class="col-md-3 col-sm-12" style="line-height: 2rem;">
+          <label class="form-label" for="specificSizeSelect">Due Date</label>
+              <input type="date"   class="form-control" placeholder=" ">
+              <small class="text-danger" *ngIf="PurchaseOrderform.controls['DueDate'].errors && ckPurchaseOrderform">Select your Dus Date </small>
+            </div>
+            <div class=" col-sm-4 col-md-3" style="line-height: 2rem;  ">
+  
+                <label class="form-label" for="specificSizeSelect">Party Account</label>
+                <select class="form-select" id="specificSizeSelect">
+                    <option value="" >Select</option>
+                    <option>Amer</option>
+                    <option >Ram</option>
+                    <option >Shyem</option>
+                </select>
+  
+                <small class="text-danger" *ngIf="PurchaseOrderform.controls['PartyAccount'].errors && ckPurchaseOrderform">Select your PARTY ACCOUNT</small>
+  
+            </div>
+  
+            <div class="col-sm-4 col-md-3" style="line-height: 2rem;  ">
+              <label class="form-label" for="specificSizeSelect"> Purchase Ledger</label>
+                <select class="form-select"  id="specificSizeSelect">
+                    <option value="">Select</option>
+                    <option >PURCHASE ACCOUNT</option>
+                    <option >Two</option>
+                    <option >Three</option>
+                </select>
+                <small class="text-danger" *ngIf="PurchaseOrderform.controls['PurchaseSalesLedger'].errors && ckPurchaseOrderform">Select your PURCHASE LEDGER</small>
+  
+  
+  
+            </div>
+            <div class=" col-sm-12 col-md-3" style="line-height: 2rem;  ">
+  
+                <label class="form-label" for="specificSizeSelect"> Product Name</label>
+                <select class="form-select"  id="specificSizeSelect">
+                    <option value="">Select</option>
+                    <option>PRODUCT 2</option>
+                    <option>PRODUCT 3</option>
+                    <option>PRODUCT 4</option>
+                </select>
+  
+                <small class="text-danger" *ngIf="PurchaseOrderform.controls['ProductName'].errors && ckPurchaseOrderform">Select your PRODUCT NAME</small>
+  
+            </div>
+  
+           
+  
+            <div class="col-sm-4 col-md-3" style="line-height: 2rem;  ">
+  
+                <label class="form-label" for="autoSizingInputGroup">Quantity </label>
+                <input type="text" (input)="ckpice()"  class="form-control" id="inputPassword " placeholder="Enter Quantity">
+             
+                <small class="text-danger" *ngIf="PurchaseOrderform.controls['Quantity'].errors && ckPurchaseOrderform">Enter your  QUANTITY </small>
+  
+            </div>
+  
+            <div class=" col-sm-3 col-md-3" style="line-height: 2rem;  ">
+  
+                <label class="form-label" for="specificSizeSelect">Price</label>
+                <input type="text" (input)="ckpice()"  class="form-control"  placeholder="Enter Price">
+                <small class="text-danger" *ngIf="PurchaseOrderform.controls['Price'].errors && ckPurchaseOrderform">Enter your  PRICE </small>
+             
+  
+  
+  
+            </div>
+  
+  
+            <div class=" col-sm-12 col-md-3" style="line-height: 2rem;">
+                <label class="form-label" for="specificSizeSelect">Amount</label>
+                <input type="text" disabled class="form-control" [value]="setAmount" id="inputPassword " placeholder="Quantity*PRICE">
+            </div>
+  
+            <div class=" col-sm-12 col-md-3" style="line-height: 2rem;">
+              <label class="form-label" for="specificSizeSelect">Status	</label>
+              <select class="form-select"  id="specificSizeSelect">
+                <option value="">Select</option>
+                <option >On</option>
+                <option >Off</option>
+              </select>
+              <small class="text-danger" *ngIf="PurchaseOrderform.controls['Status'].errors && ckPurchaseOrderform">Select your Status</small>
+            </div>
+          
+           <div class=" col-sm-12 col-md-6" style="line-height: 2rem; ">
+                <label class="form-label"  for="autoSizingInputGroup">Notes</label>
+                <input type="text"  class="form-control" id="autoSizingInputGroup " placeholder="Enter Notes">
+  
+              </div>
+        </div>
+      </div>
+      <!-- </form> -->
+    </mat-dialog-content>
+    
+    
+    <mat-divider></mat-divider>
+  <mat-dialog-actions class="py-2" align="end">
+      <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+        <div class=" Btn_Save" (click)="add_order()" type="button">Save</div>
+        <div mat-dialog-close class="Btn_Close" >Cancel</div>
+      </div>
+  </mat-dialog-actions>
+    
+</ng-container>
+<ng-container *ngIf="data.name == 'Users'">
+  <span mat-dialog-title>
+      <div class="set_header">
+        <div class="d-flex  align-items-center">
+          <i class="fa-sharp fs-2 fa-solid fa-user-secret"></i>
+             <span class="text-capitalize fs-4 mx-2 fw-bold" style="font-family: Arial, Helvetica, sans-serif;">User</span>  
+        </div>
+        <div>
+          <button
+          align="end"
+          type="button"
+          [mat-dialog-close]="true"
+          class="btn-close"
+          aria-label="Close"
+        ></button>
+        </div>
+      </div>
+    </span>
+    <mat-divider></mat-divider>
+    <mat-dialog-content>
+  
+      <!-- <form [formGroup]="PurchaseOrderform"> -->
+      <div class="container-fluid c1 py-3 my-2">
+        <div class="row">
+            <div class=" col-sm-12 col-md-3" style="line-height: 2rem;  ">
+                 <label class="form-label" for="specificSizeSelect"> First Name </label><br>
+                 <input type="text" placeholder="Enter Your Name"  class="form-control"  id="inputPassword " >
+            </div>
+          <div class="  col-md-3 col-sm-12" style="line-height: 2rem;  ">
+            <label class="form-label" for="specificSizeSelect">Last Name</label>
+               <input type="text" placeholder="Enter Your Last" class="form-control" />
+           
+            </div>
+            <div class="col-md-3 col-sm-12" style="line-height: 2rem;">
+          <label class="form-label" for="specificSizeSelect">Country</label>
+                    <select class="form-select" id="specificSizeSelect">
+                      <option value="">Select</option>
+                      <option>Usa</option>
+                      <option> Uk</option>
+                      <option>ENG</option>
+                  </select>
+         
+            </div>
+            <div class=" col-sm-4 col-md-3" style="line-height: 2rem;  ">
+  
+                <label class="form-label" for="specificSizeSelect">State</label>
+                <select class="form-select" id="specificSizeSelect">
+                    <option value="" >Select</option>
+                    <option>Amer</option>
+                    <option >Ram</option>
+                    <option >Shyem</option>
+                </select>
+  
+          
+  
+            </div>
+  
+            <div class="col-sm-4 col-md-3" style="line-height: 2rem;  ">
+              <label class="form-label" for="specificSizeSelect">City </label>
+                <select class="form-select"  id="specificSizeSelect">
+                    <option value="">Select</option>
+                    <option >PURCHASE ACCOUNT</option>
+                    <option >Two</option>
+                    <option >Three</option>
+                </select>
+                <!-- <small class="text-danger" *ngIf="PurchaseOrderform.controls['PurchaseSalesLedger'].errors && ckPurchaseOrderform">Select your PURCHASE LEDGER</small> -->
+  
+  
+  
+            </div>
+            <div class=" col-sm-12 col-md-3" style="line-height: 2rem;  ">
+  
+                <label class="form-label" for="specificSizeSelect">Zip Code</label>
+                <select class="form-select"  id="specificSizeSelect">
+                    <option value="">Select</option>
+                    <option>PRODUCT 2</option>
+                    <option>PRODUCT 3</option>
+                    <option>PRODUCT 4</option>
+                </select>
+  
+                <!-- <small class="text-danger" *ngIf="PurchaseOrderform.controls['ProductName'].errors && ckPurchaseOrderform">Select your PRODUCT NAME</small> -->
+  
+            </div>
+  
+           
+  
+            <div class="col-sm-4 col-md-3" style="line-height: 2rem;  ">
+  
+                <label class="form-label" for="autoSizingInputGroup">Phone No.</label>
+                <input type="nimber"   class="form-control" id="inputPassword " placeholder="Enter Phone No.">
+             
+                <!-- <small class="text-danger" *ngIf="PurchaseOrderform.controls['Quantity'].errors && ckPurchaseOrderform">Enter your  QUANTITY </small> -->
+  
+            </div>
+  
+            <div class=" col-sm-3 col-md-3" style="line-height: 2rem;  ">
+  
+                <label class="form-label" for="specificSizeSelect">Email</label>
+                <input type="email"   class="form-control"  placeholder="Enter Email">
+                <!-- <small class="text-danger" *ngIf="PurchaseOrderform.controls['Price'].errors && ckPurchaseOrderform">Enter your  PRICE </small> -->
+             
+  
+  
+  
+            </div>
+  
+  
+            <div class=" col-sm-12 col-md-3" style="line-height: 2rem;">
+                <label class="form-label" for="specificSizeSelect">Password</label>
+                <input type="password"  class="form-control"  id="inputPassword " placeholder="Enter Your  Password">
+            </div>
+            <div class=" col-sm-12 col-md-3" style="line-height: 2rem;">
+              <label class="form-label" for="specificSizeSelect">Confirm Password</label>
+              <input type="password"  class="form-control"  id="inputPassword " placeholder="Enter Your  Password">
+          </div>
+            
+  
+            <div class=" col-sm-12 col-md-3" style="line-height: 2rem;">
+              <label class="form-label" for="specificSizeSelect">Roll	</label>
+              <select class="form-select"  id="specificSizeSelect">
+                <option value="">Select</option>
+                <option >On</option>
+                <option >Off</option>
+              </select>
+              <!-- <small class="text-danger" *ngIf="PurchaseOrderform.controls['Status'].errors && ckPurchaseOrderform">Select your Status</small> -->
+            </div>
+
+            <div class=" col-sm-12 col-md-3" style="line-height: 2rem;">
+              <label class="form-label" for="specificSizeSelect">Fingerprints </label>
+              <select class="form-select"  id="specificSizeSelect">
+                <option value="">Select</option>
+                <option >On</option>
+                <option >Off</option>
+              </select>
+              <!-- <small class="text-danger" *ngIf="PurchaseOrderform.controls['Status'].errors && ckPurchaseOrderform">Select your Status</small> -->
+            </div>
+          
+           <div class=" col-sm-12 col-md-6" style="line-height: 2rem; ">
+                <label class="form-label"  for="autoSizingInputGroup">Address</label>
+                <textarea  class="form-control" id="autoSizingInputGroup " placeholder="Enter Address"></textarea>
+  
+              </div>
+              <div class=" col-sm-12 col-md-6" style="line-height: 2rem; ">
+                <label class="form-label"  for="autoSizingInputGroup">User Image</label>
+                <input type="file" class="form-control form-control-lg" id="autoSizingInputGroup " placeholder="Enter Address" />
+  
+              </div>
+          </div>
+      </div>
+      <!-- </form> -->
+    </mat-dialog-content>
+    
+    
+    <mat-divider></mat-divider>
+  <mat-dialog-actions class="py-2" align="end">
+      <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+        <div class=" Btn_Save" (click)="add_order()" type="button">Save</div>
+        <div mat-dialog-close class="Btn_Close" >Cancel</div>
+      </div>
+  </mat-dialog-actions>
+    
+</ng-container>
+<ng-container *ngIf="data.name == 'Vendor'">
+  <form [formGroup]="firstFormGroup">
+  <span mat-dialog-title>
+      <div class="set_header">
+        <div class="d-flex  align-items-center">
+          <i class="fa-solid fa-user-plus fs-2"></i>
+             <span class="text-capitalize fs-4 mx-2 fw-bold" style="font-family: Arial, Helvetica, sans-serif;">Vendor</span>  
+        </div>
+        <div>
+          <button
+          align="end"
+          type="button"
+          [mat-dialog-close]="true"
+          class="btn-close"
+          aria-label="Close"
+        ></button>
+        </div>
+      </div>
+    </span>
+    <mat-divider></mat-divider>
+    <mat-dialog-content>
+  
+  
+      <mat-stepper [linear]="isLinear" #stepper>
+        <mat-step [stepControl]="firstFormGroup">
+          <ng-template matStepLabel >VENDOR INFO</ng-template>
+    
+        
+            <div class="row">
+              <div class="col-lg-6 col-md-4 col-sm-6 mt-2">
+                  <div class="form-group">
+                      <label for="name" class="form-label">Name</label>
+                      <input class="form-control "
+                       formControlName="vname" 
+                       type="text" 
+                       id="name"
+                       [ngClass]="{'is-invalid': firstFormGroup.controls['vname'].errors && ckfiest }" 
+                       >
+                       <small class="text-danger"
+                       *ngIf="firstFormGroup.controls['vname'].errors && ckfiest" 
+                       >Enter Your Name</small>
+      
+                  </div>
+              </div>
+              <div class="col-lg-6 col-md-4 col-sm-6 mt-2">
+                  <div class="form-group">
+                      <label for="contact" class="form-label">Contact No.</label>
+                      <input class="form-control"
+                       formControlName="vcontact" 
+                       type="number"
+                        id="contact"
+                        [ngClass]="{'is-invalid' : firstFormGroup.controls['vcontact'].errors && ckfiest }"
+                        >
+                        <small class="text-danger"
+                        *ngIf="firstFormGroup.controls['vcontact'].errors && ckfiest" 
+                        >Enter Your contact</small>
+      
+                  </div>
+              </div>
+              <div class="col-lg-6 col-md-4 col-sm-6 mt-2">
+                  <div class="form-group">
+                      <label for="email" class="form-label">Email</label>
+                      <input class="form-control"
+                       formControlName="vemail"
+                        type="email" 
+                        id="email"
+                        [ngClass]="{'is-invalid': firstFormGroup.controls['vemail'].errors && ckfiest }"
+                        >
+                        <small class="text-danger"
+                        *ngIf="firstFormGroup.controls['vemail'].errors && ckfiest" 
+                        >Enter Your Email</small>
+      
+                  </div>
+              </div>   
+              <div class="col-lg-6 col-md-4 col-sm-6 my-2">
+                  <div class="form-group">
+                      <label for="tax_number" class="form-label">Ein/Vat/Tax Number</label>
+                      <input class="form-control"
+                       formControlName="ein"
+                        type="text"
+                         id="tax_number"
+                        [ngClass]="{'is-invalid': firstFormGroup.controls['ein'].errors && ckfiest }"
+                         >
+                         <small class="text-danger"
+                         *ngIf="firstFormGroup.controls['ein'].errors && ckfiest" 
+                         >Enter Your Ein</small>      
+                  </div>
+              </div>
+           </div>
+
+           <mat-divider></mat-divider>
+              <mat-dialog-actions class="py-2" align="end">
+                <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                  <button class=" Btn_Save" (click)="to_next()" matStepperNext>Next</button>
+                  <div mat-dialog-close class="Btn_Close" >Cancel</div>
+                </div>
+            </mat-dialog-actions>
+        
+    
+        </mat-step>
+        <mat-step [stepControl]="secondFormGroup" label="BILLING ADDRESS">
+          <form [formGroup]="secondFormGroup">
+        
+            <div class="row">
+              <div class="col-lg-6 col-md-6 col-sm-6 mt-2">
+                  <div class="form-group">
+                      <label for="billing_name" class="form-label">Name</label>
+                      <input class="form-control"
+                       formControlName="billingname"
+                         type="text"
+                          id="billing_name"
+                          [ngClass]="{'is-invalid': secondFormGroup.controls['billingname'].errors && cksecond }" 
+                          >
+      
+                      <small class="text-danger"
+                      *ngIf="secondFormGroup.controls['billingname'].errors && cksecond" 
+                      >Enter Your Name</small>
+                  </div>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-6 mt-2">
+                  <div class="form-group">
+                      <label for="billing_phone" class="form-label">Contact No.</label>
+                      <input class="form-control"
+                       formControlName="billingphone" 
+                       type="number"
+                        id="billing_phone"
+                        [ngClass]="{'is-invalid': secondFormGroup.controls['billingphone'].errors && cksecond }"
+                        >
+      
+                      <small class="text-danger"
+                      *ngIf="secondFormGroup.controls['billingphone'].errors && cksecond" 
+                      >Enter Your Contact</small>
+                  </div>
+              </div>
+                      
+              <div class="col-lg-6 col-md-6 col-sm-6 mt-2">
+                  <div class="form-group">
+                      <label for="billing_city" class="form-label">City</label>
+                      <input class="form-control"  
+                      formControlName="billingcity" 
+                      type="text"
+                       id="billing_city"
+                       [ngClass]="{'is-invalid': secondFormGroup.controls['billingcity'].errors && cksecond }"
+                      
+                       >
+                 
+                      <small class="text-danger"
+                      *ngIf="secondFormGroup.controls['billingcity'].errors && cksecond" 
+                      >Enter Your City</small>
+                    </div>
+              </div>          
+              <div class="col-lg-6 col-md-6 col-sm-6 mt-2">
+                  <div class="form-group">
+                      <label for="billing_state" class="form-label">State</label>
+                      <input class="form-control"
+                        formControlName="billingstate" 
+                        type="text"
+                         id="billing_state"
+                         [ngClass]="{'is-invalid': secondFormGroup.controls['billingstate'].errors && cksecond }"
+                         >
+                  
+                      <small class="text-danger"
+                      *ngIf="secondFormGroup.controls['billingstate'].errors && cksecond" 
+                      >Enter Your State</small>
+                    </div>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-6 mt-2">
+                  <div class="form-group">
+                      <label for="billing_country" class="form-label">Country</label>
+                      <input class="form-control"
+                        formControlName="billingcountry" 
+                        type="text"
+                         id="billing_country"
+                         [ngClass]="{'is-invalid': secondFormGroup.controls['billingcountry'].errors && cksecond }"
+                         >
+      
+                      <small class="text-danger"
+                      *ngIf="secondFormGroup.controls['billingcountry'].errors && cksecond" 
+                      >Enter Your Country</small>
+                  </div>
+              </div>        
+              <div class="col-lg-6 col-md-6 col-sm-6 mt-2">
+                  <div class="form-group">
+                      <label for="billing_zip" class="form-label">Zip Code</label>
+                      <input class="form-control" 
+                       formControlName="billingzipcode"
+                        type="text"
+                         id="billing_zip"
+                         [ngClass]="{'is-invalid': secondFormGroup.controls['billingzipcode'].errors && cksecond }"
+                         >
+      
+                      <small class="text-danger"
+                      *ngIf="secondFormGroup.controls['billingzipcode'].errors && cksecond" 
+                      >Enter Your Zip Code</small>
+                  </div>
+              </div>
+              <div class="col-md-12 mt-2">
+                  <div class="form-group">
+                      <label for="shipping_address" class="form-label">Address</label>
+                      <textarea class="form-control" 
+                      rows="3" 
+                       formControlName="billingaddress"
+                        cols="50"
+                         id="shipping_address"
+                         [ngClass]="{'is-invalid': secondFormGroup.controls['billingaddress'].errors && cksecond }"
+                         ></textarea>
+                  
+                      <small class="text-danger"
+                      *ngIf="secondFormGroup.controls['billingaddress'].errors && cksecond" 
+                      >Enter Your Address</small>
+                    </div>
+              </div>
+          </div>
+
+            <mat-divider></mat-divider>
+            <mat-dialog-actions class="py-2" align="end">
+              <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                <button matStepperPrevious class="Btn_Close" >Back</button>
+                <button class=" Btn_Save" matStepperNext (click)="to_next2nd()">Next</button>
+                
+              </div>
+          </mat-dialog-actions>
+
+          </form>
+        </mat-step>
+
+        <mat-step>
+          <ng-template matStepLabel>SHIPPING ADDRESS</ng-template>
+          <form [formGroup]="thirdFormGroup">
+
+            <div class="row">
+              <div class="col-lg-6 col-md-6 col-sm-6 mt-2">
+                  <div class="form-group">
+                      <label for="shipping_name" class="form-label">Name</label>
+                      <input class="form-control" 
+                      formControlName="shippingname"
+                        type="text"
+                         id="shipping_name"
+                         [ngClass]="{'is-invalid': thirdFormGroup.controls['shippingname'].errors && ckthird }"
+                         >
+                         <small class="text-danger"
+                         *ngIf="thirdFormGroup.controls['shippingname'].errors && ckthird" 
+                         >Enter Your Name</small>
+
+  
+                  </div>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-6 mt-2">
+                  <div class="form-group">
+                      <label for="shipping_phone" class="form-label">Contact No.</label>
+                      <input class="form-control"
+                       formControlName="shippingphone"  
+                       type="text"
+                        id="shipping_phone"
+                      [ngClass]="{'is-invalid': thirdFormGroup.controls['shippingphone'].errors && ckthird }"
+                      >
+                      <small class="text-danger"
+                      *ngIf="thirdFormGroup.controls['shippingphone'].errors && ckthird" 
+                      >Enter Your Contact No.</small>
+  
+                  </div>
+              </div>
+             
+              <div class="col-lg-6 col-md-6 col-sm-6 mt-2">
+                  <div class="form-group">
+                      <label for="shipping_city" class="form-label">City</label>
+                      <input class="form-control" 
+                      formControlName="shippingcity" 
+                       type="text" 
+                       id="shipping_city"
+                      [ngClass]="{'is-invalid': thirdFormGroup.controls['shippingcity'].errors && ckthird }"
+                      >
+                      <small class="text-danger"
+                      *ngIf="thirdFormGroup.controls['shippingcity'].errors && ckthird" 
+                      >Enter Your City</small>
+  
+                  </div>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-6 mt-2">
+                  <div class="form-group">
+                      <label for="shipping_state" class="form-label">State</label>
+                      <input class="form-control" 
+                      formControlName="shippingstate" 
+                       type="text" 
+                       id="shipping_state"
+                      [ngClass]="{'is-invalid': thirdFormGroup.controls['shippingstate'].errors && ckthird }"
+                      >
+                      <small class="text-danger"
+                      *ngIf="thirdFormGroup.controls['shippingstate'].errors && ckthird" 
+                      >Enter Your State</small>
+  
+                  </div>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-6 mt-2">
+                  <div class="form-group">
+                      <label for="shipping_country" class="form-label">Country</label>
+                      <input class="form-control"
+                       formControlName="shippingcountry"  
+                       type="text"
+                        id="shipping_country"
+                      [ngClass]="{'is-invalid': thirdFormGroup.controls['shippingcountry'].errors && ckthird }"
+                      >
+                      <small class="text-danger"
+                      *ngIf="thirdFormGroup.controls['shippingcountry'].errors && ckthird" 
+                      >Enter Your Country</small>
+  
+                  </div>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-6 mt-2">
+                  <div class="form-group">
+                      <label for="shipping_zip" class="form-label">Zip Code</label>
+                      <input class="form-control" 
+                      formControlName="shippingzipcode" 
+                      type="text"
+                       id="shipping_zip"
+                      [ngClass]="{'is-invalid': thirdFormGroup.controls['shippingzipcode'].errors && ckthird }"
+                      >
+                      <small class="text-danger"
+                      *ngIf="thirdFormGroup.controls['shippingzipcode'].errors && ckthird" 
+                      >Enter Your Zip Code</small>
+                  </div>
+              </div>
+
+              <div class="col-md-12 mt-2">
+                  <div class="form-group">
+                      <label for="shipping_address" class="form-label">Address</label>
+                      <textarea class="form-control" 
+                      rows="3" 
+                      formControlName="shippingaddress"
+                       cols="50"
+                        id="shipping_address"
+                        [ngClass]="{'is-invalid': thirdFormGroup.controls['shippingaddress'].errors && ckthird }"
+                        ></textarea>
+
+                        <small class="text-danger"
+                        *ngIf="thirdFormGroup.controls['shippingaddress'].errors && ckthird" 
+                        >Enter Your Address</small>
+                  </div>
+              </div>
+             
+              <mat-divider></mat-divider>
+              <mat-dialog-actions class="py-2" align="end">
+                <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                  <div mat-dialog-close class="Btn_Close" >Cancel</div>
+                  <button class=" Btn_Save" (click)="to_next3nd()" >Add</button>
+                  
+                </div>
+            </mat-dialog-actions>
+          </div> 
+          </form>
+
+        </mat-step>
+      </mat-stepper>
+      
+    </mat-dialog-content>
+    
+    
+
+
+</form>
+</ng-container>
+<ng-container *ngIf="data.name == 'onlinestore'">
+  <span mat-dialog-title>
+      <div class="set_header">
+        <div class="d-flex  align-items-center">
+    <i style="font-size: 40px;" class="fa-light fa-cart-shopping"></i>
+              
+             <span class="text-capitalize fs-4 mx-2 fw-bold" style="font-family: Arial, Helvetica, sans-serif;">Online Store</span>  
+        </div>
+        <div>
+          <button
+          align="end"
+          type="button"
+          [mat-dialog-close]="true"
+          class="btn-close"
+          aria-label="Close"
+        ></button>
+        </div>
+      </div>
+    </span>
+    <mat-divider></mat-divider>
+    <mat-dialog-content>
+
+      <!-- form start -->
+  
+      <form [formGroup]="onlinestore">
+     
+        <div class="container-fluid c1 py-3 my-2">
+          <div class="row">
+              <div class=" col-sm-12 col-md-3" style="line-height: 2rem;  ">
+  
+                  <label class="" for="specificSizeSelect">Product ID</label><br>
+                  <input type="text" class="form-control " id="inputPassword " placeholder="#ORDER00035">
+  
+              </div>
+              <div class=" col-sm-12 col-md-3" style="line-height: 2rem;  ">
+  
+                  <label class="" for="specificSizeSelect">Description of Product</label><br>
+                  <input type="text" class="form-control " id="inputPassword " placeholder="#ORDER00035">
+  
+              </div>
+              <div class=" col-sm-4 col-md-3" style="line-height: 2rem;  ">
+  
+                  <label class="" for="specificSizeSelect">Category</label>
+                  <select class="form-select" id="specificSizeSelect">
+                      <option selected>CREDITORS NAME</option>
+                      <option value="1">CREDITORS NAME</option>
+                      <option value="2">CREDITORS NAME</option>
+                      <option value="3">CREDITORS NAME</option>
+                  </select>
+  
+  
+  
+              </div>
+  
+              <div class="col-sm-4 col-md-3" style="line-height: 2rem;  ">
+  
+                  <label class="" for="specificSizeSelect">PURCHASE LEDGER ACCOUNT:</label>
+                  <select class="form-select" id="specificSizeSelect">
+                      <option selected>PURCHASE ACCOUNT</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                  </select>
+  
+  
+  
+              </div>
+              <div class=" col-sm-12 col-md-3" style="line-height: 2rem;  ">
+  
+                  <label class="" for="specificSizeSelect"> PRODUCT NAME:</label>
+                  <select class="form-select" id="specificSizeSelect">
+                      <option selected>PRODUCT 1</option>
+                      <option value="1">PRODUCT 2</option>
+                      <option value="2">PRODUCT 3</option>
+                      <option value="3">PRODUCT 4</option>
+                  </select>
+  
+  
+              </div>
+  
+              <div class="  col-md-3 col-sm-12" style="line-height: 2rem;  ">
+  
+                  <label class="" for="specificSizeSelect"> DATE</label>
+                  <input type="date" class="form-control" placeholder=" ">
+              </div>
+  
+              <div class="col-sm-4 col-md-3" style="line-height: 2rem;  ">
+  
+                  <label class="" for="autoSizingInputGroup">  QUANTITY</label>
+                  <input type="number" class="form-control" id="inputPassword " placeholder="Enter Quantity">
+  
+  
+  
+              </div>
+  
+             
+  
+              <div class=" col-sm-12 col-md-3" style="line-height: 2rem;  ">
+  
+                  <label class="" for="specificSizeSelect">AMOUNT:</label>
+                  <input type="text" class="form-control" id="inputPassword " placeholder="Quantity*PRICE">
+  
+  
+  
+              </div>
+              
+              <div class=" col-sm-12 col-md-9" style="line-height: 2rem;  ">
+                  <label class="" for="autoSizingInputGroup">Notes:</label>
+                  <input type="text" class="form-control" id="inputPassword " placeholder="Enter Notes">
+              </div>
+              <div class=" col-sm-12 col-md-3" style="line-height: 2rem;  ">
+  
+                  <label class="" for="specificSizeSelect">Status</label>
+                  <input type="text" class="form-control" id="inputPassword " placeholder="status">
+              </div>  
+          </div>
+      </div>
+      </form>
+
+          <!-- form end -->
+
+    </mat-dialog-content>
+    
+    
+    <mat-divider></mat-divider>
+  <mat-dialog-actions class="py-2" align="end">
+      <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+        <div mat-dialog-close class="Btn_Close" >Cancel</div>
+        <div class=" Btn_Save" (click)="add_order()" type="button">Save</div>
+      </div>
+  </mat-dialog-actions>
+    
+  </ng-container>
+
+  <ng-container *ngIf="data.name == 'Expensescategory'">
+    <span mat-dialog-title>
+        <div class="set_header">
+          <div class="d-flex  align-items-center">
+            <img src="../../../../../assets/logos/WhatsApp Image 2023-11-09 at 7.21.39 PM.jpeg" alt="">
+               <span class="text-capitalize fs-4 mx-2 fw-bold" style="font-family: Arial, Helvetica, sans-serif;">Expenses Category</span>  
+          </div>
+          <div>
+            <button
+            align="end"
+            type="button"
+            [mat-dialog-close]="true"
+            class="btn-close"
+            aria-label="Close"
+          ></button>
+          </div>
+        </div>
+      </span>
+      <mat-divider></mat-divider>
+      <mat-dialog-content>
+    
+          <form [formGroup]="expensescategory"> 
+       
+
+        <div class="container-fluid c1">
+
+
+          <div class="row">
+              <div class=" col-sm-12 col-md-4" style="line-height: 2rem;  ">
+  
+                  <label class="" for="specificSizeSelect">Name</label><br>
+                  <input type="text" class="form-control " placeholder="Office Supplies">
+  
+  
+  
+              </div>
+  
+  
+  
+  
+              <div class="  col-md-4 col-sm-12" style="line-height: 2rem;  ">
+  
+                  <label class="" for="specificSizeSelect">Description</label><br>
+                  <input type="text" class="form-control " placeholder="Expenses for office stationery and supplies">
+              </div>
+  
+              <div class="  col-md-4 col-sm-12" style="line-height: 2rem;  ">
+  
+                  <label class="" for="specificSizeSelect"> Status</label>
+              <select class="form-select" id="specificSizeSelect">
+                <option selected>Paid</option>
+                <option selected>UnPaid</option>
+              </select>
+              </div>
+
+          </div>
+      </div>
+      </form>
+      </mat-dialog-content>
+      
+      
+      <mat-divider></mat-divider>
+    <mat-dialog-actions class="py-2" align="end">
+        <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+          <div class=" Btn_Save" (click)="add_order()" type="button">Save</div>
+          <div mat-dialog-close class="Btn_Close" >Cancel</div>
+        </div>
+    </mat-dialog-actions>
+      
+  </ng-container>
+
+  <ng-container *ngIf="data.name == 'feedbackform'">
+    <span mat-dialog-title>
+        <div class="set_header">
+          <div class="d-flex  align-items-center">
+      <i  class="fa-regular fa-message-pen fs-3" style="color: #23c6d1;"></i>
+                
+               <span class="text-capitalize fs-4 mx-2 fw-bold" style="font-family: Arial, Helvetica, sans-serif;"> Feedback Form</span>  
+          </div>
+          <div>
+            <button
+            align="end"
+            type="button"
+            [mat-dialog-close]="true"
+            class="btn-close"
+            aria-label="Close"
+          ></button>
+          </div>
+        </div>
+      </span>
+      <mat-divider></mat-divider>
+      <mat-dialog-content>
+  
+        <!-- form start -->
+    
+        <form [formGroup]="feedbackform">
+
+    <div class="container-fluid c1 py-3 my-2">
+        <div class="row">
+            <div class=" col-sm-12 col-md-3" style="line-height: 2rem;  ">
+
+                <label class="" for="specificSizeSelect">Name</label><br>
+                <input type="text" class="form-control " id="inputPassword " placeholder="name">
+
+            </div>
+
+
+
+            <div class=" col-sm-12 col-md-3" style="line-height: 2rem;  ">
+
+                <label class="" for="specificSizeSelect">Email Address</label><br>
+                <input type="email" class="form-control " id="inputPassword " placeholder="Gmail Address">
+
+            </div>
+
+
+
+            <div class="  col-md-3 col-sm-12" style="line-height: 2rem;  ">
+
+                <label class="" for="specificSizeSelect"> DATE</label>
+                <input type="date" class="form-control" placeholder=" ">
+            </div>
+
+           
+
+            
+       
+
+            
+
+        
+
+           
+
+
+            
+      
+        </div>
+        <form id="feedback-form">
+            <div class="form-group">
+                <label for="feedbackText">Feedback:</label>
+                <textarea class="form-control me-5" id="feedbackText" rows="5" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="rating">Rating:</label>
+              <div style="margin: 10px;">
+                <i class="fa-solid fa-star" style="color: #f0c014;"></i>
+                <i class="fa-solid fa-star" style="color: #f0c014;"></i>
+                <i class="fa-solid fa-star" style="color: #f0c014;"></i>
+                <i class="fa-solid fa-star" style="color: #f0c014;"></i>
+                <i class="fa-solid fa-star" style="color: #f0c014;"></i>
+              </div>
+                <!-- <select class="form-control" id="rating">
+                    <option value="5">5 (Excellent)</option>
+                    <option value="4">4 (Good)</option>
+                    <option value="3">3 (Average)</option>
+                    <option value="2">2 (Fair)</option>
+                    <option value="1">1 (Poor)</option>
+                </select> -->
+            </div>
+            <div>
+              <br>
+              <button type="submit" class="btn btn-primary">Submit Feedback</button>
+            </div>
+        </form>
+    </div>
+        </form>
+
+            <!-- form end -->
+  
+      </mat-dialog-content>
+      
+      <mat-divider></mat-divider>
+    <mat-dialog-actions class="py-2" align="end">
+        <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+          <div mat-dialog-close class="Btn_Close" >Cancel</div>
+          <div class=" Btn_Save" (click)="add_order()" type="button">Save</div>
+        </div>
+    </mat-dialog-actions>
+      
+    </ng-container>
+
+
+    <ng-container *ngIf="data.name == 'prepareorder'">
+      <span mat-dialog-title>
+          <div class="set_header">
+            <div class="d-flex  align-items-center">
+                 <img src="../../../../../assets/logos/pre-order.png" style="height: 5vh;" alt="" srcset="">  
+                 <span class="text-capitalize fs-4 mx-2 fw-bold" style="font-family: Arial, Helvetica, sans-serif;"> prepare Order</span>  
+            </div>
+            <div>
+              <button
+              align="end"
+              type="button"
+              [mat-dialog-close]="true"
+              class="btn-close"
+              aria-label="Close"
+            ></button>
+            </div>
+          </div>
+        </span>
+        <mat-divider></mat-divider>
+        <mat-dialog-content>
+      
+          <form [formGroup]="PrepareOrder">
+
+            <div class=" container-fluid c1 shadow p-4  mb-3 bg-body rounded">
+              <div class="row">
+                  <div class=" col-sm-12 col-md-4" style="line-height: 2rem;  ">
+                      <label class="" for="specificSizeSelect">Name</label><br>
+                      <input type="number" class="form-control " id="inputPassword " placeholder=" Enter name">
+                  </div>
+      
+                  <div class="col-md-4 col-sm-12" style="line-height:2rem;">
+                      <label class="" for="specificSizeSelect">Contact No.</label>
+                      <input type="number" class="form-control" placeholder="Enter number">
+                  </div>
+      
+                  <div class="col-md-4 col-sm-12" style="line-height: 2rem;">
+                      <label class="" for="specificSizeSelect">City</label>
+                      <input type="text" class="form-control" placeholder="Enter City">
+                  </div>
+      
+                  <div class="col-sm-4 col-md-4 mt-2" style="line-height: 2rem;">
+                      <label class="" for="specificSizeSelect">State</label>
+                      <input type="text" class="form-control" placeholder="Enter State">
+                  </div>
+      
+                  <div class=" col-sm-12 col-md-4 mt-2" style="line-height: 2rem;">
+                      <label class="" for="specificSizeSelect">Country</label>
+                      <input type="text" class="form-control" placeholder="Enter Country">
+                  </div>
+      
+                  <div class="col-sm-4 col-md-4 mt-2" style="line-height: 2rem;">
+                      <label class="" for="specificSizeSelect">Zip Code </label>
+                      <input type="number" class="form-control" placeholder="Enter Code">
+                  </div>
+      
+                  <div class="col-sm-4 col-md-4 mt-2" style="line-height: 2rem;">
+                      <label class="" for="specificSizeSelect">Status </label>
+                      <select class="form-select" id="specificSizeSelect">
+                          <option selected>Select Status</option>
+                          <option selected>Pending </option>
+                          <option value="1">Approved </option>
+                          <option value="1"> Canceled </option>
+                          <option value="1"> Rejected</option>
+                      </select>
+                  </div>
+                  
+                  <div class="col-sm-4 col-md-4 mt-2" style="line-height: 2rem;  ">
+                      <label class="" for="specificSizeSelect">Addres</label>
+                      <input type="text" class="form-control" placeholder="Enter Address">
+                  </div>
+      
+                  <div class="col-md-12 col-sm-12 my-3">
+                      <label class="" for="autoSizingInputGroup">Note</label>
+                      <input type="text" class="form-control" id="inputPassword " placeholder="Enter Note"
+                          style="height: 46px;">
+                  </div>
+              </div>
+          </div>
+          </form>
+        </mat-dialog-content>
+        
+        
+        <mat-divider></mat-divider>
+      <mat-dialog-actions class="py-2" align="end">
+          <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+            <div class=" Btn_Save" (click)="add_order()" type="button">Save</div>
+            <div mat-dialog-close class="Btn_Close" >Cancel</div>
+          </div>
+      </mat-dialog-actions>
+        
+      </ng-container>
+
+
+      <ng-container *ngIf="data.name == 'expenses'"> 
+        <span mat-dialog-title>
+            <div class="set_header">
+              <div class="d-flex  align-items-center">
+                   <img src="../../../../../assets/Expensescategory.png" style="height: 5vh;" alt="" srcset="">  
+                   <span class="text-capitalize fs-4 mx-2 fw-bold" style="font-family: Arial, Helvetica, sans-serif;">Expenses</span>  
+              </div>
+              <div>
+                <button
+                align="end"
+                type="button"
+                [mat-dialog-close]="true"
+                class="btn-close"
+                aria-label="Close"
+              ></button>
+              </div>
+            </div>
+          </span>
+          <mat-divider></mat-divider>
+          <mat-dialog-content>
+        
+            <form [formGroup]="Expensesform">
+              <div class="container-fluid c1">
+      
+      
+                <div class="row">
+                    <div class=" col-sm-12 col-md-4" style="line-height: 2rem;  ">
+        
+                        <label class="" for="specificSizeSelect">Date</label><br>
+                        <input type="date" class="form-control ">
+                    </div>
+        
+                    <div class="  col-md-4 col-sm-12" style="line-height: 2rem;  ">
+        
+                        <label class="" for="specificSizeSelect">Expenses Category</label><br>
+                    <input type="text" class="form-control " placeholder="Expenses for office stationery and supplies">
+                    </div>
+        
+                    <div class="  col-md-4 col-sm-12" style="line-height: 2rem;  ">
+        
+                        <label class="" for="specificSizeSelect">Amount</label><br>
+                        <input type="number" class="form-control " placeholder="$100.00">
+                    </div>
+        
+                    <div class="  col-md-4 col-sm-12" style="line-height: 2rem;  ">
+        
+                        <label class="" for="specificSizeSelect">Payee</label><br>
+                        <input type="text" class="form-control " placeholder="ABC Comapany">
+                    </div>
+        
+                    <div class="  col-md-4 col-sm-12" style="line-height: 2rem;  ">
+        
+                        <label class="" for="specificSizeSelect"> Payment Method</label>
+                    <select class="form-select" id="specificSizeSelect">
+                      <option selected>Credit Card</option>
+                      <option selected>Cash</option>
+                    </select>
+                    </div>
+        
+                    <div class="  col-md-4 col-sm-12" style="line-height: 2rem;">
+                        <label class="" for="specificSizeSelect">Receipt Number	</label><br>
+                    <input type="text" class="form-control " placeholder="12345">
+                    </div>
+                    <div class="  col-md-4 col-sm-12" style="line-height: 2rem;  ">
+                        <label class="" for="specificSizeSelect">Description	</label><br>
+                        <input type="text" class="form-control " placeholder="Purchase of office stationery">
+                    </div>
+                    <div class="  col-md-4 col-sm-12" style="line-height: 2rem;  ">
+        
+                        <label class="" for="specificSizeSelect">Account Code</label><br>
+                      <input type="password" class="form-control" placeholder="account code">
+                    </div>
+        
+                    <div class="  col-md-4 col-sm-12" style="line-height: 2rem;  ">
+        
+                        <label class="" for="specificSizeSelect"> Status</label>
+                        <select class="form-select" id="specificSizeSelect">
+                          <option selected>Paid</option>
+                          <option selected>UnPaid</option>
+                        </select>
+                    </div>
+        </div>
+        
+        
+            </div>
+            </form>
+          </mat-dialog-content>
+          
+          
+          <mat-divider></mat-divider>
+        <mat-dialog-actions class="py-2" align="end">
+            <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+              <div class=" Btn_Save" type="button">Save</div>
+              <div mat-dialog-close class="Btn_Close" >Cancel</div>
+            </div>
+        </mat-dialog-actions>
+          
+        </ng-container>
+
+
+        <ng-container *ngIf="data.name == 'CompilationItem'">
+          <span mat-dialog-title>
+              <div class="set_header">
+                <div class="d-flex  align-items-center">
+                  <i class="fa-duotone fa-sitemap fs-1"></i> 
+                     <span class="text-capitalize fs-4 mx-2 fw-bold" style="font-family: Arial, Helvetica, sans-serif;">Compilation Item Orders</span>  
+                </div>
+                <div>
+                  <button
+                  align="end"
+                  type="button"
+                  [mat-dialog-close]="true"
+                  class="btn-close"
+                  aria-label="Close"
+                ></button>
+                </div>
+              </div>
+            </span>
+            <mat-divider></mat-divider>
+            <mat-dialog-content>
+          
+              <form [formGroup]="Compilationitem">
+
+              
+
+                <div class="container-fluid c1 py-3 my-2">
+
+
+                  <div class="row">
+                     <!-- <div class=" col-sm-12 col-md-3" style="line-height: 2rem;  ">
+         
+                         <label class="" for="specificSizeSelect">Product ID</label><br>
+                         <input type="password" class="form-control " id="inputPassword " placeholder="#ORDER00035">
+         
+                     </div>  -->
+         
+         
+         
+                     <!-- <div class=" col-sm-12 col-md-3" style="line-height: 2rem;  ">
+         
+                         <label class="" for="specificSizeSelect">Description of Product</label><br>
+                         <input type="password" class="form-control " id="inputPassword " placeholder="#ORDER00035">
+         
+                     </div> -->
+         
+                     <div class=" col-sm-4 col-md-3" style="line-height: 2rem;  ">
+         
+                         <label class="" for="specificSizeSelect">ITEM SELECTION:</label>
+                         <select class="form-select" id="specificSizeSelect">
+                             <option selected>ITEM 1</option>
+                             <option value="1">ITEM 2</option>
+                             <option value="2">ITEM 3</option>
+                             <option value="3">ITEM 4</option>
+                         </select>
+         
+         
+         
+                     </div>
+         
+                     <!-- <div class="col-sm-4 col-md-3" style="line-height: 2rem;  ">
+         
+                         <label class="" for="specificSizeSelect">PURCHASE LEDGER ACCOUNT:</label>
+                         <select class="form-select" id="specificSizeSelect">
+                             <option selected>PURCHASE ACCOUNT</option>
+                             <option value="1">One</option>
+                             <option value="2">Two</option>
+                             <option value="3">Three</option>
+                         </select>
+                     </div> -->
+         
+         
+                     <div class=" col-sm-12 col-md-3" style="line-height: 2rem;  ">
+         
+                         <label class="" for="specificSizeSelect"> PRODUCT NAME:</label>
+                         <select class="form-select" id="specificSizeSelect">
+                             <option selected>PRODUCT 1</option>
+                             <option value="1">PRODUCT 2</option>
+                             <option value="2">PRODUCT 3</option>
+                             <option value="3">PRODUCT 4</option>
+                         </select>
+                     </div>
+         
+                     <div class="  col-md-3 col-sm-12" style="line-height: 2rem;  ">
+         
+                         <label class="" for="specificSizeSelect"> DATE</label>
+                         <input type="date" class="form-control" placeholder=" ">
+                     </div>
+         
+                     <div class="col-sm-4 col-md-3" style="line-height: 2rem;  ">
+         
+                         <label class="" for="autoSizingInputGroup">  QUANTITY:</label>
+                         <input type="text" class="form-control" id="inputPassword " placeholder="Enter Quantity">
+         
+         
+         
+                     </div>
+         
+                    
+         
+                     <div class=" col-sm-12 col-md-3" style="line-height: 2rem;  ">
+         
+                         <label class="" for="specificSizeSelect">UNIT PRICE:</label>
+                         <input type="text" class="form-control" id="inputPassword " placeholder="Quantity*PRICE">
+                     </div>
+         
+         
+                     <div class=" col-sm-12 col-md-3" style="line-height: 2rem;  ">
+         
+                         <label class="" for="specificSizeSelect">TOTAL PRICE:</label>
+                         <input type="text" class="form-control" id="inputPassword " placeholder="Quantity*PRICE">
+                     </div>
+         
+         
+                     <div class=" col-sm-12 col-md-3" style="line-height: 2rem;  ">
+         
+                         <label class="" for="specificSizeSelect">DISCOUNT:</label>
+                         <input type="text" class="form-control" id="inputPassword " placeholder="Quantity*PRICE">
+                     </div>
+         
+         
+                     <div class=" col-sm-12 col-md-3" style="line-height: 2rem;  ">
+         
+                         <label class="" for="specificSizeSelect">SUBTOTAL:</label>
+                         <input type="text" class="form-control" id="inputPassword " placeholder="Quantity*PRICE">
+                     </div>
+         
+                     
+                     <div class=" col-sm-12 col-md-9" style="line-height: 2rem;  ">
+                         <label class="" for="autoSizingInputGroup">NOTES:</label>
+                         <input type="text" class="form-control" id="inputPassword " placeholder="Enter Notes">
+                     </div>
+                    
+                 </div>
+         
+ 
+             </div>
+        
+              </form>
+            </mat-dialog-content>
+            
+            
+            <mat-divider></mat-divider>
+          <mat-dialog-actions class="py-2" align="end">
+              <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                <div class=" Btn_Save" type="button">Save</div>
+                <div mat-dialog-close class="Btn_Close" >Cancel</div>
+              </div>
+          </mat-dialog-actions>
+            
+          </ng-container>
+
+
+          <ng-container *ngIf="data.name == 'ProductionCost'">
+            <span mat-dialog-title>
+                <div class="set_header">
+                  <div class="d-flex  align-items-center">
+                    <i class="fa-duotone fa-sitemap fs-1"></i> 
+                       <span class="text-capitalize fs-4 mx-2 fw-bold" style="font-family: Arial, Helvetica, sans-serif;">Production Cost</span>  
+                  </div>
+                  <div>
+                    <button
+                    align="end"
+                    type="button"
+                    [mat-dialog-close]="true"
+                    class="btn-close"
+                    aria-label="Close"
+                  ></button>
+                  </div>
+                </div>
+              </span>
+              <mat-divider></mat-divider>
+              <mat-dialog-content>
+            
+                <form [formGroup]="ProductionCost">
+
+
+                  
+    <div class="container-fluid c1 py-3 my-2">
+
+
+      <div class="row">
+          <div class=" col-sm-12 col-md-3" style="line-height: 2rem;  ">
+
+              <label class="" for="specificSizeSelect">Direct material cost</label><br>
+              <input type="text" class="form-control " id="inputPassword " placeholder="#material cost">
+
+          </div>
+
+
+
+          <div class=" col-sm-12 col-md-3" style="line-height: 2rem;  ">
+
+              <label class="" for="specificSizeSelect">Direct Labour cost</label><br>
+              <input type="text" class="form-control " id="inputPassword " placeholder="#ORDER00035">
+
+          </div>
+
+          <div class=" col-sm-12 col-md-3" style="line-height: 2rem;  ">
+
+              <label class="" for="specificSizeSelect">OverHead Cost </label><br>
+              <input type="text" class="form-control " id="inputPassword " placeholder="#ORDER00035">
+
+          </div>
+          <div class=" col-sm-12 col-md-3" style="line-height: 2rem;  ">
+
+              <label class="" for="specificSizeSelect">Machine Cost </label><br>
+              <input type="text" class="form-control " id="inputPassword " placeholder="#ORDER00035">
+
+          </div>
+
+          <div class=" col-sm-12 col-md-3" style="line-height: 2rem;  ">
+
+              <label class="" for="specificSizeSelect">Scrap Cost </label><br>
+              <input type="text" class="form-control " id="inputPassword " placeholder="#ORDER00035">
+
+          </div>
+
+
+
+         
+          <div class=" col-sm-12 col-md-3" style="line-height: 2rem;  ">
+
+              <label class="" for="specificSizeSelect">Transportation Cost </label><br>
+              <input type="text" class="form-control " id="inputPassword " placeholder="#ORDER00035">
+
+          </div>
+          
+          <div class=" col-sm-12 col-md-3" style="line-height: 2rem;  ">
+
+              <label class="" for="specificSizeSelect">Qualitiy Control Cost </label><br>
+              <input type="text" class="form-control " id="inputPassword " placeholder="#ORDER00035">
+
+          </div>
+        
+          <div class="  col-md-3 col-sm-12" style="line-height: 2rem;  ">
+
+              <label class="" for="specificSizeSelect"> Labour Productivity</label>
+              <input type="text" class="form-control" placeholder=" ">
+          </div>
+
+          <div class="col-sm-4 col-md-3" style="line-height: 2rem;  ">
+
+              <label class="" for="autoSizingInputGroup">  QUANTITY</label>
+              <input type="text" class="form-control" id="inputPassword " placeholder="Enter Quantity">
+
+
+
+          </div>
+
+         
+
+          <div class=" col-sm-12 col-md-3" style="line-height: 2rem;  ">
+
+              <label class="" for="specificSizeSelect">AMOUNT:</label>
+              <input type="text" class="form-control" id="inputPassword " placeholder="Quantity*PRICE">
+
+
+
+          </div>
+          <div class=" col-sm-12 col-md-3" style="line-height: 2rem;  ">
+
+              <label class="" for="specificSizeSelect">Taxes</label>
+              <input type="text" class="form-control" id="inputPassword " placeholder="Quantity*PRICE">
+
+
+
+          </div>
+          <div class=" col-sm-12 col-md-3" style="line-height: 2rem;  ">
+
+              <label class="" for="specificSizeSelect">Startup Cost</label>
+              <input type="text" class="form-control" id="inputPassword " placeholder="Quantity*PRICE">
+
+
+
+          </div>
+          
+          <div class=" col-sm-12 col-md-9" style="line-height: 2rem;  ">
+              <label class="" for="autoSizingInputGroup">Notes:</label>
+              <input type="text" class="form-control" id="inputPassword " placeholder="Enter Notes">
+          </div>
+          <div class=" col-sm-12 col-md-3" style="line-height: 2rem;  ">
+
+              <label class="" for="specificSizeSelect">Status</label>
+              <input type="text" class="form-control" id="inputPassword " placeholder="status">
+
+
+
+          </div>
+
+      </div>
+
+
+  </div>
+                </form>
+              </mat-dialog-content>
+              
+              
+              <mat-divider></mat-divider>
+            <mat-dialog-actions class="py-2" align="end">
+                <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                  <div class=" Btn_Save" type="button">Save</div>
+                  <div mat-dialog-close class="Btn_Close" >Cancel</div>
+                </div>
+            </mat-dialog-actions>
+              
+            </ng-container>
+
+            <ng-container *ngIf="data.name == 'Productionorderplan'">
+              <span mat-dialog-title>
+                  <div class="set_header">
+                    <div class="d-flex  align-items-center">
+                      <i class="fa-solid fa-sheet-plastic  fs-1"></i>
+                         <span class="text-capitalize fs-4 mx-2 fw-bold" style="font-family: Arial, Helvetica, sans-serif;">Production Order Plan</span>  
+                    </div>
+                    <div>
+                      <button
+                      align="end"
+                      type="button"
+                      [mat-dialog-close]="true"
+                      class="btn-close"
+                      aria-label="Close"
+                    ></button>
+                    </div>
+                  </div>
+                </span>
+                <mat-divider></mat-divider>
+                <mat-dialog-content>
+              
+                  <form [formGroup]="ProductionOrderplan">
+  
+
+                    <div class="container-fluid c1 py-3 my-2">
+
+
+                      <div class="row">
+                          <div class=" col-sm-12 col-md-3" style="line-height: 2rem;  ">
+              
+                              <label class="" for="specificSizeSelect">ORDER ID:</label><br>
+                              <input type="text" class="form-control " id="inputPassword " placeholder="#ORDER00035">
+              
+                          </div>
+              
+              
+              
+                          <div class=" col-sm-12 col-md-3" style="line-height: 2rem;  ">
+              
+                              <label class="" for="specificSizeSelect">ORDER DATE:</label><br>
+                              <input type="date" class="form-control " id="inputPassword " placeholder="#ORDER00035">
+              
+                          </div>
+              
+              
+                          <div class="  col-md-3 col-sm-12" style="line-height: 2rem;  ">
+              
+                              <label class="" for="specificSizeSelect"> SERVICE ID:</label>
+                              <input type="text" class="form-control" placeholder=" ">
+                          </div>
+              
+                          <div class="col-sm-4 col-md-3" style="line-height: 2rem;  ">
+              
+                              <label class="" for="autoSizingInputGroup">  QUANTITY:</label>
+                              <input type="text" class="form-control" id="inputPassword " placeholder="Enter Quantity">
+              
+              
+              
+                          </div>
+                          
+              
+                          <div class=" col-sm-4 col-md-3" style="line-height: 2rem;  ">
+                              <label class="" for="specificSizeSelect">MATERIALS LIST:</label>
+                              <select class="form-select" id="specificSizeSelect">
+                                  <option selected>LIST </option>
+                                  <option value="1">LIST </option>
+                                  <option value="2">LIST </option>
+                                  <option value="3">LIST </option>
+                              </select>
+                          </div>
+                         
+              
+              
+                          <div class=" col-sm-12 col-md-3" style="line-height: 2rem;  ">
+              
+                              <label class="" for="specificSizeSelect">MATERIAL AVAILABILITY:</label>
+                              <input type="text" class="form-control" id="inputPassword " placeholder="Quantity*PRICE">
+              
+                          </div>
+              
+                          <div class=" col-sm-12 col-md-3" style="line-height: 2rem;  ">
+              
+                              <label class="" for="specificSizeSelect">DUE DATE:</label>
+                              <input type="date" class="form-control" id="inputPassword " placeholder="Quantity*PRICE">
+              
+                          </div>
+                          <div class=" col-sm-12 col-md-3" style="line-height: 2rem;  ">
+              
+                              <label class="" for="specificSizeSelect">STATUS</label>
+                              <input type="text" class="form-control" id="inputPassword " placeholder="status">
+              
+                          </div>
+                          
+                          <div class=" col-sm-12 col-md-9" style="line-height: 2rem;  ">
+                              <label class="" for="autoSizingInputGroup">SERVICE DESCRIPTION:</label>
+                              <input type="text" class="form-control" id="inputPassword " placeholder="Enter Notes">
+                          </div>
+              
+              
+              
+                          <div class=" col-sm-12 col-md-9" style="line-height: 2rem;  ">
+                              <label class="" for="autoSizingInputGroup">QUANTITY CHECK NOTES:</label>
+                              <input type="text" class="form-control" id="inputPassword " placeholder="Enter Notes">
+                          </div>
+                         
+              
+              
+                          <div class=" col-sm-12 col-md-3" style="line-height: 2rem;  ">
+              
+                              <label class="" for="specificSizeSelect">PACKAGING DETAILS:</label>
+                              <input type="text" class="form-control" id="inputPassword " placeholder="Quantity*PRICE">
+              
+                          </div>
+              
+              
+                          <div class=" col-sm-12 col-md-3" style="line-height: 2rem;  ">
+              
+                              <label class="" for="specificSizeSelect">DELIVERY INFORMATION:</label>
+                              <input type="text" class="form-control" id="inputPassword " placeholder="Quantity*PRICE">
+              
+                          </div>
+              
+              
+                          <div class=" col-sm-12 col-md-3" style="line-height: 2rem;  ">
+              
+                              <label class="" for="specificSizeSelect">CUSTOM FIELDS:</label>
+                              <input type="text" class="form-control" id="inputPassword " placeholder="Quantity*PRICE">
+              
+                          </div>
+              
+                      </div>
+              
+              
+                  </div>
+  
+      
+                  </form>
+                </mat-dialog-content>
+                
+                
+                <mat-divider></mat-divider>
+              <mat-dialog-actions class="py-2" align="end">
+                  <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                    <div class=" Btn_Save" type="button">Save</div>
+                    <div mat-dialog-close class="Btn_Close" >Cancel</div>
+                  </div>
+              </mat-dialog-actions>
+                
+              </ng-container>
+
+              <ng-container *ngIf="data.name == 'addbox'">
+                <span mat-dialog-title>
+                    <div class="set_header">
+                      <div class="d-flex  align-items-center">
+                        <i class="fa-solid fa-shield-plus fs-1"></i>                           <span class="text-capitalize fs-4 mx-2 fw-bold" style="font-family: Arial, Helvetica, sans-serif;">Add box</span>  
+                      </div>
+                      <div>
+                        <button
+                        align="end"
+                        type="button"
+                        [mat-dialog-close]="true"
+                        class="btn-close"
+                        aria-label="Close"
+                      ></button>
+                      </div>
+                    </div>
+                  </span>
+                  <mat-divider></mat-divider>
+                  <mat-dialog-content>
+                
+                    <form [formGroup]="addBox">
+                      <div class="container-fluid c1 py-3 my-2 px-4">
+
+                        <div class="row ">
+                            <div class="row">
+                                <div class=" col-sm-12 col-md-4" style="line-height: 2rem;  ">
+
+                                    <label class="" for="specificSizeSelect">ORDER ID:</label>
+                                    <input type="number" class="form-control " id="inputPassword "
+                                        placeholder="#ORDER00035">
+
+
+                                </div>
+                                <div class=" col-sm-12 col-md-4" style="line-height: 2rem;  ">
+
+                                    <label class="" for="specificSizeSelect">ITEMS:</label><br>
+                                    <input type="text" class="form-control " id="inputPassword " placeholder="......">
+                                </div>
+                                <div class="col-sm-12 col-md-4 " style="line-height: 2rem;  ">
+
+                                    <label class="" for="specificSizeSelect">SIZE:</label>
+                                    <select class="form-select" id="specificSizeSelect">
+                                        <option selected>Big</option>
+                                        <option value="1">Medium</option>
+                                        <option value="2">Small</option>
+                                        <option value="3">Add another</option>
+                                    </select>
+                                </div>
+                            </div>  
+
+
+                            <div class="row">
+
+
+                                <div class="col-sm-12 col-md-4" style="line-height: 2rem;  ">
+
+                                    <label class="" for="specificSizeSelect">DIMENSIONS:</label>
+                                    <input type="text" class="form-control" placeholder="..... ">
+
+                                </div>
+
+
+                                <div class="col-sm-12  col-md-4" style="line-height: 2rem;  ">
+
+                                    <label class="" for="specificSizeSelect">CATEGORY:</label>
+                                    <select class="form-select" id="specificSizeSelect">
+                                        <option selected>Shoes</option>
+                                        <option value="1">Clothes</option>
+                                        <option value="2">Perfumes</option>
+                                        <option value="3">Add another</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-sm-3 col-md-4" style="line-height: 2rem;  ">
+
+                                    <label class="" for="autoSizingInputGroup">QUANTITY:</label>
+                                    <input type="password" class="form-control" id="inputPassword "
+                                        placeholder="Enter Type">
+
+
+
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                        <div class="row mb-5">
+                            <div class=" col-sm-12 col-md-4" style="line-height: 2rem;  ">
+
+                                <label class="" for="specificSizeSelect">DOCUMENT:</label>
+                                <br>
+                                <div class="btn btn-primary btn-rounded btn-secondary mt-2">
+                                    <label class="form-label text-white m-1 " htmlFor="customFile1">
+                                        Browser &nbsp;<i class="fa-solid fa-browsers"></i>
+                                        <input type="file" class="form-control d-none" id="customFile1" />
+                                    </label>
+                                </div>
+                            </div>
+
+
+                            <div class=" col-sm-12 col-md-4" style="line-height: 2rem;  ">
+
+                                <label class="" for="specificSizeSelect">STATUS:</label>
+                                <select class="form-select" id="specificSizeSelect">
+                                    <option selected>Pending</option>
+                                    <option value="1">Canceled</option>
+                                    <option value="2">Received</option>
+                                    <option value="3">Not Received</option>
+                                </select>
+
+
+                            </div>
+                            <div class=" col-sm-12 col-md-4" style="line-height: 2rem;  ">
+
+                                <label class="" for="specificSizeSelect">BARCODE:</label><br>
+                                <div><img src="../../../../../assets/logos/barcode.png" style="height: 35px; width: 80px; " alt="scanner">
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+        
+                    </form>
+                  </mat-dialog-content>
+                  
+                  
+                  <mat-divider></mat-divider>
+                <mat-dialog-actions class="py-2" align="end">
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                      <div class=" Btn_Save" type="button"  >Save</div>
+                      <div mat-dialog-close class="Btn_Close" >Cancel</div>
+                    </div>
+                </mat-dialog-actions>
+                  
+                </ng-container>

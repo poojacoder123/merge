@@ -1,0 +1,308 @@
+
+<ng-container *ngIf="data.name == 'dropshipping'">
+    <form [formGroup]="pfirstFormGroup">
+    <span mat-dialog-title>
+        <div class="set_header">
+          <div class="d-flex  align-items-center">
+            <i class="fa-duotone fa-truck fs-1" style="color: #000000;"></i> 
+               <span class="text-capitalize fs-4 mx-2 fw-bold" style="font-family: Arial, Helvetica, sans-serif;">Dropshipping
+              </span>  
+          </div>
+          <div>
+            <button
+            align="end"
+            type="button"
+            [mat-dialog-close]="true"
+            class="btn-close"
+            aria-label="Close"
+          ></button>
+          </div>
+        </div>
+      </span>
+      <mat-divider></mat-divider>
+      <mat-dialog-content>
+    
+    
+        <mat-stepper [linear]="isLinear" #stepper>
+            <mat-step [stepControl]="pfirstFormGroup">
+            <ng-template matStepLabel >PRODUCT INFORMATION: :</ng-template>
+      
+              <div class="row"> 
+          <!-- first part -->
+
+          <div class="container-fluid c1 py-3 mt-4 super">
+            <div class="row">
+
+                <div class="col-sm-12 col-md-4" style="line-height: 2rem;">
+                    <label class="" for="autoSizingInputGroup">PRODUCT ID:</label>
+                    <input type="number" class="form-control" id="inputPassword "
+                        placeholder="Enter Product ID">
+                </div>
+                <div class="col-sm-4 col-md-4" style="line-height: 2rem;  ">
+                    <label class="" for="specificSizeSelect">PRODUCT NAME:</label>
+                    <input type="Text" class="form-control" id="inputPassword "
+                        placeholder="Enter Your Name">
+                </div>
+                <div class="col-sm-4 col-md-4" style="line-height: 2rem;  ">
+                    <label class="" for="specificSizeSelect">PRICE:</label>
+                    <input type="number" class="form-control" id="inputPassword "
+                        placeholder="Enter Price">
+                </div>
+                <div class="col-sm-4 col-md-6 pt-2" style="line-height: 2rem;  ">
+                    <label class="" for="specificSizeSelect">SKU:</label>
+                    <input type="number" class="form-control" id="inputPassword "
+                        placeholder="Enter Stock Keeping Unit">
+                </div>
+                <div class="col-sm-12 col-md-6 pt-2" style="line-height: 2rem;  ">
+                    <label class="" for="autoSizingInputGroup">DESCRIPTION:</label>
+                    <input type="text" class="form-control" id="inputPassword " placeholder="Enter Description">
+                </div>
+
+               
+            </div>
+        </div>
+             </div>
+
+             <mat-divider></mat-divider>
+                <mat-dialog-actions class="py-2" align="end">
+                  <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                    <div mat-dialog-close class="Btn_Close" >Cancel</div>
+                    <button class=" Btn_Save" (click)="to_next1nd()" matStepperNext>Next</button>
+                  </div>
+              </mat-dialog-actions>
+          
+      
+          </mat-step>
+
+
+          <mat-step [stepControl]="pfirstFormGroup" label="INVENTORY MANAGEMENT:">
+            <form [formGroup]="psecondFormGroup">
+          
+              <div class="row">
+                <!-- form 2nd -->
+                
+                <div class="container-fluid c1 py-3 mt-4 super">
+                    <div class="row">
+
+                        <div class="col-sm-12 col-md-4" style="line-height: 2rem;  ">
+                            <label class="" for="autoSizingInputGroup">STOCK QUANTITY:</label>
+                            <input type="number" class="form-control" id="inputPassword "
+                                placeholder="Enter Stock Quantity">
+                        </div>
+                      
+                        <div class="col-sm-12 col-md-4" style="line-height: 2rem;  ">
+                            <label class="" for="autoSizingInputGroup">REORDER LEVEL:</label>
+                            <input type="text" class="form-control" id="inputPassword "
+                            placeholder="Enter Reorder Level">
+                          
+                        </div>
+                        <div class="col-sm-12 col-md-4" style="line-height: 2rem;  ">
+                            <label class="" for="autoSizingInputGroup">STATUS:</label>
+             <select class="form-select" id="specificSizeSelect">
+                                <option selected>In Stock</option>
+                                <option value="0">Out Of Stock</option>
+                               
+                            </select> 
+                        </div>
+
+                       
+
+                    </div>
+                </div>
+
+            </div>
+  
+              <mat-divider></mat-divider>
+              <mat-dialog-actions class="py-2" align="end">
+                <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                  <button matStepperPrevious class="Btn_Close" >Back</button>
+                  <button class=" Btn_Save" matStepperNext (click)="to_next2nd()">Next</button>
+                </div>
+            </mat-dialog-actions>
+            </form>
+          </mat-step>
+
+  
+          <mat-step><ng-template matStepLabel>ORDER PROCESSING:
+            </ng-template>
+            <form [formGroup]="pthirdFormGroup">
+              <div class="row">
+                <div class="container-fluid c1 py-3 my-2 mt-4 super">
+                    <div class="row">
+                       
+                        <div class="col-sm-12 col-md-4" style="line-height: 2rem;  ">
+                            <label class="" for="autoSizingInputGroup">ORDER ID:</label>
+                            <input type="number" class="form-control" id="inputPassword " placeholder="Enter Order Id">
+                        </div>
+                        <div class="col-sm-12 col-md-4" style="line-height: 2rem;  ">
+                            <label class="" for="autoSizingInputGroup">CUSTOMER INFORMATION:</label>
+                            <input type="text" class="form-control" id="inputPassword"
+                            placeholder="First Name and Last Name">
+                           
+                        </div>
+
+                        <div class="col-sm-12 col-md-4" style="line-height: 2rem;  ">
+                            <label class="" for="autoSizingInputGroup">PRODUCTS ORDERED:</label>
+                            <select class="form-select" id="specificSizeSelect">
+
+                                <option value="0">Product ID</option>
+                                <option value="1">Quantity</option>
+                                <option value="2">Price</option>
+                               
+
+                            </select>
+                        </div>
+
+                        <div class="col-sm-12 col-md-6 pt-3" style="line-height: 2rem;  ">
+                            <label class="" for="autoSizingInputGroup">SHIPPING METHOD:</label>
+                            <input type="text" class="form-control" id="inputPassword"
+                                placeholder="Enter Method">
+                        </div>
+
+                        <div class="col-sm-12 col-md-6 pt-3" style="line-height: 2rem;  ">
+                            <label class="" for="autoSizingInputGroup">ORDER STATUS:</label>
+                            <select class="form-select" id="specificSizeSelect">
+
+                                <option value="0">Pending</option>
+                                <option value="1">Processing</option>
+                                <option value="2">Shippped</option>
+                               
+
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            
+             
+            </div> 
+                <mat-divider></mat-divider>
+                <mat-dialog-actions class="py-2" align="end">
+                  <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                    <button matStepperPrevious class="Btn_Close" >Back</button>
+                     <button class=" Btn_Save" matStepperNext (click)="to_next4nd()">Next</button>
+                    
+                    
+                  </div>
+              </mat-dialog-actions>
+            
+            </form>
+  
+          </mat-step>
+
+
+          <mat-step [stepControl]="pfirstFormGroup" label="SHIPPING AND TRACKING:">
+            <form [formGroup]="pfourthFormGroup">
+          
+                <div class="container-fluid c1 py-3 my-2 mt-4 super">
+                    <div class="row">
+                      
+
+                        <div class="col-sm-12 col-md-3" style="line-height: 2rem;  ">
+                            <label class="" for="autoSizingInputGroup">TRACKING NUMBER:</label>
+                            <input type="number" class="form-control" id="inputPassword " placeholder="Enter Number">
+                        </div>
+                        <div class="col-sm-12 col-md-3" style="line-height:2rem;">
+                            <label class="" for="autoSizingInputGroup">SHIPPING ADDRESSS:</label>
+                            <input type="text" class="form-control" id="inputPassword " placeholder="Enter Address">
+                        </div>
+
+                        <div class="col-sm-12 col-md-3" style="line-height: 2rem;  ">
+                            <label class="" for="autoSizingInputGroup">SHIPPING STATUS:</label>
+                            <select class="form-select" id="specificSizeSelect">
+                                <option value="0">Shipped</option>
+                                <option value="1">In Transit</option>
+                                <option value="2">Delivered</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-12 col-md-3" style="line-height: 2rem;  ">
+                            <label class="" for="autoSizingInputGroup">ESTIMATED DELIVERY DATE:</label>
+                            <input type="date" class="form-control" id="inputPassword " placeholder="Enter Date">
+                        </div>
+                      
+                       
+                    </div>
+                </div>
+              <mat-divider></mat-divider>
+              <mat-dialog-actions class="py-2" align="end">
+                <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                  <button matStepperPrevious class="Btn_Close" >Back</button>
+                  <button class=" Btn_Save" matStepperNext (click)="to_next4nd()">Next</button>
+
+                </div>
+            </mat-dialog-actions>
+            </form>
+          </mat-step>
+
+
+          <mat-step [stepControl]="pfirstFormGroup" label="SUPPLIER INFORMATION:">
+            <form [formGroup]="pfifthFormGroup">
+                <div class="container-fluid c1 py-3 my-2 mt-4 super">
+                    <div class="row">
+                      
+
+                        <div class="col-sm-12 col-md-4" style="line-height: 2rem;  ">
+                            <label class="" for="autoSizingInputGroup">SUPPPLIER ID:</label>
+                            <input type="number" class="form-control" id="inputPassword " placeholder="Enter Id">
+                        </div>
+                        <div class="col-sm-12 col-md-4" style="line-height:2rem;">
+                            <label class="" for="autoSizingInputGroup">SUPPLIER NAME:</label>
+                            <input type="text" class="form-control" id="inputPassword " placeholder="Enter Name">
+                        </div>
+
+                        <div class="col-sm-12 col-md-4" style="line-height: 2rem;  ">
+                            <label class="" for="autoSizingInputGroup">CONTACT INFORMATION:</label>
+                            <input type="text" class="form-control" id="inputPassword " placeholder="Enter Information">
+                           
+                        </div>
+                      
+                      
+                       
+                    </div>
+                </div>
+              <mat-divider></mat-divider>
+              <mat-dialog-actions class="py-2" align="end">
+                <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                  <button matStepperPrevious class="Btn_Close" >Back</button>
+                  <button class=" Btn_Save"  matStepperNext  (click)="to_next6th()" >Next</button>
+                </div>
+            </mat-dialog-actions>
+            </form>
+          </mat-step>
+          <!-- sixth step -->
+          <mat-step [stepControl]="pfirstFormGroup" label="TRANSACTION AND PAYMENT:">
+            <form [formGroup]="psixthFormGroup">
+                <div class="container-fluid c1 py-3 my-2 mt-4 super">
+                    <div class="row">
+                     
+
+                        <div class="col-sm-12 col-md-6" style="line-height: 2rem;  ">
+                            <label class="" for="autoSizingInputGroup">PAYMENT INFORMATION:</label>
+                            <input type="text" class="form-control" id="inputPassword " placeholder="Enter Payment Information">
+                        </div>
+                        <div class="col-sm-12 col-md-6" style="line-height:2rem;">
+                            <label class="" for="autoSizingInputGroup">TRANSACTION ID:</label>
+                            <input type="number" class="form-control" id="inputPassword " placeholder="Enter Transaction Id">
+                        </div>
+                      
+                      
+                       
+                    </div>
+                </div>
+              <mat-divider></mat-divider>
+              <mat-dialog-actions class="py-2" align="end">
+                <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                  <button matStepperPrevious class="Btn_Close" >Back</button>
+                  <button class=" Btn_Save" >Save</button>
+
+                </div>
+            </mat-dialog-actions>
+            </form>
+          </mat-step>
+
+
+        </mat-stepper>
+        
+      </mat-dialog-content>
+      
+  </form>
+  </ng-container>

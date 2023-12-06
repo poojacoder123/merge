@@ -1,0 +1,395 @@
+<div class="container-fluid my-4 ">
+    <div class="prant_div">
+      <div class="fast_div">
+        <div class="super_chaild">
+          <mat-icon>density_medium</mat-icon>
+        
+          <i class="fa-solid fa-badge-dollar fa-xl fs-1" style="color: #121212;"></i>
+          <span class="fs-4">Discount</span>
+        </div>
+        <div>
+          <a class="text_routes" routerLink="/admin"> Dashboard </a>
+          <i class="ri-arrow-right-s-line"></i> Discount
+        </div>
+      </div>
+
+      <div class="secoand_div">
+
+        <button mat-raised-button matTooltip="Filter.." class="demo-button">
+            <i class="ri-filter-2-fill fs-5"></i>
+          </button>
+
+        <button mat-raised-button matTooltip="status" class="demo-button dropdown-toggle mx-2 " data-bs-toggle="dropdown"
+          aria-expanded="false">
+          <mat-icon>density_medium</mat-icon>
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="@wweb">Company Name </a></li>
+          <li><a class="dropdown-item" href="#">Company website </a></li>
+        </ul>
+        <button mat-raised-button class="demo-button ">
+          <i class="ri-printer-line fs-5"></i>
+        </button>
+
+        <button mat-raised-button  matTooltip="Add" class="demo-button">
+            <i class="ri-add-line fs-5"></i>
+          </button>
+
+      
+      </div>
+
+    </div>
+    <hr />
+    <mat-form-field style="height: 100%; width: 100%;">
+           <mat-label>Search</mat-label>
+           <input matInput placeholder="Ex. ium" #input>
+    </mat-form-field>
+    <div class="card row">
+      <div class="col-md-12 col-sm-12 set_scroller">
+       
+        <table class="table table-hover">
+          <thead>
+            <tr style="border: none;">
+              <th scope="col"> <input class="form-check-" type="checkbox" value="" id="flexCheckDefault"></th>
+
+              <th scope="col"  style="text-align: center;">ID</th>
+
+              <th scope="col"  style="text-align: center;">Discount Name</th>
+
+
+            
+              
+
+              <th scope="col" style="text-align: center;">Discount Type
+                  
+              </th>
+              <th scope="col"  style="text-align: center;">Amount</th>
+              
+             
+              
+              <th scope="col" style="text-align: center;">Start Date</th>
+            
+              
+              <th scope="col " style="padding-left: 4rem;  white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">End Date</th>
+             
+              
+
+              <th scope="col" style="text-align: center; white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">Status</th>
+             
+              
+              <th scope="col " style="text-align: start" ><span class="m-5">Action</span></th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td> <input class="form-check-input mt-2" type="checkbox" value="" id="flexCheckDefault"></td>
+
+                  
+                  <td><span class="card text-center">101</span></td>
+                  <td><span class="card text-center">Early Bird Discount </span></td>
+                  
+                 
+                  <td><span class="card text-center"><select class="border-0">
+                     
+                      <option selected>Select</option>
+                      <option >   Percentage %  </option>
+
+                      <option >Fixed Amount</option> </select></span>
+                      </td>
+                      <td><span class="card text-center">1000</span></td>
+                 
+
+                  
+                  
+                  <td> <span class="card text-center">2023-11-01</span></td>
+                  <td> <span class="card text-center">2023-11-30</span></td>
+                 
+                  
+                  <td> <span class="card text-center bg-danger" style="color: white;">Inactive</span></td>
+                  <td>
+                      <div class="parent_div ">
+
+                          <div style="cursor: pointer;" class="add_icon"
+                              aria-label="Example icon button with a menu icon">
+                              <i class="ri-file-add-line"></i>
+                          </div>
+                          <div style="cursor: pointer;" class="view_icon"
+                              aria-label="Example icon button with a menu icon">
+                              <i class="ri-eye-line"></i>
+                          </div>
+                          <div style="cursor: pointer;" class="edit_icon"
+                              aria-label="Example icon button with a menu icon">
+                              <i class="ri-pencil-line"></i>
+                          </div>
+
+                          <div style="cursor: pointer;" class="delete_icon"
+                              aria-label="Example icon button with a menu icon">
+                              <i class="ri-delete-bin-6-line "></i>
+                          </div>
+                          <div style="cursor: pointer;" class="print_icon"
+                              aria-label="Example icon button with a menu icon">
+                              <i class="ri-printer-fill"></i>
+                          </div>
+
+
+                          <div class="btn-group dropstart">
+                              <button type="button" class="btn  " data-bs-toggle="dropdown" aria-expanded="fals"><i
+                                      class="ri-more-2-fill"></i>
+                              </button>
+                              <ul class="dropdown-menu" style="width: 16vw;">
+                                  <li><a class="dropdown-PRODUCT" href="#"><i class="ri-eye-fill"></i> View Sale</a></li>
+                                  <li><a class="dropdown-PRODUCT" href="#"><i class="ri-download-fill"></i> Download
+                                          PDF</a></li>
+                                  <li><a class="dropdown-PRODUCT" href="#"><i class="ri-money-dollar-circle-fill"></i>
+                                          Show Payments</a>
+                                  </li>
+
+                                  <li><a class="dropdown-PRODUCT" href="#"><i class="ri-shopping-cart-fill"></i> Create
+                                          Sale Return</a>
+                                  </li>
+
+                                  <li><a class="dropdown-PRODUCT" href="#"><i class="ri-pencil-fill"></i> Edit Sale</a>
+                                  </li>
+                                  <li><a class="dropdown-PRODUCT" href="#"><i class="ri-delete-bin-5-fill"></i> Delete
+                                          Sale</a></li>
+                              </ul>
+                          </div>
+                      </div>
+
+                  </td>
+              </tr>
+                   <tr>
+                  <td> <input class="form-check-input mt-2" type="checkbox" value="" id="flexCheckDefault"></td>
+                  
+                  <td><span class="card text-center">102</span></td>
+                  <td><span class="card text-center">Black Friday Sale</span></td>
+                  
+                 
+                  <td><span class="card text-center"><select class="border-0">
+                     
+                      <option selected>Select</option>
+                      <option >   Percentage %  </option>
+
+                      <option >Fixed Amount</option> </select></span>
+                      </td>
+                      <td><span class="card text-center">2000</span></td>
+                    
+
+                  
+                  
+                  <td> <span class="card text-center">2023-11-25</span></td>
+                  <td> <span class="card text-center">2023-11-26
+                  </span></td>
+                  
+                  
+                  <td> <span class="card text-center bg-success" style="color: white;">Active</span></td>
+                  
+
+                  <td>
+                      <div class="parent_div ">
+
+                          <div style="cursor: pointer;" class="add_icon"
+                              aria-label="Example icon button with a menu icon">
+                              <i class="ri-file-add-line"></i>
+                          </div>
+                          <div style="cursor: pointer;" class="view_icon"
+                              aria-label="Example icon button with a menu icon">
+                              <i class="ri-eye-line"></i>
+                          </div>
+                          <div style="cursor: pointer;" class="edit_icon"
+                              aria-label="Example icon button with a menu icon">
+                              <i class="ri-pencil-line"></i>
+                          </div>
+
+                          <div style="cursor: pointer;" class="delete_icon"
+                              aria-label="Example icon button with a menu icon">
+                              <i class="ri-delete-bin-6-line "></i>
+                          </div>
+                          <div style="cursor: pointer;" class="print_icon"
+                              aria-label="Example icon button with a menu icon">
+                              <i class="ri-printer-fill"></i>
+                          </div>
+
+
+                          <div class="btn-group dropstart">
+                              <button type="button" class="btn  " data-bs-toggle="dropdown" aria-expanded="fals"><i
+                                      class="ri-more-2-fill"></i>
+                              </button>
+                              <ul class="dropdown-menu" style="width: 16vw;">
+                                  <li><a class="dropdown-PRODUCT" href="#"><i class="ri-eye-fill"></i> View Sale</a></li>
+                                  <li><a class="dropdown-PRODUCT" href="#"><i class="ri-download-fill"></i> Download
+                                          PDF</a></li>
+                                  <li><a class="dropdown-PRODUCT" href="#"><i class="ri-money-dollar-circle-fill"></i>
+                                          Show Payments</a>
+                                  </li>
+
+                                  <li><a class="dropdown-PRODUCT" href="#"><i class="ri-shopping-cart-fill"></i> Create
+                                          Sale Return</a>
+                                  </li>
+
+                                  <li><a class="dropdown-PRODUCT" href="#"><i class="ri-pencil-fill"></i> Edit Sale</a>
+                                  </li>
+                                  <li><a class="dropdown-PRODUCT" href="#"><i class="ri-delete-bin-5-fill"></i> Delete
+                                          Sale</a></li>
+                              </ul>
+                          </div>
+                      </div>
+
+                  </td>
+
+                  
+
+                  
+                  
+
+
+
+              </tr>
+
+              <tr>
+                  <td> <input class="form-check-input mt-2" type="checkbox" value="" id="flexCheckDefault"></td>
+                  
+                  <td><span class="card text-center">103</span></td>
+                  <td><span class="card text-center" style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">Early Bird Discount</span></td>
+                  
+                  <td><span class="card text-center"><select class="border-0">
+                     
+                      <option selected>Select</option>
+                      <option >   Percentage %  </option>
+
+                      <option >Fixed Amount</option> </select></span>
+                      </td>
+
+                      <td><span class="card text-center" style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">3000</span></td>
+              
+                    
+                     
+                      
+
+                 
+                  
+                  <td> <span class="card text-center" style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">2023-11-01</span></td>
+                  <td> <span class="card text-center" style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">2023-11-30
+                  </span></td>
+                  
+                  
+                  <td> <span class="card text-center bg-danger" style="color: white;">Inactive</span></td>
+
+                  <td>
+                      <div class="parent_div ">
+
+                          <div style="cursor: pointer;" class="add_icon"
+                              aria-label="Example icon button with a menu icon">
+                              <i class="ri-file-add-line"></i>
+                          </div>
+                          <div style="cursor: pointer;" class="view_icon"
+                              aria-label="Example icon button with a menu icon">
+                              <i class="ri-eye-line"></i>
+                          </div>
+                          <div style="cursor: pointer;" class="edit_icon"
+                              aria-label="Example icon button with a menu icon">
+                              <i class="ri-pencil-line"></i>
+                          </div>
+
+                          <div style="cursor: pointer;" class="delete_icon"
+                              aria-label="Example icon button with a menu icon">
+                              <i class="ri-delete-bin-6-line "></i>
+                          </div>
+                          <div style="cursor: pointer;" class="print_icon"
+                              aria-label="Example icon button with a menu icon">
+                              <i class="ri-printer-fill"></i>
+                          </div>
+
+
+                          <div class="btn-group dropstart">
+                              <button type="button" class="btn  " data-bs-toggle="dropdown" aria-expanded="fals"><i
+                                      class="ri-more-2-fill"></i>
+                              </button>
+                              <ul class="dropdown-menu" style="width: 16vw;">
+                                  <li><a class="dropdown-PRODUCT" href="#"><i class="ri-eye-fill"></i> View Sale</a></li>
+                                  <li><a class="dropdown-PRODUCT" href="#"><i class="ri-download-fill"></i> Download
+                                          PDF</a></li>
+                                  <li><a class="dropdown-PRODUCT" href="#"><i class="ri-money-dollar-circle-fill"></i>
+                                          Show Payments</a>
+                                  </li>
+
+                                  <li><a class="dropdown-PRODUCT" href="#"><i class="ri-shopping-cart-fill"></i> Create
+                                          Sale Return</a>
+                                  </li>
+
+                                  <li><a class="dropdown-PRODUCT" href="#"><i class="ri-pencil-fill"></i> Edit Sale</a>
+                                  </li>
+                                  <li><a class="dropdown-PRODUCT" href="#"><i class="ri-delete-bin-5-fill"></i> Delete
+                                          Sale</a></li>
+                              </ul>
+                          </div>
+                      </div>
+
+                  </td>
+              </tr>
+
+              
+
+          </tbody>
+      </table>
+
+     
+
+      </div>
+  
+    </div>
+   <div class="row my-3 ">
+      <div class="prant_div">
+        <div class="new_dropdown">
+          <div>
+            <div class="input-group mb-3">
+              <button type="button" class="btn btn-outline-secondary">10</button>
+              <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <span class="visually-hidden">Toggle Dropdown</span>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">15</a></li>
+                <li><a class="dropdown-item" href="#">25</a></li>
+                <li><a class="dropdown-item" href="#">50</a></li>
+                <li><a class="dropdown-item" href="#">100</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="d-grid ga d-md-flex justify-content-md-end">
+            <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
+              <div class="btn-group me-2" role="group" aria-label="First group">
+                <button type="button" class="btn btn-outline-secondary"> 1</button>
+                <button type="button" class="btn btn-outline-secondary">2</button>
+                <button type="button" class="btn btn-outline-secondary">3</button>
+                <button type="button" class="btn btn-outline-secondary">4</button>
+                <button type="button" class="btn btn-outline-secondary">5</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="d-grid ga d-md-flex justify-content-md-end">
+            <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
+              <div class="btn-group me-2" role="group" aria-label="First group">
+                <button type="button" class="btn btn-outline-secondary">
+                  <i class="fas fa-angle-left"></i>
+                </button>
+                <button type="button" class="btn btn-outline-secondary">
+                  <i class="fas fa-angle-left"></i>
+                </button>
+                <button type="button" class="btn btn-outline-secondary">
+                  <i class="fas fa-angle-right"></i>
+                </button>
+                <button type="button" class="btn btn-outline-secondary ">
+                  <i class="fas fa-angle-right"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+         </div>
+      </div>
+   </div>
+  </div>
