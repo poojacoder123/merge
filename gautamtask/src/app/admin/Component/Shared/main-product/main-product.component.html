@@ -1,0 +1,345 @@
+<div class="container" style="min-width: 900px;">
+        <h3><img src="assets/inventory-clipart-5.jpg" alt="" style="height: 10VH; margin: 1rem; border-radius: 40px;" >Product Add</h3>
+            <div class="row gy-2 gx-4 my-3 py-3"  id="form1">
+            <div class="col-md-12">
+                    <div class="container">
+                        <div class="row" style="padding-bottom: 0.5rem;">
+                            <div class="col-md-6">
+
+                                <label class="form-label" for="autoSizingInput">Product Name</label>
+                                <input type="text" class="form-control" id="autoSizingInput" placeholder="Product Name" >
+                              
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label" for="autoSizingInputGroup">Product Type</label>
+                                <div class="input-group mb-3">
+                                    <select class="form-select" id="inputGroupSelect02">
+                                        <option selected>Product</option>
+                                        <option value="">Service</option>
+                                    </select>
+                                       
+                                     
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="container">
+                                    <div class="row">
+                                      
+                                
+                                        <div class="col-md-6">
+                                        <label class="form-label" for="autoSizingInputGroup">Product Price </label>
+                                            <div class="input-group">
+                                                <input type="number" class="form-control" (keyup)="product_prices($event)" placeholder="Product  Price">
+                                                <div class="input-group-text ">{{all_tag}}</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label" for="autoSizingInputGroup">Product Cost</label>
+                                            <div class="input-group ">
+                                                <input type="number" class="form-control" (keyup)="product_cost($event)" placeholder="Product Cost">
+                                                <div class="input-group-text ">{{all_tag}}</div>
+                                            </div>
+                                    </div>
+                                        
+                                    </div>
+                                    <div class="row mt-3">
+                                
+                                        <div class="col-md-6">
+                                        <label class="form-label" for="autoSizingInputGroup">Profit</label>
+                                            <div class="input-group">
+                                                <input type="text" disabled class="form-control" value="{{ totalProfit | currency }}">
+                                                <div class="input-group-text ">{{all_tag}}</div>
+                                            </div>
+                                        </div>
+                                            
+                                        <div class="col-md-6">
+                                                <label class="form-label" for="autoSizingInputGroup">Margin</label>
+                                                <div class="input-group ">
+                                
+                                                    <input type="text" disabled class=" form-control" value="{{ totalMargin }}%" >
+                                                    <div class="input-group-text">{{all_tag}}</div>
+                                                </div>
+                                        </div>
+                                    </div>
+                           
+                            
+                                </div>
+                                </div>
+                        </div>
+                    </div>
+            </div>
+            </div> 
+            <div class="row gy-2 gx-4 my-3 py-3" id="form1">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="form-label" for="autoSizingInput"> Quantity </label>
+                        <input type="text" class="form-control" id="autoSizingInput" placeholder="Quantity " >
+        
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label" for="autoSizingInput">Quantity Limitation</label>
+                        <input type="text" class="form-control" id="autoSizingInput" placeholder="Quantity Limitation" >
+        
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="form-label" for="autoSizingInput">Stock Alert</label>
+                        <input type="text" class="form-control" id="autoSizingInput" placeholder="Stock Alert" >
+                
+                    </div>
+                    <div class="col-md-6">
+                     
+                        <label class="form-label" for="specificSizeSelect">Expiry Date</label>
+                        <input class="form-control" type="date" id="Test_DatetimeLocal"
+                      >
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="form-label" for="autoSizingInput">Barcode</label>
+                        <input type="text" class="form-control" id="autoSizingInput" placeholder="" >
+            
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label" for="autoSizingInput">SKU  (Stock Keeping Unit)</label>
+                        <input type="text" class="form-control" id="autoSizingInput" placeholder="" >
+            
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="row">
+                        <label class="form-label">Add Opction</label>
+                        <select  (change)="add_opction($event)" class="form-select">
+                            <option > Select </option>
+                            <option >Size</option>
+                            <option >color</option>
+                            <option >Style</option>
+                            <option >Material</option>
+                        </select>
+                    </div>
+                    <div *ngIf="colors" class="row">
+                        <div *ngFor="let v of values; let n = index;">
+                                    <div class="row">
+
+                                  
+                                    <div class="col-md-4">
+                                           <label  class="form-label"> Opction name</label>
+                                    <input type="text" placeholder={{plaseholder}} [(ngModel)]="v. val3" class="form-control" />
+                       
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label  class="form-label" >  values</label>
+                                        <input type="text" class="form-control" [(ngModel)]="v.val"  #name="ngModel" name="v{{n}}" />
+                                    </div>
+                                    <div class="col-md-4 ">
+                                        
+                                        <label  class="form-label">  values</label> 
+                                        <div class="set_input" >
+
+                                            <input type="text" class="form-control" [(ngModel)]="v.val2"  #name="ngModel" name="v{{n}}" />
+                                            <button class="btn btn-danger btn-sm" (click)="remove(n)">
+                                                <i class="ri-delete-bin-5-line"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                      
+                                </div>
+                            
+                                </div>
+                  
+                        
+                         
+                           
+                       
+                    
+                        <div>
+                            <button class="btn btn-info btn-sm mt-3 fs-5" (click)="addBut()">+</button>
+                        </div>
+                      
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    </div>
+                </div>
+                <div class="row"  style="padding-bottom: 1rem;">
+                    <div class="col-md-6">
+                    <label class="form-label" for="autoSizingInputGroup"> Categories</label>
+                            <ng-multiselect-dropdown
+                            [placeholder]="'Select'"
+                            [settings]="dropdownSettings"
+                            [data]="allCategoryName"
+                            [(ngModel)]="selectedItems"
+                            (onSelect)="onItemSelect($event)"
+                            (onSelectAll)="onSelectAll($event)"
+                        > </ng-multiselect-dropdown>
+                        
+                           
+
+                       
+
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label" for="specificSizeSelect"> Unit</label>
+                        <select class="form-select" id="specificSizeSelect">
+                            <option selected>Select</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                </div> 
+            </div>
+            
+            <div class="row gy-2 gx-4 my-3 py-3" id="form1">
+
+                <div class="container">
+
+                
+                    <div class="row">
+                        <div class="col-md-6">
+                            
+                    <label class="form-label" for="specificSizeSelect">Brand</label>
+                    <select class="form-select" id="specificSizeSelect">
+                        <option >Select</option>
+                        <option value="" *ngFor="let b of allBrandName">{{b.brandname}}</option>
+                        
+                    </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label" for="autoSizingInputGroup">Supplier</label>
+                            <div class="input-group mb-3">
+                                <select class="form-select" id="inputGroupSelect02">
+                                    <option selected>Select</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                
+                            </div>
+                        </div>
+
+                
+                        
+                    </div>
+                    <div class="row ">
+                        <div class="col-md-6">
+
+                            <label class="form-label" for="autoSizingInputGroup"> Tax Type</label>
+                            <select class="form-select" id="specificSizeSelect">
+                                <option selected>Select</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                     <label class="form-label" for="specificSizeSelect">Product Tax</label>
+                     <select class="form-select" id="specificSizeSelect">
+                        <option selected>Select</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                        </div>
+
+                    </div> 
+
+                    
+                </div>
+            </div>
+
+
+            <div class="row gy-2 gx-4 my-3 py-3" id="form1">
+              
+
+                <div class="col-md-12">
+                    <div class="container">
+                        <div class="row" style="padding-bottom: 1rem;">
+                            <label class="form-label" for="autoSizingInput">Media</label>
+                            <div class="form-control1 " style="border: dashed gray 1px; ">
+                                <div class=" py-5">
+                                 <div class="drag-file-area mt-1  d-flex justify-content-center  align-items-center ">
+                                        <input type="file" class="form-control"  id="inputGroupFile01" style="width: 7vw; margin: 2px;"> <span class="material-icons-outlined upload-icon"><b>Add from URL</b> </span>
+                                    </div>
+                                                         
+                
+                                    <div class="drag-file-area mt-1  d-flex justify-content-center ">
+                                        <span class="material-icons-outlined upload-icon">Accepts image, videos or 3D models</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <div class="row"> 
+                            <div class="col-md-6">
+                               <label class="form-label">Description</label>
+                               <!-- <form [formGroup]="seo">
+                                   <div class="NgxEditor__Wrapper">
+                                     <ngx-editor-menu [editor]="editor" [toolbar]="toolbar"> </ngx-editor-menu>
+                                     <ngx-editor [editor]="editor" formControlName=" editorContent"> </ngx-editor>
+                                   </div>
+                                </form> -->
+                            </div>
+                           
+
+                            <div class="col-md-6">
+                               
+                                
+
+                                <label class="form-label">SEO</label>
+                                <!-- <form [formGroup]="form">
+                                    <div class="NgxEditor__Wrapper">
+                                      <ngx-editor-menu [editor]="seoeditor" [toolbar]="toolbar"> </ngx-editor-menu>
+                                      <ngx-editor [editor]="seoeditor" formControlName="seo"> </ngx-editor>
+                                    </div>
+                                 </form> -->
+                            </div>
+                            
+                        </div> 
+                      
+                    </div>
+                    <div class="Product_btn mt-5">
+                        <button class="btn_submit">Submit</button>
+                        <button class="btn_cancel">Cancel</button>
+                    </div>
+                    </div>
+            </div>
+</div> 
+
+
+ 
+              
+    
+    
+
+    
+    
+           
+
+
+
+    
+    
+                    
+    
+    
+                    
+    
+               
+    
+          
+    
+            
+    
+           
+               

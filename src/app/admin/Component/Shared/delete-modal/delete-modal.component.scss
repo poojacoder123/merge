@@ -1,0 +1,66 @@
+
+
+.yas{
+  height: 40px;
+  width: 103px;
+  background-color:#70d843;
+  color: #FFF;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  font-size: 1.3rem;
+  border: none;
+  cursor: pointer;
+}
+.No{
+  height: 40px;
+  width: 103px;
+  background-color: #ff3a6e;
+  color: #FFF;
+  font-size: 1.3rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+}
+
+
+.set_icons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    position: relative;
+    width: 80px;
+    border-radius: 50%;
+    color: #f8bb86;
+
+    font-size: 3rem;
+   
+    border: 0.3rem solid #f8bb86;
+    margin: auto;
+}
+
+
+
+.set_header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+:host {
+  display: block;
+  background: #fff;
+  border-radius: 20px;
+  padding: 16px;
+
+
+}
+

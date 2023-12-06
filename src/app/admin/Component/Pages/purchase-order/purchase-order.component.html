@@ -1,0 +1,213 @@
+<div class="container my-4 ">
+  <div class="prant_div">
+    <div class="fast_div">
+      <div class="super_chaild">
+        <mat-icon>density_medium</mat-icon>
+        <img src="../../../../../assets/new-product.png" />
+        <span class="fs-4"> Manage Purchase Order</span>
+      </div>
+      <div>
+        <a class="text_routes" routerLink="/admin"> Dashboard </a>
+        <i class="ri-arrow-right-s-line"></i> Purchase Order
+      </div>
+    </div>
+    <div class="secoand_div">
+      <button mat-raised-button (click)="open_Model_order()" matTooltip="Add" class="demo-button">
+        <i class="ri-add-line fs-5"></i>
+      </button>
+      <button mat-raised-button matTooltip="status" class="demo-button dropdown-toggle mx-2 " data-bs-toggle="dropdown"
+        aria-expanded="false">
+        <mat-icon>density_medium</mat-icon>
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="@wweb">Company Name </a></li>
+        <li><a class="dropdown-item" href="#">Company website </a></li>
+      </ul>
+      <button mat-raised-button class="demo-button ">
+        <i class="ri-printer-line fs-5"></i>
+      </button>
+      <button mat-raised-button matTooltip="Filter.." class="demo-button">
+        <i class="ri-filter-2-fill"></i>
+      </button>
+    </div>
+  </div>
+  <hr />
+  <mat-form-field style="height: 100%; width: 100%;">
+    <mat-label>Search</mat-label>
+    <input matInput placeholder="Ex. ium" #input>
+  </mat-form-field>
+  <div class="card row">
+    <div class="col-md-12 col-sm-12 set_scroller" *ngFor="let order of order_list let n = index">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+
+            <th scope="col"> <input class="form-check-" type="checkbox" value="" id="flexCheckDefault"></th>
+            <th scope="col"> ORDER NO.</th>
+            <th scope="col" style="text-align: center;">ORDER<span style="color: #FFF;">a</span>DATE</th>
+            <th scope="col" style="padding-left:2.5rem;">Party Account</th>
+            <th scope="col" style="text-align: center;">Purchase Ledger</th>
+            <th scope="col" style="padding-left: 4rem;">ACTION</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-bs-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false"
+              aria-controls="collapseExample1" scope="row"><i class="fa-light fa-angle-right fa-lg mt-3"
+                style="color: #141414;"></i>
+              </td>
+
+            <!-- <td> <input class="form-check-input mt-2" type="checkbox" value="" id="flexCheckDefault"></td> -->
+           
+            <td><span class="card text-center">{{order.OrderNo}}</span></td>
+            <td><span class="card text-center">{{order.OrderDate | date : 'dd/MM/yy'}}
+              </span></td>
+            <td>
+              <span class="card text-center">{{order.PartyAccount}}
+              </span>
+            </td>
+            <td><span class="card  text-center">{{order.PurchaseSalesLedger}} </span>
+            </td>
+            <td>
+              <div class="parent_div ">
+                <div matTooltip="Copy" style="cursor: pointer;" class="add_icon"
+                  aria-label="Example icon button with a menu icon">
+                  <i class="ri-file-add-line"></i>
+                </div>
+                <div matTooltip="View" style="cursor: pointer;" class="view_icon"
+                  aria-label="Example icon button with a menu icon">
+                  <i class="ri-eye-line"></i>
+                </div>
+                <div matTooltip="Edit" style="cursor: pointer;" class="edit_icon"
+                  aria-label="Example icon button with a menu icon">
+                  <i class="ri-pencil-line"></i>
+                </div>
+                <div matTooltip="Delete" style="cursor: pointer;" class="delete_icon"
+                  aria-label="Example icon button with a menu icon">
+                  <i class="ri-delete-bin-6-line "></i>
+                </div>
+                <div matTooltip="Print" style="cursor: pointer;" class="print_icon"
+                  aria-label="Example icon button with a menu icon">
+                  <i class="ri-printer-fill"></i>
+                </div>
+                <div class="btn-group dropstart">
+                  <button matTooltip="More" type="button" class="btn  " data-bs-toggle="dropdown"
+                    aria-expanded="fals"><i class="ri-more-2-fill"></i>
+                  </button>
+                  <ul class="dropdown-menu" style="width: 16vw;">
+                    <li><a class="dropdown-PRODUCT" href="#"><i class="ri-eye-fill"></i> View Sale</a></li>
+                    <li><a class="dropdown-PRODUCT" href="#"><i class="ri-download-fill"></i> Download
+                        PDF</a></li>
+                    <li><a class="dropdown-PRODUCT" href="#"><i class="ri-money-dollar-circle-fill"></i>
+                        Show Payments</a>
+                    </li>
+
+                    <li><a class="dropdown-PRODUCT" href="#"><i class="ri-shopping-cart-fill"></i> Create
+                        Sale Return</a>
+                    </li>
+
+                    <li><a class="dropdown-PRODUCT" href="#"><i class="ri-pencil-fill"></i> Edit Sale</a>
+                    </li>
+                    <li><a class="dropdown-PRODUCT" href="#"><i class="ri-delete-bin-5-fill"></i> Delete
+                        Sale</a></li>
+                  </ul>
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <!-- open table -->
+         
+      <tr class="m-0">
+        <td colspan="10">
+          <div class="collapse" id="collapseExample1">
+            <table class="table table-hover">
+              <thead>
+                <th scope="col" style="text-align: center;">SR. NO..</th>
+                <th scope="col" style="text-align: center;">PRODUCT NAME</th>
+                <th scope="col" style="padding-left:2.5rem;">QUANTITY</th>
+                <th scope="col" style="text-align: center;">PRICE</th>
+                <th scope="col" style="padding-left: 4rem;">DISCOUNT</th>
+                <th scope="col" style="padding-left: 4rem;">TAX</th>
+                <th scope="col" style="padding-left: 4rem;">AMOUNT</th>
+              </thead>
+              <tbody>
+                <tr *ngFor="let Amountorder of order.newProduct let n = index">
+                  <td><span class="card text-center">{{n+1}}</span></td>
+                  <td><span class="card text-center">{{Amountorder.productname}}</span></td>
+                  <td><span class="card text-center">{{Amountorder.quantity}}</span></td>
+                  <td><span class="card text-center">{{Amountorder.price}}</span></td>
+                  <td>
+                    <span class="card text-center">{{Amountorder.discount}}</span>
+                  </td>
+                  <td><span class="card  text-center">{{Amountorder.tax}}</span> </td>
+                  <td><span class="card  text-center">{{Amountorder.amount}}</span> </td>
+                </tr>
+              </tbody>
+              </table>
+          </div>
+          </td>
+            </tr>
+
+          <!-- open table -->
+          
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="row my-3 ">
+    <div class="prant_div">
+      <div class="new_dropdown">
+        <div>
+          <div class="input-group mb-3">
+            <button type="button" class="btn btn-outline-secondary">10</button>
+            <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              <span class="visually-hidden">Toggle Dropdown</span>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">15</a></li>
+              <li><a class="dropdown-item" href="#">25</a></li>
+              <li><a class="dropdown-item" href="#">50</a></li>
+              <li><a class="dropdown-item" href="#">100</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="d-grid ga d-md-flex justify-content-md-end">
+          <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
+            <div class="btn-group me-2" role="group" aria-label="First group">
+              <button type="button" class="btn btn-outline-secondary"> 1</button>
+              <button type="button" class="btn btn-outline-secondary">2</button>
+              <button type="button" class="btn btn-outline-secondary">3</button>
+              <button type="button" class="btn btn-outline-secondary">4</button>
+              <button type="button" class="btn btn-outline-secondary">5</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="d-grid ga d-md-flex justify-content-md-end">
+          <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
+            <div class="btn-group me-2" role="group" aria-label="First group">
+              <button type="button" class="btn btn-outline-secondary">
+                <i class="fas fa-angle-left"></i>
+              </button>
+              <button type="button" class="btn btn-outline-secondary">
+                <i class="fas fa-angle-left"></i>
+              </button>
+              <button type="button" class="btn btn-outline-secondary">
+                <i class="fas fa-angle-right"></i>
+              </button>
+              <button type="button" class="btn btn-outline-secondary ">
+                <i class="fas fa-angle-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+.page_name{
+    text-align: left;
+    text-transform: capitalize;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 11px;
+  
+  }
+
+  .top_mane{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.set_filed_color{
+    background: #e0e3ff;
+    color: #88b2ec;
+    border-radius: 10px;
+}
+.Field_optional{
+background: #cef2e3;
+color: #37cb8e;
+border-radius: 10px;
+}

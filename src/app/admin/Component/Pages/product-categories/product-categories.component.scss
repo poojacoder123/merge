@@ -1,0 +1,127 @@
+
+table {
+  width: 100%;
+}
+
+.mat-mdc-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+  .demo-button-container {
+    padding-bottom: 16px;
+  }
+  
+  .demo-button  {
+    margin-left: 8px;
+    float: right;
+    background-color: #0a1e3c !important;
+    color: #FFF  !important;
+
+  }
+  .example-button {
+    margin-top: 16px;
+  }
+  
+  .example-tooltip-uppercase {
+    text-transform: uppercase;
+  }
+  
+  @media print {
+    button {
+      display: none;
+    }
+  }
+.page_name{
+  text-align: left;
+  
+  text-transform: capitalize;
+  font-weight: 500;
+ display: flex;
+ align-items: center;
+ gap: 11px;
+
+}
+.mani{
+  display: inline-block;
+
+}
+
+.prant_div{
+  display: flex;
+  align-items: center;
+  justify-content: space-between
+}
+.cut_line{
+
+  height: 35px;
+  width: 6px;
+ 
+  
+ }
+
+ .parent_div {
+  display: flex;
+  gap: 10px;
+ }
+
+ .pagination_link{
+  display: flex;
+ 
+  justify-content: space-between;
+  padding: 10px;
+ }
+ 
+ .new_dropdown{
+  display: flex;
+  gap: 10px;
+ }
+
+
+
+ .btn-outline-secondary:hover{
+  background-color: #6e7881 !important;
+  color: #FFF !important;
+ }
+ .IMG1{
+  height: 6vh;
+  width: 5vw;
+  border-radius: 8px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.top_mane{
+display: flex;
+align-items: center;
+justify-content: space-between;
+}

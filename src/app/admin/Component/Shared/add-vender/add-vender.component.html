@@ -1,0 +1,345 @@
+
+    <form [formGroup]="firstFormGroup">
+    <span mat-dialog-title>
+        <div class="set_header">
+          <div class="d-flex  align-items-center">
+            <i class="fa-solid fa-user-plus fs-2"></i>
+               <span class="text-capitalize fs-4 mx-2 fw-bold" style="font-family: Arial, Helvetica, sans-serif;">Vendor</span>  
+          </div>
+          <div>
+            <button
+            align="end"
+            type="button"
+            [mat-dialog-close]="true"
+            class="btn-close"
+            aria-label="Close"
+          ></button>
+          </div>
+        </div>
+      </span>
+      <mat-divider></mat-divider>
+      <mat-dialog-content>
+    
+    
+        <mat-stepper [linear]="isLinear" #stepper>
+          <mat-step [stepControl]="firstFormGroup">
+            <ng-template matStepLabel >VENDOR INFO</ng-template>
+            <div class="row">
+                <div class="col-lg-6 col-md-4 col-sm-6 mt-2">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Name</label>
+                        <input class="form-control "
+                         formControlName="VendorName" 
+                         type="text" 
+                         id="name"
+                         [ngClass]="{'is-invalid': firstFormGroup.controls['VendorName'].errors && ckfiest }" 
+                         >
+                         <small class="text-danger"
+                         *ngIf="firstFormGroup.controls['VendorName'].errors && ckfiest" 
+                         >Enter Your Name</small>
+                     </div>
+                </div>
+                <div class="col-lg-6 col-md-4 col-sm-6 mt-2">
+                    <div class="form-group">
+                        <label for="contact" class="form-label">Contact No.</label>
+                        <input class="form-control"
+                         formControlName="VendorContactNo" 
+                         type="number"
+                          id="contact"
+                          [ngClass]="{'is-invalid' : firstFormGroup.controls['VendorContactNo'].errors && ckfiest }"
+                          >
+                          <small class="text-danger"
+                          *ngIf="firstFormGroup.controls['VendorContactNo'].errors && ckfiest" 
+                          >Enter Your contact</small>
+                      </div>
+                </div>
+                <div class="col-lg-6 col-md-4 col-sm-6 mt-2">
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email</label>
+                        <input class="form-control"
+                         formControlName="VendorEmail"
+                          type="email" 
+                          id="email"
+                          [ngClass]="{'is-invalid': firstFormGroup.controls['VendorEmail'].errors && ckfiest }"
+                          >
+                          <small class="text-danger"
+                          *ngIf="firstFormGroup.controls['VendorEmail'].errors && ckfiest" 
+                          >Enter Your Email</small>
+                   </div>
+                </div>   
+                <div class="col-lg-6 col-md-4 col-sm-6 my-2">
+                    <div class="form-group">
+                        <label for="tax_number" class="form-label">Ein/Vat/Tax Number</label>
+                        <input class="form-control"
+                         formControlName="VendorTaxNumber"
+                          type="text"
+                           id="tax_number"
+                          [ngClass]="{'is-invalid': firstFormGroup.controls['VendorTaxNumber'].errors && ckfiest }"
+                           >
+                           <small class="text-danger"
+                           *ngIf="firstFormGroup.controls['VendorTaxNumber'].errors && ckfiest" 
+                           >Enter Your Ein</small>      
+                    </div>
+                </div>
+             </div>
+  
+             <mat-divider></mat-divider>
+                <mat-dialog-actions class="py-2" align="end">
+                  <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                    <button class=" Btn_Save" (click)="to_next()" matStepperNext>Next</button>
+                    <div mat-dialog-close class="Btn_Close" >Cancel</div>
+                  </div>
+              </mat-dialog-actions>
+          </mat-step>
+          <mat-step [stepControl]="secondFormGroup" label="BILLING ADDRESS">
+            <form [formGroup]="secondFormGroup">
+              <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 mt-2">
+                    <div class="form-group">
+                        <label for="billing_name" class="form-label">Name</label>
+                        <input class="form-control"
+                         formControlName="BillingName"
+                           type="text"
+                            id="billing_name"
+                            [ngClass]="{'is-invalid': secondFormGroup.controls['BillingName'].errors && cksecond }" 
+                            >
+                       <small class="text-danger"
+                        *ngIf="secondFormGroup.controls['BillingName'].errors && cksecond" 
+                        >Enter Your Name</small>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 mt-2">
+                    <div class="form-group">
+                        <label for="billing_phone" class="form-label">Contact No.</label>
+                        <input class="form-control"
+                         formControlName="BillingContact" 
+                         type="number"
+                          id="billing_phone"
+                          [ngClass]="{'is-invalid': secondFormGroup.controls['BillingContact'].errors && cksecond }"
+                          >
+        
+                        <small class="text-danger"
+                        *ngIf="secondFormGroup.controls['BillingContact'].errors && cksecond" 
+                        >Enter Your Contact</small>
+                    </div>
+                </div>
+                        
+                <div class="col-lg-6 col-md-6 col-sm-6 mt-2">
+                    <div class="form-group">
+                        <label for="billing_city" class="form-label">City</label>
+                        <input class="form-control"  
+                        formControlName="BillingCity" 
+                        type="text"
+                         id="billing_city"
+                         [ngClass]="{'is-invalid': secondFormGroup.controls['BillingCity'].errors && cksecond }"
+                        
+                         >
+                   
+                        <small class="text-danger"
+                        *ngIf="secondFormGroup.controls['BillingCity'].errors && cksecond" 
+                        >Enter Your City</small>
+                      </div>
+                </div>          
+                <div class="col-lg-6 col-md-6 col-sm-6 mt-2">
+                    <div class="form-group">
+                        <label for="billing_state" class="form-label">State</label>
+                        <input class="form-control"
+                          formControlName="BillingState" 
+                          type="text"
+                           id="billing_state"
+                           [ngClass]="{'is-invalid': secondFormGroup.controls['BillingState'].errors && cksecond }"
+                           >
+                    
+                        <small class="text-danger"
+                        *ngIf="secondFormGroup.controls['BillingState'].errors && cksecond" 
+                        >Enter Your State</small>
+                      </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 mt-2">
+                    <div class="form-group">
+                        <label for="billing_country" class="form-label">Country</label>
+                        <input class="form-control"
+                          formControlName="BillingCountry" 
+                          type="text"
+                           id="billing_country"
+                           [ngClass]="{'is-invalid': secondFormGroup.controls['BillingCountry'].errors && cksecond }"
+                           >
+        
+                        <small class="text-danger"
+                        *ngIf="secondFormGroup.controls['BillingCountry'].errors && cksecond" 
+                        >Enter Your Country</small>
+                    </div>
+                </div>        
+                <div class="col-lg-6 col-md-6 col-sm-6 mt-2">
+                    <div class="form-group">
+                        <label for="billing_zip" class="form-label">Zip Code</label>
+                        <input class="form-control" 
+                         formControlName="BillingZipCode"
+                          type="text"
+                           id="billing_zip"
+                           [ngClass]="{'is-invalid': secondFormGroup.controls['BillingZipCode'].errors && cksecond }"
+                           >
+        
+                        <small class="text-danger"
+                        *ngIf="secondFormGroup.controls['BillingZipCode'].errors && cksecond" 
+                        >Enter Your Zip Code</small>
+                    </div>
+                </div>
+                <div class="col-md-12 mt-2">
+                    <div class="form-group">
+                        <label for="shipping_address" class="form-label">Address</label>
+                        <textarea class="form-control" 
+                        rows="3" 
+                         formControlName="BillingAddress"
+                          cols="50"
+                           id="shipping_address"
+                           [ngClass]="{'is-invalid': secondFormGroup.controls['BillingAddress'].errors && cksecond }"
+                           ></textarea>
+                    
+                        <small class="text-danger"
+                        *ngIf="secondFormGroup.controls['BillingAddress'].errors && cksecond" 
+                        >Enter Your Address</small>
+                      </div>
+                </div>
+            </div>
+  
+              <mat-divider></mat-divider>
+              <mat-dialog-actions class="py-2" align="end">
+                <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                  <button matStepperPrevious class="Btn_Close" >Back</button>
+                  <button class=" Btn_Save" matStepperNext (click)="to_next2nd()">Next</button>
+                  
+                </div>
+            </mat-dialog-actions>
+  
+            </form>
+          </mat-step>
+          <mat-step>
+            <ng-template matStepLabel>SHIPPING ADDRESS</ng-template>
+            <form [formGroup]="thirdFormGroup">
+  
+              <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 mt-2">
+                    <div class="form-group">
+                        <label for="shipping_name" class="form-label">Name</label>
+                        <input class="form-control" 
+                        formControlName="ShippingName"
+                          type="text"
+                           id="shipping_name"
+                           [ngClass]="{'is-invalid': thirdFormGroup.controls['ShippingName'].errors && ckthird }"
+                           >
+                           <small class="text-danger"
+                           *ngIf="thirdFormGroup.controls['ShippingName'].errors && ckthird" 
+                           >Enter Your Name</small>
+  
+    
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 mt-2">
+                    <div class="form-group">
+                        <label for="shipping_phone" class="form-label">Contact No.</label>
+                        <input class="form-control"
+                         formControlName="ShippingContactNo"  
+                         type="text"
+                          id="shipping_phone"
+                        [ngClass]="{'is-invalid': thirdFormGroup.controls['ShippingContactNo'].errors && ckthird }"
+                        >
+                        <small class="text-danger"
+                        *ngIf="thirdFormGroup.controls['ShippingContactNo'].errors && ckthird" 
+                        >Enter Your Contact No.</small>
+    
+                    </div>
+                </div>
+               
+                <div class="col-lg-6 col-md-6 col-sm-6 mt-2">
+                    <div class="form-group">
+                        <label for="shipping_city" class="form-label">City</label>
+                        <input class="form-control" 
+                        formControlName="ShippingCity" 
+                         type="text" 
+                         id="shipping_city"
+                        [ngClass]="{'is-invalid': thirdFormGroup.controls['ShippingCity'].errors && ckthird }"
+                        >
+                        <small class="text-danger"
+                        *ngIf="thirdFormGroup.controls['ShippingCity'].errors && ckthird" 
+                        >Enter Your City</small>
+    
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 mt-2">
+                    <div class="form-group">
+                        <label for="shipping_state" class="form-label">State</label>
+                        <input class="form-control" 
+                        formControlName="ShippingState" 
+                         type="text" 
+                         id="shipping_state"
+                        [ngClass]="{'is-invalid': thirdFormGroup.controls['ShippingState'].errors && ckthird }"
+                        >
+                        <small class="text-danger"
+                        *ngIf="thirdFormGroup.controls['ShippingState'].errors && ckthird" 
+                        >Enter Your State</small>
+    
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 mt-2">
+                    <div class="form-group">
+                        <label for="shipping_country" class="form-label">Country</label>
+                        <input class="form-control"
+                         formControlName="ShippingCountry"  
+                         type="text"
+                          id="shipping_country"
+                        [ngClass]="{'is-invalid': thirdFormGroup.controls['ShippingCountry'].errors && ckthird }"
+                        >
+                        <small class="text-danger"
+                        *ngIf="thirdFormGroup.controls['ShippingCountry'].errors && ckthird" 
+                        >Enter Your Country</small>
+    
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 mt-2">
+                    <div class="form-group">
+                        <label for="shipping_zip" class="form-label">Zip Code</label>
+                        <input class="form-control" 
+                        formControlName="ShippingZipCode" 
+                        type="text"
+                         id="shipping_zip"
+                        [ngClass]="{'is-invalid': thirdFormGroup.controls['ShippingZipCode'].errors && ckthird }"
+                        >
+                        <small class="text-danger"
+                        *ngIf="thirdFormGroup.controls['ShippingZipCode'].errors && ckthird" 
+                        >Enter Your Zip Code</small>
+                    </div>
+                </div>
+  
+                <div class="col-md-12 mt-2">
+                    <div class="form-group">
+                        <label for="shipping_address" class="form-label">Address</label>
+                        <textarea class="form-control" 
+                        rows="3" 
+                        formControlName="ShippingAddress"
+                         cols="50"
+                          id="shipping_address"
+                          [ngClass]="{'is-invalid': thirdFormGroup.controls['ShippingAddress'].errors && ckthird }"
+                          ></textarea>
+  
+                          <small class="text-danger"
+                          *ngIf="thirdFormGroup.controls['ShippingAddress'].errors && ckthird" 
+                          >Enter Your Address</small>
+                    </div>
+                </div>
+               
+                <mat-divider></mat-divider>
+                <mat-dialog-actions class="py-2" align="end">
+                  <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                    <div mat-dialog-close class="Btn_Close" >Cancel</div>
+                    <button class="Btn_Save" (click)="to_next3nd()" >Add</button>
+                    
+                  </div>
+              </mat-dialog-actions>
+            </div> 
+            </form>
+  
+          </mat-step>
+        </mat-stepper>
+      </mat-dialog-content>
+  </form>

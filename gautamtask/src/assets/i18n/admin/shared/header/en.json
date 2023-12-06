@@ -1,0 +1,61 @@
+{
+    "header" : {
+        "logoname" : "My App",
+        "softname" : "ERP Bussiness",
+        "userName" : "Anamika Roy",
+        "admin" : "Admin",
+        "placeholder" : "Search...",
+        "menu" : {
+            "item1" : "Dashboard",
+            "item2" : "ERP Business",
+            "item3" : "POS Systems",
+            "item4" : "HRM",
+            "item5" : "CRM",
+            "item6" : "Project System",
+            "item7" : "Appointment",
+            "item8" : "WebSite ",
+            "item9" : "Payroll",
+            "item0" : "E-mail",
+            "item11": "Meeting",
+            "item12" : "Chats",
+            "item13" : "Marketing",
+            "item14" : "Rewards",
+            "item15" : "Job System",
+            "item16" : "Hospital System",
+            "item17" : "Pharmacy System",
+            "item18" : "Hotel System",
+            "item19" : "School System",
+            "item20" : "College System",
+            "item21" : "Card System",
+            "item22" : "Exchange System",
+            "item23" : "Property System",
+            "item24" : "Plans System",
+            "item25" : "API Integration",
+            "item26" : "Support Team"
+         },
+         "submenu" : {
+            "ProductManger" : " Product Manger",
+            "ProductReport" : " Product Report",
+            "SupplyManger" : "Supply Manger",
+            "StockManger" : "Stock Manger",
+            "StockReport" : "Stock Report",
+            "PurchaseManger" : "Purchase Manger",
+            "PurchaseReport" : "Purchase Report",
+            "SalesManger" : "Sales Manger",
+            "SalesReport" : "Sales Report",
+            "ProductionManger" : "Production Manger",
+            "ProductionReport" : "Production Report",
+            "ExpenseManger" : "Expense Manger",
+            "ExpenseReport" : "Expense Report",
+            "POSManger"    : "POS Manger",
+            "POSReport"    : "POS Report",
+            "E-Bill"        : "E-Bill Manger",
+            "PartnershipManger" : "Partnership Manger",
+            "PartnershipReport"  : "Partnership Report",
+            "AccountingManger"   : "Accounting Manger",
+            "AccountingReport"   : "Accounting Report"
+ 
+          }
+    }
+    
+}

@@ -1,0 +1,26 @@
+{
+
+    "card" : {
+        "OrdersPending" : "الطلبات المعلقة",
+        "OrdersProcessing" : "معالجة الطلبات",
+        "OrdersCompleted" : "الطلبات المنجزة",
+        "Expenses" : "نفقات",
+        "TotalPosts" : "إجمالي المشاركات",
+        "Paidorders" : "الطلبات المدفوعة",
+        "Unpaidorders" : "الطلبات غير المدفوعة",
+        "Orderdelivery" : "توصيل الطلب",
+        "Newpurchase" : "شراء جديدة",
+        "Totalpurchase" : "إجمالي الشراء",
+        "TotalCustomers" : "إجمالي العملاء",
+        "TotalProducts" : "إجمالي المنتجات",
+        "NewSales" : "مبيعات جديدة",
+        "TotalSales" : "إجمالي المبيعات",
+        "BestsellingProducts" : "المنتجات الأفضل مبيعًا",
+        "Lowestselling" : "الأدنى - مبيعًا",
+        "OrderUndelivery" : "طلب عدم التسليم",
+        "StagnantProducts" : "طلب عدم التسليم",
+        "btn" : "مشاهدة الكل"
+    }
+
+    
+}

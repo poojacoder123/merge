@@ -1,0 +1,203 @@
+<div class="container-fluid my-4 " >
+
+<div class="prant_div">
+    <div class="fast_div">
+      <div class="super_chaild">
+
+        <mat-icon>density_medium</mat-icon>
+        <img src="../../../../../assets/new-product.png"  />
+        <span class="fs-4">Manage Product</span>
+      </div>
+      <div>
+        <a class="text_routes" routerLink="/admin"> Dashboard </a>
+        <i class="ri-arrow-right-s-line"></i> Product
+
+      </div>
+    </div>
+<div class="secoand_div">
+  <button mat-raised-button matTooltip="Search.."
+  class="demo-button" >
+  <i class="ri-filter-2-fill"></i>
+  </button>
+  <button mat-raised-button  matTooltip="status" class="demo-button dropdown-toggle mx-2 "  data-bs-toggle="dropdown" aria-expanded="false">
+    <mat-icon>density_medium</mat-icon>
+  </button>
+  <ul class="dropdown-menu">
+    
+    <li><a class="dropdown-item" href="@wweb">Company Name </a></li>
+    <li><a class="dropdown-item" href="#">Company website </a></li>
+  </ul>
+  <button mat-raised-button matTooltip="Add" (click)="add_product()" class="demo-button ">
+    <i class="ri-add-line fs-4"></i>
+  </button>
+ 
+</div>
+
+
+
+</div>
+<hr/>
+  <mat-form-field style="height: 100%; width: 100%;" >
+    <mat-label>Search</mat-label>
+   <input matInput  placeholder="Ex. ium"  #input>
+   </mat-form-field> 
+
+
+
+
+
+ <div class="card row">
+  <div class="col-md-12 col-sm-12 set_scroller" >
+  <table  class="table  table-hover">
+      <thead >
+        <tr style="border:none">
+          <th >
+            <span >
+
+              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            </span>
+          </th>
+          <th scope="col"  class="text-center">IMAGE</th>
+          <th scope="col" class="text-center">NAME</th>
+          <th scope="col" class="text-center" >PRICES</th>
+          <th scope="col" class=" text-center text-uppercase" > Inventory</th>
+          <th scope="col" class="text-center" >EXPRY<span style="color: #ffffff;">_</span>DATE<span style="color: #ffffff;">____</span></th>
+          <th scope="col">STATUS</th>
+          <th scope="col" style="text-align: center;">SKU</th>
+          <th scope="col " style="text-align: center;">ACTION</th>
+        
+          </tr>
+     
+      </thead>
+ 
+      <tbody>
+    
+          <tr *ngFor="let p of dataSource ; ">
+              <td class="mt-4">
+                <span >
+                  <input class="form-check-input mt-2" type="checkbox"  id="flexCheckDefault">
+              </span>
+              </td>
+              <td ><img class="IMG1" src={{p.img}} alt=""></td>
+              <td ><div  style="width: 200px;" class="text_decoreion p-2 border border-1 rounded text-start">{{p.name}}</div></td>
+             
+              <td><div  style="width: 100px;" class="text_decoreion border border-1 rounded p-2 text-center">{{p.price}} $</div></td>
+             <td>
+                  <div  style="width: 150px;" class="text_decoreion border border-1 rounded py-2 px-3 text-center">{{p.quantity}}</div>
+                  
+              </td>
+              <td> <div  class="text_decoreion border border-1 rounded py-2 px-5">{{p.expiry_date}}</div></td>
+              <td><input id="s2" type="checkbox" class="switch mx-2 mt-2" >
+              </td>
+
+              <td class="mt-1"><div class="dropdown">
+                  <button class="btn btn-outline-secondary dropdown-toggle"(click)="openModal()" >
+                    Barcode
+                  </button>
+                
+                </div>
+              </td>
+                    <td class="mt-1">
+                      <div class="parent_div">
+                      <div class="add_icon" matTooltip="copy"
+                        aria-label="Example icon button with a menu icon">
+                        <i class="ri-file-add-line"></i>
+                      </div>
+                      <div class="view_icon mx-2"
+                      matTooltip="View"
+                      >
+                        <i class="ri-eye-line"></i>
+                      </div>
+                      <div class="edit_icon"
+                      matTooltip="Edit"
+                      >
+                             <i class="ri-pencil-line"></i>
+                      </div>
+                      <div class="delete_icon mx-2"
+                      matTooltip="Delete"
+                        aria-label="Example icon button with a menu icon">
+                        <i class="ri-delete-bin-6-line "></i>
+                      </div>
+                      <div class="print_icon"
+                      matTooltip="Print"
+                      aria-label="Example icon button with a menu icon">
+                      <i class="ri-printer-fill"></i>
+                      </div>
+                    </div>
+                  </td>
+               </tr>
+        </tbody>
+  </table>
+</div>
+ 
+  </div>
+
+
+
+ <div class="row my-3 ">
+  <div class="prant_div">
+    <div class="new_dropdown" >
+      <div >
+        <div class="input-group mb-3">
+            <button type="button" class="btn btn-outline-secondary">10</button>
+            <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <span class="visually-hidden">Toggle Dropdown</span>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">15</a></li>
+              <li><a class="dropdown-item" href="#">25</a></li>
+              <li><a class="dropdown-item" href="#">50</a></li>
+              <li><a class="dropdown-item" href="#">100</a></li>
+            </ul>
+          </div>
+         </div>
+          </div>
+          <div >
+            <div class="d-grid ga d-md-flex justify-content-md-end">
+               <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
+                  <div class="btn-group me-2" role="group" aria-label="First group">
+                      <button type="button" class="btn btn-outline-secondary" > 1</button>
+                      <button type="button" class="btn btn-outline-secondary">2</button>
+                      <button type="button" class="btn btn-outline-secondary">3</button>
+                      <button type="button" class="btn btn-outline-secondary">4</button>
+                      <button type="button" class="btn btn-outline-secondary">5</button>
+                  </div>
+              </div>
+          </div>
+     </div>
+  <div >
+    <div class="d-grid ga d-md-flex justify-content-md-end">
+       <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
+          <div class="btn-group me-2" role="group" aria-label="First group">
+              <button type="button" class="btn btn-outline-secondary"> |
+                  <i class="fas fa-angle-left"></i>
+                  </button>
+              <button type="button" class="btn btn-outline-secondary">
+                <i class="fas fa-angle-left"></i>
+                    </button>
+              <button type="button" class="btn btn-outline-secondary">
+                <i class="fas fa-angle-right"></i>
+                    </button>
+              <button type="button" class="btn btn-outline-secondary " >
+                <i class="fas fa-angle-right"></i> |
+              </button>
+          </div>
+      </div>
+  </div>
+
+  </div>
+  </div>
+
+ 
+</div>
+
+
+
+
+
+
+
+</div>
+
+

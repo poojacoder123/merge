@@ -1,0 +1,41 @@
+<span mat-dialog-title>
+
+    <div class="set_header">
+        <div class="d-flex  align-items-center">
+            <img src="./assets/submenu/grid.png" style="height: 5vh;" alt="" srcset="">
+            <span class="text-capitalize fs-4 mx-2" style="font-family: Arial, Helvetica, sans-serif;"> Categorie</span>
+        </div>
+        <div>
+            <button align="end" type="button" [mat-dialog-close]="true" class="btn-close" aria-label="Close"></button>
+        </div>
+    </div>
+
+
+</span>
+<mat-divider></mat-divider>
+<div mat-dialog-content>
+    <form [formGroup]="AddCategories">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="form-label">Category Images</label>
+                <input type="file" (change)="img_upload($event)" formControlName="CategoryImage" class="form-control" placeholder="Category Images..." />
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="form-label">Category Name</label>
+                <input type="text" formControlName="CategoryName" class="form-control" placeholder="Category Name..." />
+            </div>
+        </div>
+    </div>
+    </form>
+
+</div>
+<mat-divider></mat-divider>
+<mat-dialog-actions align="center">
+    <div class="d-grid gap-2 mt-2 d-md-flex justify-content-md-center">
+        <div class=" Btn_Save" (click)="add_Categorys()" type="button">Save</div>
+        <div mat-dialog-close class="Btn_Close">Cancel</div>
+    </div>
+</mat-dialog-actions>

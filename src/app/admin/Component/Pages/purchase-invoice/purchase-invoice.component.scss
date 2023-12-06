@@ -1,0 +1,85 @@
+
+.c1 {
+    background-color: white;
+    border-radius: 2%;
+   
+
+}
+.super_chaild{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.demo-button  {
+    margin-left: 8px;
+    float: right;
+    background-color: #0a1e3c !important;
+    color: #FFF  !important;
+
+  }
+.mani{
+    display: inline-block;
+  
+  }
+
+  .page_name{
+    text-align: left;
+    
+    text-transform: capitalize;
+    font-weight: 500;
+   display: flex;
+   align-items: center;
+   gap: 11px;
+  
+  }
+
+.span1 {
+    background-color: #f7e6e6;
+    border-radius: 5%;
+    color: red;
+    padding: 5px;
+
+}
+
+.span2 {
+    background-color: #c7dce4;
+    border-radius: 5%;
+    color: rgb(26, 151, 209);
+    padding: 5px;
+
+}
+
+.IMG1 {
+    height: 5vh;
+
+}
+
+.IMG2 {
+    height: 8vh;
+    width: 10vw;
+    /* icon action   */
+}
+
+.parent_div {
+    display: flex;
+    gap: 10px;
+}
+
+
+
+.salesicon {
+    width: 5vw;
+}
+
+.card {
+    padding: .5rem;
+}
+
+
+.set_color:hover{
+    background-color: #8a8888;
+    color: #FFF;
+  
+}
+
+    

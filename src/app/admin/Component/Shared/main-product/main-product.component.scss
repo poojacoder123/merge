@@ -1,0 +1,76 @@
+
+
+body {
+    background-color: rgb(241, 241, 241);
+}
+
+.form-control {
+    border: .5PX solid gray;
+    
+   
+}
+.example-additional-selection {
+    opacity: 0.75;
+    font-size: 0.75em;
+
+  }
+  
+
+.form-control1 {
+    border: .5PX solid gray;
+    border-radius: 5px;
+    
+    
+   
+}
+
+.form-select {
+    border: .5PX solid gray;
+    
+}
+
+.Edate {
+    border: .5PX solid gray;
+   
+}
+
+#form1 {
+
+    background-color: white;
+    margin-top: .5rem;
+    border-radius: 10px;
+}
+.set_input{
+    display: flex;
+    gap: 10px;
+}
+
+
+.Product_btn{
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 22px;
+}
+.btn_submit{
+    background-color:#0a1e3c ;
+    color: #FFF;
+    padding: 8px;
+    border-radius: 8px;
+    border: none;
+}
+.btn_submit:hover{
+    background-color:rgb(31, 156, 31);
+}
+.btn_cancel{
+background-color:#5ef5dce8 ;
+padding: 8px;
+border-radius: 8px;
+color: #0a1e3c;
+border: none;
+
+}
+.btn_cancel:hover{
+    background-color: rgb(226, 31, 31);
+    color: #FFF;
+}

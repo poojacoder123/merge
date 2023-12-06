@@ -1,0 +1,240 @@
+<div class="container-fluid my-4 ">
+    <div class="prant_div">
+        <div class="fast_div">
+            <div class="super_chaild">
+                <mat-icon>density_medium</mat-icon>
+                <img src="../../../../../assets/logos/WhatsApp Image 2023-11-09 at 7.21.39 PM.jpeg" alt="">
+                <!-- <i class=" fs-4 fa-solid fa-users"></i>                -->
+                <span class="fs-4">Expenses </span>
+            </div>
+            <div>
+                <a class="text_routes" routerLink="/admin"> Dashboard </a>
+                <i class="ri-arrow-right-s-line"></i> Expenses
+            </div>
+        </div>
+        <div class="secoand_div">
+  
+            <button mat-raised-button matTooltip="Filter.." class="demo-button">
+                <!-- <i class="ri-add-line fs-5"></i> -->
+                <i class="ri-filter-2-fill"></i>
+  
+            </button>
+            <button mat-raised-button matTooltip="status" class="demo-button dropdown-toggle mx-2 "
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <mat-icon>density_medium</mat-icon>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="@wweb">Company Name </a></li>
+                <li><a class="dropdown-item" href="#">Company website </a></li>
+            </ul>
+            <button mat-raised-button class="demo-button ">
+                <i class="ri-printer-line fs-5"></i>
+            </button>
+            <button mat-raised-button matTooltip="Add" (click)="expenses()" class="demo-button ms-2">
+                <!-- <i class="ri-filter-2-fill"></i> -->
+                <i class="ri-add-line fs-5 "></i>
+  
+                <!-- fitter -->
+            </button>
+        </div>
+  
+    </div>
+    <hr />
+    <mat-form-field style="height: 100%; width: 100%;">
+        <mat-label>Search</mat-label>
+        <input matInput placeholder="Ex. ium" #input>
+    </mat-form-field>
+
+
+    <div class="card row">
+        <div class="col-md-12 col-sm-12 set_scroller">
+  
+        
+            <table class="table table-hover">
+                <thead>
+                    <th scope="col"> <input class="form-check-" type="checkbox" value="" id="flexCheckDefault"></th>
+                    <th scope="col"  style="text-align: center;">Date</th>
+    
+                    <th scope="col" style="text-align: center; white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">Expense Category</th>
+                   
+                    
+                    <th scope="col" style="text-align: center;">Amount</th>
+                    <th scope="col" style="text-align: center;">Payee</th>
+                  
+                    
+                    <th scope="col " style="padding-left: 4rem;  white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">Payment Method</th>
+                    <th scope="col " style="padding-left: 4rem; white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">Receipt Number</th>
+                    <th scope="col " style="padding-left: 4rem;">Description</th>
+                    <th scope="col " style="text-align: center;  white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">Account Code</th>
+                    <th scope="col " style="text-align: center">Status</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td> <input class="form-check-input mt-2" type="checkbox" value="" id="flexCheckDefault"></td>
+    
+                        <td><span class="card text-center">2023-11-06</span></td>
+                        
+                       
+                        <td><span class="card text-center" style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">Office Supplies
+                            </span></td>
+                        <!-- <td >
+                            <div  class="btn-group " role="group" aria-label="Basic outlined example">
+                                <button type="button" class="btn btn-outline-secondary" checked>-</button>
+                                <button type="button" class="btn btn-outline-secondary">1</button>
+                                <button type="button" class="btn btn-outline-secondary">+</button>
+                            </div>
+                        </td> -->
+    
+                        <td><span class="card text-center">$100.00
+                            </span></td>
+                        <td> <span class="card text-center">ABC Company</span></td>
+                        <td> <span class="card text-center">Credit Card</span></td>
+                        <td> <span class="card text-center">12345</span></td>
+                        <td> <span class="card text-center" style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">Purchase of office stationery</span></td>
+    
+                        <td> <span class="card text-center">1001</span></td>
+                        <td> <span class="card text-center" style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis; background-color:#40ff00 ;">Paid</span></td>
+    
+    
+                        
+                        
+    
+                        
+                        
+    
+    
+    
+                    </tr>
+    
+    
+                    <tr>
+                        <td> <input class="form-check-input mt-2" type="checkbox" value="" id="flexCheckDefault"></td>
+    
+                        <td><span class="card text-center">2023-11-06</span></td>
+                        
+                       
+                        <td><span class="card text-center" style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">Office Supplies
+                            </span></td>
+                        <!-- <td >
+                            <div  class="btn-group " role="group" aria-label="Basic outlined example">
+                                <button type="button" class="btn btn-outline-secondary" checked>-</button>
+                                <button type="button" class="btn btn-outline-secondary">1</button>
+                                <button type="button" class="btn btn-outline-secondary">+</button>
+                            </div>
+                        </td> -->
+    
+                        <td><span class="card text-center">$100.00
+                            </span></td>
+                        <td> <span class="card text-center">ABC Company</span></td>
+                        <td> <span class="card text-center">Credit Card</span></td>
+                        <td> <span class="card text-center">12345</span></td>
+                        <td> <span class="card text-center" style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">Purchase of office stationery</span></td>
+    
+                        <td> <span class="card text-center">1001</span></td>
+                        <td> <span class="card text-center " style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis; background-color:#40ff00;">Paid</span></td>
+    
+    
+                        
+                        
+    
+                        
+                        
+    
+    
+    
+                    </tr>
+    
+                    <tr>
+                        <td> <input class="form-check-input mt-2" type="checkbox" value="" id="flexCheckDefault"></td>
+    
+                        <td><span class="card text-center" style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">2023-11-01</span></td>
+                        
+                       
+                        <td><span class="card text-center" style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">Utilities
+                            </span></td>
+                        <td >
+                            <!-- <div  class="btn-group " role="group" aria-label="Basic outlined example">
+                                <button type="button" class="btn btn-outline-secondary" checked>-</button>
+                                <button type="button" class="btn btn-outline-secondary">1</button>
+                                <button type="button" class="btn btn-outline-secondary">+</button>
+                            </div> -->
+                            <span class="card text-center" style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">$200
+                            </span>
+                        </td>
+    
+                       
+                        
+                        <td> <span class="card text-center" style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">DEF Comapany</span></td>
+                        <td> <span class="card text-center" style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">Cash</span></td>
+                        <td> <span class="card text-center" style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">12345</span></td>
+    
+                        <td> <span class="card text-center" style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">Purchase of office stationery</span></td>
+    
+                        <td> <span class="card text-center" style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">1001</span></td>
+    
+                        <td> <span class="card text-center bg-danger" style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis; color: white;">UnPaid</span></td>
+                    </tr>
+    
+                    
+    
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+    <div class="row my-3 ">
+        <div class="prant_div">
+            <div class="new_dropdown">
+                <div>
+                    <div class="input-group mb-3">
+                        <button type="button" class="btn btn-outline-secondary">10</button>
+                        <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="visually-hidden">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">15</a></li>
+                            <li><a class="dropdown-item" href="#">25</a></li>
+                            <li><a class="dropdown-item" href="#">50</a></li>
+                            <li><a class="dropdown-item" href="#">100</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="d-grid ga d-md-flex justify-content-md-end">
+                    <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
+                        <div class="btn-group me-2" role="group" aria-label="First group">
+                            <button type="button" class="btn btn-outline-secondary"> 1</button>
+                            <button type="button" class="btn btn-outline-secondary">2</button>
+                            <button type="button" class="btn btn-outline-secondary">3</button>
+                            <button type="button" class="btn btn-outline-secondary">4</button>
+                            <button type="button" class="btn btn-outline-secondary">5</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="d-grid ga d-md-flex justify-content-md-end">
+                    <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
+                        <div class="btn-group me-2" role="group" aria-label="First group">
+                            <button type="button" class="btn btn-outline-secondary">
+                                <i class="fas fa-angle-left"></i>
+                            </button>
+                            <button type="button" class="btn btn-outline-secondary">
+                                <i class="fas fa-angle-left"></i>
+                            </button>
+                            <button type="button" class="btn btn-outline-secondary">
+                                <i class="fas fa-angle-right"></i>
+                            </button>
+                            <button type="button" class="btn btn-outline-secondary ">
+                                <i class="fas fa-angle-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+

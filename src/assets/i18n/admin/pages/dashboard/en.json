@@ -1,0 +1,26 @@
+{
+
+    "card" : {
+        "OrdersPending" : "Orders Pending",
+        "OrdersProcessing" : "Orders Processing",
+        "OrdersCompleted" : "Orders Completed",
+        "Expenses" : "Expenses",
+        "TotalPosts" : "Total Posts",
+        "Paidorders" : "Paid orders",
+        "Unpaidorders" : "Unpaid orders",
+        "Orderdelivery" : "Order delivery",
+        "Newpurchase" : "New purchase",
+        "Totalpurchase" : "Total purchase",
+        "TotalCustomers" : "Total Customers",
+        "TotalProducts" : "Total Products",
+        "NewSales" : "New Sales",
+        "TotalSales" : "Total Sales",
+        "BestsellingProducts" : "Bestselling Products",
+        "Lowestselling" : "Lowest - selling",
+        "OrderUndelivery" : "Order Undelivery",
+        "StagnantProducts" : "Stagnant Products",
+        "btn" : "View All"
+    }
+
+    
+}

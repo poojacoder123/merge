@@ -1,0 +1,160 @@
+<span mat-dialog-title>
+  <div class="set_header">
+    <div class="d-flex  align-items-center">
+      <img src="../../../../../assets/submenu/brand-image.png" style="height: 5vh;" alt="" srcset="">
+      <span class="text-capitalize fs-4 mx-2 fw-bold" style="font-family: Arial, Helvetica, sans-serif;"> Purchase
+        Order</span>
+    </div>
+    <div>
+      <button align="end" type="button" [mat-dialog-close]="true" class="btn-close" aria-label="Close"></button>
+    </div>
+  </div>
+</span>
+<mat-divider></mat-divider>
+<mat-dialog-content>
+  <form [formGroup]="PurchaseOrderform">
+    <div class="container-fluid c1 py-3 my-2">
+      <div class="row">
+   
+        <div class="  col-md-4 col-sm-12" style="line-height: 2rem;  ">
+          <label class="form-label" for="specificSizeSelect">Order Date</label>
+          <input type="date" formControlName="OrderDate" class="form-control" />
+          <small class="text-danger"
+            *ngIf="PurchaseOrderform.controls['OrderDate'].errors && ckPurchaseOrderform">Select your Order Date
+          </small>
+        </div>
+
+        <div class=" col-sm-4 col-md-4" style="line-height: 2rem;  ">
+
+          <label class="form-label">Party Account</label>
+          <select class="form-select" formControlName="PartyAccount">
+            <option value="">Select</option>
+            <option>Amer</option>
+            <option>Ram</option>
+            <option>Shyem</option>
+          </select>
+
+          <small class="text-danger"
+            *ngIf="PurchaseOrderform.controls['PartyAccount'].errors && ckPurchaseOrderform">Select your PARTY
+            ACCOUNT</small>
+
+        </div>
+
+        <div class="col-sm-4 col-md-4" style="line-height: 2rem;  ">
+          <label class="form-label"> Purchase Ledger</label>
+          <select class="form-select" (change)="addControl()" formControlName="PurchaseSalesLedger">
+            <option value="">Select</option>
+            <option>PURCHASE ACCOUNT</option>
+            <option>Two</option>
+            <option>Three</option>
+          </select>
+          <small class="text-danger"
+            *ngIf="PurchaseOrderform.controls['PurchaseSalesLedger'].errors && ckPurchaseOrderform">Select your PURCHASE
+            LEDGER</small>
+
+
+
+        </div>
+
+
+
+        <div class=" col-sm-12 col-md-3" style="line-height: 2rem;">
+
+          <input type="hidden" formControlName="Status" class="form-control" value="pending" id="inputPassword ">
+
+        </div>
+
+        <div class=" col-sm-12 col-md-12" style="line-height: 2rem; ">
+          <label class="form-label" for="autoSizingInputGroup">Notes</label>
+          <input type="text" formControlName="Notes" class="form-control" id="autoSizingInputGroup "
+            placeholder="Enter Notes">
+
+        </div>
+      </div>
+    </div>
+    <div formArrayName="newProduct">
+      <div *ngFor="let control of newProduct.controls; let i = index" [formGroupName]="i">
+        <div class="container-fluid c1 py-3 my-2">
+          <div class="row">
+            <table class="table table-hover table-bordered">
+              <thead>
+                <tr>
+                  <th>S.No.</th>
+                  <th> Product Name</th>
+                  <th> Due Date</th>
+                  <th>Warehouse</th>
+                  <th>Quantity</th>
+                  <th>Price</th>
+                  <th>Discount%</th>
+                  <th>Tax</th>
+                  <th>Amount</th>
+
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{{i+1}}</td>
+                  <td>
+
+                    <select class="form-select" formControlName="productname" id="specificSizeSelect">
+                      <option value="">Select</option>
+                      <option>PRODUCT 2</option>
+                      <option>PRODUCT 3</option>
+                      <option>PRODUCT 4</option>
+                    </select>
+                   </td>
+                  <td>
+                    <input type="date" formControlName="duedate" class="form-control" placeholder=" ">
+
+                  </td>
+                  <td>
+                    <select class="form-select" (change)="addControl()" formControlName="warehouse"
+                      id="specificSizeSelect">
+                      <option value="">Select</option>
+                      <option>Warehouse 1</option>
+                      <option>Warehouse 2</option>
+                    </select>
+
+                  </td>
+
+                  <td>
+                    <input type="text" (input)="updateAmounts()" formControlName="quantity" class="form-control"
+                      id="inputPassword " placeholder="Enter Quantity">
+                  </td>
+                  <td>
+                     <input type="text" (input)="updateAmounts()"   formControlName="price" class="form-control"
+                      placeholder="Enter Price">
+                  </td>
+                  <td>
+                    <input type="text" (input)="updateAmounts()"  formControlName="discount" class="form-control" placeholder="Discount">
+
+                  </td>
+                
+                  <td>
+                    <input type="text"  (input)="updateAmounts()" formControlName="tax" class="form-control" placeholder="Tax">
+
+                  </td>
+                
+                  <td>
+                    <input type="text"  [disabled]="disableAmount" formControlName="amount"  [value]="newProduct.get('amount')?.value" class="form-control" placeholder="Amount">
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+
+  </form>
+</mat-dialog-content>
+<mat-divider></mat-divider>
+<mat-dialog-actions class="py-2" align="end">
+  <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+    <div class=" Btn_Save" (click)="add_order()" type="button">Save</div>
+    <div mat-dialog-close class="Btn_Close">Cancel</div>
+  </div>
+</mat-dialog-actions>

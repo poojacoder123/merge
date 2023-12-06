@@ -1,0 +1,363 @@
+<div class="container" style="min-width: 900px;">
+        <h3><img src="assets/inventory-clipart-5.jpg" alt="" style="height: 10VH; margin: 1rem; border-radius: 40px;" >Product Add</h3>
+            <div class="row gy-2 gx-4 my-3 py-3"  id="form1">
+            <div class="col-md-12">
+                    <div class="container">
+                        <div class="row" style="padding-bottom: 0.5rem;">
+                            <div class="col-md-6">
+                                <label class="form-label" for="autoSizingInput">Product Name</label>
+                                <input type="text" class="form-control" id="autoSizingInput" placeholder="Product Name" >
+                              
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label" for="autoSizingInputGroup">Product Type</label>
+                                <div class="input-group mb-3">
+                                    <select class="form-select" (change)="set_product_type($event)" id="inputGroupSelect02">
+                                        <option value="" >select</option>
+                                        <option>Ecommerce Product</option>
+                                        <option >Restaurant POS</option>
+                                        <option>Grocery</option>
+                                    </select>
+                                       
+                                     
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="container">
+                                    <div class="row">
+                                      
+                                
+                                        <div class="col-md-6">
+                                        <label class="form-label" for="autoSizingInputGroup">Product Price </label>
+                                            <div class="input-group">
+                                                <input type="number" class="form-control" (keyup)="product_prices($event)" placeholder="Product  Price">
+                                                <div class="input-group-text ">{{all_tag}}</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label" for="autoSizingInputGroup">Product Cost</label>
+                                            <div class="input-group ">
+                                                <input type="number" class="form-control" (keyup)="product_cost($event)" placeholder="Product Cost">
+                                                <div class="input-group-text ">{{all_tag}}</div>
+                                            </div>
+                                    </div>
+                                        
+                                    </div>
+                                    <div class="row mt-3">
+                                
+                                        <div class="col-md-6">
+                                        <label class="form-label" for="autoSizingInputGroup">Profit</label>
+                                            <div class="input-group">
+                                                <input type="text" disabled class="form-control" value="{{ totalProfit | currency }}">
+                                                <div class="input-group-text ">{{all_tag}}</div>
+                                            </div>
+                                        </div>
+                                            
+                                        <div class="col-md-6">
+                                                <label class="form-label" for="autoSizingInputGroup">Margin</label>
+                                                <div class="input-group ">
+                                
+                                                    <input type="text" disabled class=" form-control" value="{{ totalMargin }}%" >
+                                                    <div class="input-group-text">{{all_tag}}</div>
+                                                </div>
+                                        </div>
+                                    </div>
+                           
+                            
+                                </div>
+                                </div>
+                        </div>
+                    </div>
+            </div>
+            </div> 
+            <div class="row gy-2 gx-4 my-3 py-3" id="form1">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="form-label" for="autoSizingInput"> Quantity </label>
+                        <input type="text" class="form-control" id="autoSizingInput" placeholder="Quantity " >
+        
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label" for="autoSizingInput">Quantity Limitation</label>
+                        <input type="text" class="form-control" id="autoSizingInput" placeholder="Quantity Limitation" >
+        
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="form-label" for="autoSizingInput">Stock Alert</label>
+                        <input type="text" class="form-control" id="autoSizingInput" placeholder="Stock Alert" >
+                
+                    </div>
+                    <div class="col-md-6">
+                     
+                        <label class="form-label" for="specificSizeSelect">Expiry Date</label>
+                        <input class="form-control" type="date" id="Test_DatetimeLocal"
+                      >
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="form-label" for="autoSizingInput">Barcode</label>
+                        <input type="text" class="form-control" id="autoSizingInput" placeholder="" >
+            
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label" for="autoSizingInput">SKU  (Stock Keeping Unit)</label>
+                        <input type="text" class="form-control" id="autoSizingInput" placeholder="" >
+            
+                    </div>
+                </div>
+<!-- option variantion strat -->
+                    <ng-container *ngIf="product_types == 'Ecommerce Product'">
+                        <div class="row">
+
+                        <label class="form-label">Add Option</label>
+                        <select (change)="set_variants($event)" class=" form-control">
+                            <option>Select</option>
+                            <option>Color</option>
+                            <option> Size</option>
+                            <option> Material</option>
+                        </select>
+                          
+                          <ng-container *ngIf="set_variant == 'Color' ">
+                            <div class="my-4">
+                              <ng-multiselect-dropdown [placeholder]="'color'" [settings]="dropdownSettingscolor" [data]="dropdownListcolor"
+                                [(ngModel)]="selectedItemscolor" (onSelect)="onItemSelectColor($event)" (onSelectAll)="onSelectAllColor($event)">
+                              </ng-multiselect-dropdown>
+                            </div>
+                          </ng-container>
+                        <ng-container *ngIf="set_variant == 'Material' ">
+                            <div class="my-4">
+                              <ng-multiselect-dropdown [placeholder]="'Material'" [settings]="dropdownSettingsMaterial"
+                                [data]="dropdownListMaterial" [(ngModel)]="selectedItemsmaterial" (onSelect)="onItemSelectMaterial($event)"
+                                (onSelectAll)="onSelectAllMaterial($event)">
+                              </ng-multiselect-dropdown>
+                            </div>
+                        </ng-container>
+                          
+                        <ng-container *ngIf="set_variant == 'Size' ">
+                            <div class="my-4">
+                              <ng-multiselect-dropdown [placeholder]="'Size'" [settings]="dropdownSettingsSize" [data]="dropdownListSize"
+                                [(ngModel)]="selectedItemsSize" (onSelect)="onItemSelectsize($event)" (onSelectAll)="onSelectAllsize($event)">
+                              </ng-multiselect-dropdown>
+                            </div>
+                        </ng-container>
+                        <table *ngIf="varent_color.length > 0" class="table table-light">
+                            <thead>
+                              <tr>
+                                <th> <input type="checkbox" /> Variant </th>
+                                <th class="text-center" > Price </th>
+                                <th class="text-center" > Available </th>
+                                <th class="text-center" > On hand </th>
+                                <th class="text-center" > SKU </th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr *ngFor="let c of varent_color">
+                                <td>
+                                  <div class="fs-5"> color : {{c.color}} </div>
+                                  <div *ngFor="let m of varent_Material" class="fs-5"> Material:{{m.material_name}}</div>
+                                  <div *ngFor="let s of varent_Size" class="fs-5"> Size:{{s.size}}</div>
+                                </td>
+                                <td>
+                                  <div class="d-flex justify-content-center  align-items-center">
+                                        <input class="form-control mt-2" type="text" />
+                                  </div>
+                                </td>
+                                <td>
+                                  <input class="form-control mt-2" type="text" />
+                                </td>
+                                <td>
+                                  <input class="form-control mt-2" type="text" />
+                                </td>
+                                <td>
+                                  <input class="form-control mt-2" type="text" />
+                                </td>
+                              </tr>
+                          
+                            </tbody>
+                        </table>
+                          
+                    </div>
+                        
+                    </ng-container>
+               
+
+
+
+                <div class="row"  style="padding-bottom: 1rem;">
+                    <div class="col-md-6">
+                    <label class="form-label" for="autoSizingInputGroup"> Categories</label>
+                            <ng-multiselect-dropdown
+                            [placeholder]="'Select'"
+                            [settings]="dropdownSettings"
+                            [data]="allCategoryName"
+                            [(ngModel)]="selectedItems"
+                            (onSelect)="onItemSelect($event)"
+                            (onSelectAll)="onSelectAll($event)"
+                        > </ng-multiselect-dropdown>
+                        
+                           
+
+                       
+
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label" for="specificSizeSelect"> Unit</label>
+                        <select class="form-select" id="specificSizeSelect">
+                            <option selected>Select</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                </div> 
+            </div>
+            
+            <div class="row gy-2 gx-4 my-3 py-3" id="form1">
+
+                <div class="container">
+
+                
+                    <div class="row">
+                        <div class="col-md-6">
+                            
+                    <label class="form-label" for="specificSizeSelect">Brand</label>
+                    <select class="form-select" id="specificSizeSelect">
+                        <option >Select</option>
+                        <option value="" *ngFor="let b of allBrandName">{{b.brandname}}</option>
+                        
+                    </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label" for="autoSizingInputGroup">Supplier</label>
+                            <div class="input-group mb-3">
+                                <select class="form-select" id="inputGroupSelect02">
+                                    <option selected>Select</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                
+                            </div>
+                        </div>
+
+                
+                        
+                    </div>
+                    <div class="row ">
+                        <div class="col-md-6">
+
+                            <label class="form-label" for="autoSizingInputGroup"> Tax Type</label>
+                            <select class="form-select" id="specificSizeSelect">
+                                <option selected>Select</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                     <label class="form-label" for="specificSizeSelect">Product Tax</label>
+                     <select class="form-select" id="specificSizeSelect">
+                        <option selected>Select</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                        </div>
+
+                    </div> 
+
+                    
+                </div>
+            </div>
+
+
+            <div class="row gy-2 gx-4 my-3 py-3" id="form1">
+              
+
+                <div class="col-md-12">
+                    <div class="container">
+                        <div class="row" style="padding-bottom: 1rem;">
+                            <label class="form-label" for="autoSizingInput">Media</label>
+                            <div class="form-control1 " style="border: dashed gray 1px; ">
+                                <div class=" py-5">
+                                 <div class="drag-file-area mt-1  d-flex justify-content-center  align-items-center ">
+                                        <input type="file" class="form-control"  id="inputGroupFile01" style="width: 7vw; margin: 2px;"> <span class="material-icons-outlined upload-icon"><b>Add from URL</b> </span>
+                                    </div>
+                                                         
+                
+                                    <div class="drag-file-area mt-1  d-flex justify-content-center ">
+                                        <span class="material-icons-outlined upload-icon">Accepts image, videos or 3D models</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <div class="row"> 
+                            <div class="col-md-6">
+                               <label class="form-label">Description</label>
+                               <!-- <form [formGroup]="seo">
+                                   <div class="NgxEditor__Wrapper">
+                                     <ngx-editor-menu [editor]="editor" [toolbar]="toolbar"> </ngx-editor-menu>
+                                     <ngx-editor [editor]="editor" formControlName=" editorContent"> </ngx-editor>
+                                   </div>
+                                </form> -->
+                            </div>
+                           
+
+                            <div class="col-md-6">
+                               
+                                
+
+                                <label class="form-label">SEO</label>
+                                <!-- <form [formGroup]="form">
+                                    <div class="NgxEditor__Wrapper">
+                                      <ngx-editor-menu [editor]="seoeditor" [toolbar]="toolbar"> </ngx-editor-menu>
+                                      <ngx-editor [editor]="seoeditor" formControlName="seo"> </ngx-editor>
+                                    </div>
+                                 </form> -->
+                            </div>
+                            
+                        </div> 
+                      
+                    </div>
+                    <div class="Product_btn mt-5">
+                        <button class="btn_submit" (click)="ok()">Submit</button>
+                        <button class="btn_cancel">Cancel</button>
+                    </div>
+                    </div>
+            </div>
+</div> 
+
+
+ 
+              
+    
+    
+
+    
+    
+           
+
+
+
+    
+    
+                    
+    
+    
+                    
+    
+               
+    
+          
+    
+            
+    
+           
+               

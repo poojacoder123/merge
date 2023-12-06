@@ -1,0 +1,108 @@
+
+  
+<div *ngFor="let p of dataSource ; " class="card container my-4 " >
+  <div class="set_text px-2 py-2">
+    <p class=""> Order No : {{p.OrderDate}}</p>
+    <p>Order Date : {{p.OrderDate}}</p>
+    <p>Vendor : {{p.PartyAccount}}</p>
+   </div>
+
+    
+    
+    
+     <div class="card row">
+      <div class="col-md-12 col-sm-12 set_scroller" >
+      <table   class="table  table-hover">
+          <thead >
+            <tr style="border:none">
+            
+        
+              <th scope="col" class="text-center text-uppercase">Product name</th>
+              <th scope="col" class="text-center text-uppercase" >quantity</th>
+              <th scope="col" class="text-center text-uppercase" > price</th>
+              <th scope="col" class="text-center text-uppercase" >due date</th>
+              <th scope="col" class="text-center text-uppercase" >warehouse</th>
+              <th scope="col" class="text-center text-uppercase" >Amount</th>
+            </tr>
+         
+          </thead>
+     
+          <tbody>
+        
+           <tr *ngFor="let q of p.newProduct ; ">
+                  <td ><div  style="width: 200px;" class="text_decoreion p-2 border border-1 rounded text-start">{{q.productname}}</div></td>
+                 
+                  <td><div  style="width: 100px;" class="text_decoreion border border-1 rounded p-2 text-center">{{q.quantity}} </div></td>
+                 <td>
+                      <div  style="width: 150px;" class="text_decoreion border border-1 rounded py-2 px-3 text-center">{{q.price}}$</div>
+                      
+                  </td>
+                  <td> <div  class="text_decoreion border border-1 rounded py-2 px-5">{{q.duedate}}</div></td>
+                  <td> <div  class="text_decoreion border border-1 rounded py-2 px-5">{{q.warehouse}}</div></td>
+                 
+                  <td> <input type="text" disabled class="form-control" /></td>
+                </tr> 
+            </tbody>
+      </table>
+    </div>
+     
+     </div>
+    
+    <div class="row my-3">
+    <div class="prant_div">
+              <div class="new_dropdown" >
+                <div >
+                  <div class="input-group mb-3">
+                      <button type="button" class="btn btn-outline-secondary">10</button>
+                      <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split"
+                          data-bs-toggle="dropdown" aria-expanded="false">
+                          <span class="visually-hidden">Toggle Dropdown</span>
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">15</a></li>
+                        <li><a class="dropdown-item" href="#">25</a></li>
+                        <li><a class="dropdown-item" href="#">50</a></li>
+                        <li><a class="dropdown-item" href="#">100</a></li>
+                      </ul>
+                    </div>
+                   </div>
+                    </div>
+                    <div >
+                      <div class="d-grid ga d-md-flex justify-content-md-end">
+                         <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
+                            <div class="btn-group me-2" role="group" aria-label="First group">
+                                <button type="button" class="btn btn-outline-secondary" > 1</button>
+                                <button type="button" class="btn btn-outline-secondary">2</button>
+                                <button type="button" class="btn btn-outline-secondary">3</button>
+                                <button type="button" class="btn btn-outline-secondary">4</button>
+                                <button type="button" class="btn btn-outline-secondary">5</button>
+                            </div>
+                        </div>
+                    </div>
+               </div>
+            <div >
+              <div class="d-grid ga d-md-flex justify-content-md-end">
+                 <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
+                    <div class="btn-group me-2" role="group" aria-label="First group">
+                        <button type="button" class="btn btn-outline-secondary"> |
+                            <i class="fas fa-angle-left"></i>
+                            </button>
+                        <button type="button" class="btn btn-outline-secondary">
+                          <i class="fas fa-angle-left"></i>
+                              </button>
+                        <button type="button" class="btn btn-outline-secondary">
+                          <i class="fas fa-angle-right"></i>
+                              </button>
+                        <button type="button" class="btn btn-outline-secondary " >
+                          <i class="fas fa-angle-right"></i> |
+                        </button>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    
+    
+    

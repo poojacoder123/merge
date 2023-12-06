@@ -1,0 +1,30 @@
+
+
+<mat-dialog-content>
+
+
+  <div class="set_icons justify-content-center">
+
+    <i class="fa-solid fa-exclamation"></i>
+  </div>
+  <h3 class=" text-center mt-3">Are You Sure ? <b *ngIf="data">{{data}}</b></h3>
+  <p class="fs-6  text-center mt-3">Do you want to remove this brand? This process cannot 
+    be undone.<b *ngIf="data">{{data}}</b></p>
+
+
+
+    <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+      <div (click)="dialogRef.close()" class="No" >
+    
+        Cancel
+      </div>
+      <div  class="yas" type="button">
+       
+        Delete
+      </div>
+      
+    </div>
+
+  </mat-dialog-content>
+  
+

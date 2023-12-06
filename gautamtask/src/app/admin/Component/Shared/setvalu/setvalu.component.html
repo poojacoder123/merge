@@ -1,0 +1,80 @@
+
+<div class="my-4">
+<ng-multiselect-dropdown
+  [placeholder]="'color'"
+  [settings]="dropdownSettingscolor"
+  [data]="dropdownListcolor"
+  [(ngModel)]="selectedItemscolor"
+  (onSelect)="onItemSelectColor($event)"
+  (onSelectAll)="onSelectAllColor($event)"
+>
+</ng-multiselect-dropdown>
+</div>
+<div class="my-4">
+  <ng-multiselect-dropdown
+    [placeholder]="'Material'"
+    [settings]="dropdownSettingsMaterial"
+    [data]="dropdownListMaterial"
+    [(ngModel)]="selectedItemsmaterial"
+    (onSelect)="onItemSelectMaterial($event)"
+    (onSelectAll)="onSelectAllMaterial($event)"
+  >
+  </ng-multiselect-dropdown>
+  </div>
+  <div class="my-4">
+    <ng-multiselect-dropdown
+      [placeholder]="'Size'"
+      [settings]="dropdownSettingsSize"
+      [data]="dropdownListSize"
+      [(ngModel)]="selectedItemsSize"
+      (onSelect)="onItemSelectsize($event)"
+      (onSelectAll)="onSelectAllsize($event)"
+    >
+    </ng-multiselect-dropdown>
+    </div>
+
+<table *ngIf="varent_color.length > 0" class="table table-light">
+  <thead>
+    <tr>
+      <th> <input type="checkbox" />  Variant </th>
+      <th> Price </th>
+      <th> Available </th>
+      <th> On hand </th>
+      <th> SKU </th> 
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let c of varent_color"  >
+    <td>
+      <div  class="fs-5" > color : {{c.color}} </div>  
+      <div *ngFor="let m of varent_Material" class="fs-5" >  Material:{{m.material_name}}</div>  
+      <div *ngFor="let s of varent_Size" class="fs-5" >  Size:{{s.size}}</div>   
+     </td>
+     <td> 
+      <div class="d-flex justify-content-center  align-items-center">
+
+        <input type="text" />
+      </div>
+     </td>
+     <td>
+        <input type="text" />
+     </td>
+     <td>
+       <input type="text" />
+     </td>
+     <td>
+       <input type="text" />
+      </td>
+    </tr>
+ 
+  </tbody>
+</table>
+
+
+
+
+<button (click)="ok()"> ok</button>
+
+
+
+

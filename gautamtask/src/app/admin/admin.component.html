@@ -1,0 +1,211 @@
+<ngx-loading-bar [height]="'4px'" [color]="'#007BFF'" [includeSpinner]="false"></ngx-loading-bar>
+
+
+ <mat-toolbar class=" box_shad fixed-top ">
+        <div class=" D_flex_box text-light mt-1">
+            <div class="example-icon text-light " style="cursor: pointer;">
+                <i (click)="drawer.toggle()" class='bx bx-menu text-dark fs-4'></i>
+        </div>
+            <div class="set_imgh mb-1">
+                <img src="./assets/logos/copyright3.png" alt="LOGO" class="img_red" srcset="">
+            </div>
+            <div class="mb-2  border-dark">
+    
+
+                <a routerLink="/admin" class="animate-charcter px-2 " style="text-decoration: none;">{{'header.logoname'|
+                    translate }}
+                </a>
+            </div>
+            <div>
+    
+
+<!-- 
+                <div class="search-container">
+                    <input type="text" name="search" placeholder="Search..." class="search-input">
+                    <a href="#" class="search-btn">
+                            <i class="fas fa-search"></i>      
+                    </a>
+                </div> -->
+            </div>
+    
+        </div>
+    
+        <span class="example-spacer"></span>
+        <div class=" d-flex align-items-center mt-1 text-dark  justify-content-center ml-2" style="gap: 10px;">
+            <i class="ri-notification-3-fill fs-4"></i>
+        
+            <i class="ri-mail-fill fs-4 " ></i>
+            <div class="dropdown p-0 m-0">
+            <i class="ri-global-fill text-dark fs-4" id="dropdownMenuButton1" data-bs-toggle="dropdown" style="cursor: pointer;"></i>
+          
+                <ul class="color_custem dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <li>
+                        <div class="p-3 text-center border-bottom  border-dark text-light" (click)="tran('ab')">Arabic</div>
+                    </li>
+                    <li>
+                        <div class="p-3 text-center border-bottom  border-dark text-light" (click)="tran('en')">English
+                        </div>
+                    </li>
+                    <li>
+                        <div class="p-3 text-center border-bottom  border-dark text-light">Abkhaz</div>
+                    </li>
+                    <li>
+                        <div class="p-3 text-center border-bottom  border-dark text-light">Ossetian </div>
+                    </li>
+                    <li>
+                        <div class="p-3 text-center border-bottom  border-dark text-light">Danish</div>
+                    </li>
+                    <li>
+                        <div class="p-3 text-center border-bottom  border-dark text-light">French </div>
+                    </li>
+                    <li>
+                        <div class="p-3 text-center border-bottom  border-dark text-light">Muskum </div>
+                    </li>
+                </ul>
+            </div>
+    
+            <div class="">
+                <i class="ri-settings-5-line fs-4  "></i>
+                <span class="fs-5">Account <i class="ri-arrow-down-s-line"></i></span> 
+            </div>
+
+    
+       
+        </div>
+</mat-toolbar> 
+<mat-drawer-container  class="example-container" style="margin-top: 62px;">
+  <mat-drawer #drawer class="example-sidenav set_sh" mode="side">
+  
+            <div class="sidebar ">
+           
+                    <div class="close_btn  border-bottom border-dark mt-4  pb-3">
+                        <div class="prent_profile mx-2 dropdown  border-dark ">
+                            <img class="Main5_img" data-bs-toggle="dropdown"
+                                src='../../assets/logos/profile.jpg'
+                                alt="">
+                            <div class="color_custem dropdown-menu">
+                                <div class="p-3 text-center   border-bottom border-dark text-light" (click)="set_profile()" >Profile</div>
+                                <div class="p-3 text-center  border-bottom border-dark text-light">Sync</div>
+                                <div class="p-3 text-center  border-bottom border-dark text-light">Backup</div>
+                                <div class="p-3 text-center  border-bottom border-dark text-light">Restore</div>
+                                <div class="p-3 text-center  border-bottom border-dark text-light">Support</div>
+                                <div class="p-3 text-center  border-bottom border-dark text-light" (click)="set_seteing()" >Settings</div>
+                                <div class="p-3 text-center  border-bottom border-dark text-light">Log Out</div>
+                            </div>
+                        </div>
+                        <div class=" border-start px-2 border-dark text-light Custme_Name " data-bs-toggle="dropdown">
+                            Hi, NAYSHIN COMPANY
+                            <br />
+                            <div class="mt-4" style="font-size: 12px;">33 NewKirk, New York, US 11267</div>
+                        </div>
+                    </div>
+              
+                   
+    
+           
+                <nav>
+                    <ul *ngFor="let main of Sub_menus" id="ul">
+                        <li class="var_nav">
+                            <div class="link_bg"></div>
+                            <div class="link_title">
+                                <div class="icon">
+                                    <i [class]='main.main_icon'></i>
+                                </div>
+                                <a class="sub_name_product " style="margin-left: 5rem;" (click)="basic.toggle()" role="button">
+                                    <span class="name_titale text-start"> {{main.Main_name}} </span>
+                                </a>
+                            </div>
+                        </li>
+                        <span mdbCollapse #basic="mdbCollapse">
+                            <ul *ngFor="let sub of main.sub" class=" old_Pos">
+                                <li class="var_nav ">
+                                    <div class="link_bg"></div>
+                                    <div class="link_title px-3">
+                                        <div class="icon ">
+                                            <i *ngIf="sub.icon" [class]="sub.icon"></i>
+                                            <mat-icon *ngIf="sub.mat_icons">{{sub.mat_icons}}</mat-icon>
+                                           
+                                        </div>
+                                        <a class="sub_name_product" (click)="super.toggle()">
+                                            <span class="name_titale text-start" style="margin-left: 4rem;">
+                                                {{sub.name}} </span>
+                                               
+                                        </a>
+                                        <div class="d-flex text-light align-items-center mt-4 justify-content-end">
+                                            <i class="ri-arrow-right-s-line fs-4"></i>
+                                        </div>
+                                   
+                                    </div>
+                                   
+                               </li>
+                                <ul mdbCollapse #super="mdbCollapse" class=" old_Pos">
+                                  <span *ngIf="sub.super_manu">
+                                    <span *ngFor="let sp of sub.super_manu">
+                                        <li  class="var_nav ">
+                                            <div class="link_bg"></div>
+                                              <div class="link_title mb-2">
+                                                <div class="icon px-5 ">
+                                                  <img *ngIf="sp.img"  [src]="'./assets/submenu/'+ sp.img" alt="no-logo" />
+                                                   </div>
+                                                      <a *ngIf="sp.routes ; else boc" class="sub_name_product" [routerLink]="sp.routes"
+                                                      style="margin-left: 6rem;" >
+                                                       <span class="name_titale text-start">{{sp.name_super_sub}}</span></a>
+                                                       <ng-template #boc>
+                                                          <a class="sub_name_product" (click)="subsuper.toggle()"
+                                                          style="margin-left: 6rem;"      >
+                                                           <span class="name_titale text-start">{{sp.name_super_sub }}</span></a>
+                                                       </ng-template>
+                                       
+                                                      </div>
+                                          </li>
+                                          <ul mdbCollapse #subsuper="mdbCollapse" class="old_Pos">
+                                            <!-- <span *ngIf="sub.super_manu.last_menu"> -->
+                                              <li *ngFor="let suip of sp.last_menu" class="var_nav ">
+                                                <div class="link_bg"></div>
+                                                  <div class="link_title mb-2">
+                                                    <div class="icon  " style="padding-left:4rem ;">
+                                                      <img *ngIf="suip.img"  [src]="'./assets/submenu/'+ suip.img" alt="no-logo" />
+                                                       </div>
+                                                          <a class="sub_name_product" [routerLink]="suip.routes"
+                                                          style="margin-left: 8rem;"      >
+                                                            <span class="name_titale text-start">{{suip.name_super_sub_last}}</span></a>
+                                                      </div>
+                                                  </li>
+                                              <!-- </span> -->
+                                          </ul>
+                                    </span>
+                                    </span>
+                                </ul>
+                            </ul>
+                        </span>
+                    </ul>
+                </nav>
+                <div class="my-3 px-2" >
+                    <span class="soft_name ">Disk Usage</span>
+                    <span class="soft_name" style="margin-left: 120px;">{{persent}}%</span>
+                    <div class="progress mt-3">
+                        <div class="progress-bar progress-bar-striped  {{colors}}"
+                            role="progressbar" [style.width.%]="persent" aria-valuenow="75" aria-valuemin="0"
+                            aria-valuemax="100">{{persent}}%</div>
+                    </div>
+                </div>
+
+            </div>
+     
+  </mat-drawer>
+    <div class="example-sidenav-content" >
+        <router-outlet></router-outlet>
+    </div>
+</mat-drawer-container>
+<div class="set_hight">
+    <app-footer></app-footer>
+</div> 
+
+
+
+
+
+
+
+
+
